@@ -19,7 +19,7 @@ const routes = [
     component: MovieView
   },
   {
-    path: '/home',
+    path: '',
     name: 'HomeView',
     component: HomeView
   },
@@ -70,7 +70,7 @@ export default router
 
 router.beforeEach((to, from, next) => {
   const isLoggedIn =  store.getters.isLogin
-  const authPage = ['HomeView']
+  const authPage = ['HomeView', 'SignUpView']
   const isAuth = !authPage.includes(to.name)
   // 로그인이 필요한 페이지에 접근하려고 할 때
   if (isAuth && !isLoggedIn) {

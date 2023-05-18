@@ -10,6 +10,8 @@ from .serializers import *
 from .models import *
 import random
 
+
+
 # Create your views here.
 @api_view(['GET'])
 def movie_list(request):
@@ -112,3 +114,20 @@ def job_movies(request, job, job_id):
             crew = get_object_or_404(Crew, pk=job_id)
             serializer = movieListSerializer(crew.movies.all(), many=True)
             return Response(serializer.data, status.HTTP_200_OK)
+        
+@api_view(['GET'])
+def genre(request):
+    print(request.GET['genre'])
+    genres = request.GET['genre'] if request.GET.get('genre', False) else []
+    print(genres)
+    genres = list(genres.split(','))
+    movies = Movie.objects.all()
+    for i in genres:
+        print(type(i))
+        movies = movies.filter(genre_ids=int(i))
+
+    movies = movies.order_by('-release_date')
+
+    serializer = movieListSerializer(movies, many=True)
+
+    return Response(serializer.data, status=status.HTTP_200_OK)

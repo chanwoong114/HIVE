@@ -10,6 +10,7 @@
 
       <input type="submit" value="logIn">
     </form>
+    <button @click="gotoSignup()">Sign Up</button>
     
   </div>
 </template>
@@ -44,7 +45,11 @@ export default {
           // 로그인 실패 처리
           console.error(error);
         });
+    },
+    gotoSignup() {
+      this.$router.push({name: 'SignUpView'})
     }
-  }
+  },
+  
 }
 </script>

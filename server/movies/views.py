@@ -3,7 +3,7 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from django.db.models import *
 
-from django.shortcuts import render, get_list_or_404, get_object_or_404
+from django.shortcuts import get_list_or_404, get_object_or_404
 
 from .serializers import *
 from .models import *
@@ -50,7 +50,7 @@ def recommend_list(request):
 def movie_detail(request, movie_id):
     movie = get_object_or_404(Movie, pk=movie_id)
     if request.method == 'GET':
-        serializer = movieListSerializer(movie)
+        serializer = movieDetailSerializer(movie)
         return Response(serializer.data, status=status.HTTP_200_OK)
     
 @api_view(['GET', 'POST'])
@@ -65,3 +65,25 @@ def comment(request, movie_id):
         if serializer.is_valid(raise_exception=True):
             serializer.save(movie=movie, user=request.user)
             return Response(serializer.data, status=status.HTTP_201_CREATED)
+        
+@api_view(['GET', 'POST'])
+def like_movie(request, movie_id):
+    movie = get_object_or_404(Movie, pk=movie_id)
+    if request.method == 'POST':
+        if movie.Like_users.filter(pk=request.user.pk).exists():
+            movie.Like_users.remove(request.user)
+        else:
+            movie.Like_users.add(request.user)
+        return Response(movieListSerializer(movie).data, status=status.HTTP_200_OK)
+    
+@api_view(['GET'])
+def job_movies(request, job, job_id):
+    if request.method == 'GET':
+        if job == 'cast':
+            cast = get_object_or_404(Cast, pk=job_id)
+            serializer = movieListSerializer(cast.movies.all(), many=True)
+            return Response(serializer.data, status.HTTP_200_OK)
+        elif job == 'crew':
+            crew = get_object_or_404(Crew, pk=job_id)
+            serializer = movieListSerializer(crew.movies.all(), many=True)
+            return Response(serializer.data, status.HTTP_200_OK)

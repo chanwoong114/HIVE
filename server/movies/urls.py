@@ -8,5 +8,6 @@ urlpatterns = [
     path('recommend_list/', views.recommend_list),
     path('<int:movie_id>/comments/', views.comment),
     path('<int:movie_id>/like/', views.like_movie),
-    path('<str:job>/<int:job_id>/', views.job_movies)
+    path('<str:job>/<int:job_id>/', views.job_movies),
+    path('user_recommend_list/', views.user_recommend_list)
 ]

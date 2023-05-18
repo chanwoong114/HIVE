@@ -2,6 +2,7 @@ from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from django.db.models import *
+from django.contrib.auth import get_user_model
 
 from django.shortcuts import get_list_or_404, get_object_or_404
 
@@ -24,6 +25,30 @@ def random_list(request):
         movies = get_list_or_404(Movie)
         movies = random.sample(movies, 20)
         serializer = movieListSerializer(movies, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+    
+@api_view(['GET'])
+def user_recommend_list(request):
+    if request.method == 'GET':
+        movies = get_list_or_404(Movie)
+        likeMovies = get_object_or_404(get_user_model(), pk=request.user.pk)
+        print(likeMovies.rated_movies.all())
+        genre_score = {}
+        for i in likeMovies.rated_movies.all():
+            for j in i.genre_ids.all():
+                genre_score[j.id] = genre_score.get(j.id, 0) + 1
+        print(genre_score)
+
+        def usermovie_sort(movie):
+            score = 0
+            for i in movie.genre_ids.all():
+                score += genre_score.get(i.id, 0)
+            return score 
+        
+        movies.sort(reverse=True, key=lambda x: (usermovie_sort(x), x.release_date))
+
+        serializer = movieListSerializer(movies, many=True)
+
         return Response(serializer.data, status=status.HTTP_200_OK)
 
 

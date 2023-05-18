@@ -2,17 +2,15 @@
   <div>
     <h1>LogIn Page</h1>
     <form @submit.prevent="login">
-      <label for="username">username : </label>
+      <label for="username"></label><br>
       <input type="text" id="username" v-model="username"><br>
 
-      <label for="password"> password : </label>
+      <label for="password"> </label><br>
       <input type="password" id="password" v-model="password"><br>
 
       <input type="submit" value="logIn">
     </form>
-    <!-- <div class="ss-container">
-    <img class="hive" src="../assets/bighive.png">
-    </div> -->
+    
   </div>
 </template>
 
@@ -35,36 +33,18 @@ export default {
       }
 
       this.$store.dispatch('login', payload)
-
+      .then((res) => {
+          console.log(1)
+          // 로그인 성공 시 사용자 이름을 스토어에 저장
+          this.$store.commit('SAVE_TOKEN', res.data.key)
+          this.$store.commit('SET_USERNAME', username);
+          // this.$router.push({ name: 'MovieView' });
+        })
+        .catch((error) => {
+          // 로그인 실패 처리
+          console.error(error);
+        });
     }
   }
 }
 </script>
-<style scoped>
-.ss-container {
-  position: relative;
-  height: 100px; 
-  overflow: hidden;
-}
-
-.hive {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 80%;
-  height: 80%;
-  animation: moveUpDown 3s infinite alternate;
-}
-
-@keyframes moveUpDown {
-  0% {
-    transform: translateY(40px);
-  }
-  50% {
-    transform: translateY(-40px); /* 이미지가 위로 이동하는 양 조정 */
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-</style>

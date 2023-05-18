@@ -7,6 +7,7 @@ import FavoritesView from '../views/FavoritesView.vue'
 import MovieDetailView from '../views/MovieDetailView.vue'
 import SignUpView from '@/views/SignUpView'
 import LogInView from '@/views/LogInView'
+import PersonView from '@/views/PersonView'
 import NotFound from '@/views/404NotFound'
 import store from '@/store'
 
@@ -56,6 +57,12 @@ const routes = [
     component: NotFound
   },
 
+  {
+    path: '/:job/:personId',
+    name: 'PersonView',
+    component: PersonView
+  },
+  
   {
     path: '*',
     redirect: '/404'

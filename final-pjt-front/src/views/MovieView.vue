@@ -1,8 +1,8 @@
 <template>
   <div class="container">
-    <div class="row cols-4">
-      <div class="col" v-for="movie in movies" :key="movie.id">
-        <div class="card mb-4">
+    <div class="row">
+      <div class="col-2" v-for="movie in movies" :key="movie.id">
+        <div class="card mb-4" @click="gotoDetail(movie.id)">
           <img :src="'https://image.tmdb.org/t/p/original/' + movie.poster_path" :alt="movie.title" 
           
           class="card-img-top">
@@ -43,6 +43,9 @@ export default {
       .catch(error => {
         console.log(error)
       })
+    },
+    gotoDetail(movieId) {
+      this.$router.push({name: 'MovieDetailView', params: {movieId: `${movieId}`}})
     }
   },
   created() {

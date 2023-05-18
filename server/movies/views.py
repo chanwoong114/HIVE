@@ -16,7 +16,7 @@ import random
 @api_view(['GET'])
 def movie_list(request):
     if request.method == 'GET':
-        movies = get_list_or_404(Movie)
+        movies = get_list_or_404(Movie)[:20]
         serializer = movieListSerializer(movies, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
     

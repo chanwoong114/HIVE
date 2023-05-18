@@ -19,7 +19,7 @@ const routes = [
     component: MovieView
   },
   {
-    path: '',
+    path: '/',
     name: 'HomeView',
     component: HomeView
   },
@@ -30,10 +30,12 @@ const routes = [
   },
   {
     path: '/favorites',
+    name: 'FavoritesView',
     component: FavoritesView
   },
   {
-    path: '/detail',
+    path: '/movies/:movieId',
+    name: 'MovieDetailView',
     component: MovieDetailView
   },
   {

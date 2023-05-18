@@ -18,6 +18,7 @@ export default new Vuex.Store({
     movies: [
     ],
     token: null,
+    username:null,
   },
   getters: {
     isLogin(state) {
@@ -32,14 +33,17 @@ export default new Vuex.Store({
     SAVE_TOKEN(state, token) {
       state.token = token
       console.log(token)
-      router.push({name : 'ArticleView'}) // store/index.js $router 접근 불가 -> import를 해야함
-    }
+      router.push({name : 'MovieView'}) // store/index.js $router 접근 불가 -> import를 해야함
+    },
+    SET_USERNAME(state, username) {
+      state.username = username;
+    },
   },
   actions: {
     getArticles(context) {
       axios({
         method: 'get',
-        url: `${API_URL}/api/v1/movies/`,
+        url: `${API_URL}/movies/`,
         headers:{
           Authorization:`Token ${context.state.token}`
         }
@@ -56,7 +60,7 @@ export default new Vuex.Store({
       const username = payload.username
       const password1 = payload.password1
       const password2 = payload.password2
-
+      console.log(payload)
       axios({
         method: 'post',
         url: `${API_URL}/accounts/signup/`,
@@ -66,7 +70,6 @@ export default new Vuex.Store({
       })
         .then((res) => {
           // console.log(res)
-          // context.commit('SIGN_UP', res.data.key)
           context.commit('SAVE_TOKEN', res.data.key)
         })
         .catch((err) => {
@@ -76,8 +79,9 @@ export default new Vuex.Store({
     login(context, payload) {
       const username = payload.username
       const password = payload.password
-
+      console.log(payload)
       axios({
+        
         method: 'post',
         url: `${API_URL}/accounts/login/`,
         data: {

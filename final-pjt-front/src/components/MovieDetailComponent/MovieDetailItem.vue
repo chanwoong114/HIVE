@@ -14,7 +14,6 @@ export default {
         movie: Object,
     },
     method: {
-        
     }
 }
 </script>

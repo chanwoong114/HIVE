@@ -7,7 +7,11 @@ import FavoritesView from '../views/FavoritesView.vue'
 import MovieDetailView from '../views/MovieDetailView.vue'
 import SignUpView from '@/views/SignUpView'
 import LogInView from '@/views/LogInView'
+import CommunityView from '@/views/community/CommunityView'
 import NotFound from '@/views/404NotFound'
+import CommunityDetailView from '@/views/community/CommunityDetailView'
+import CreateArticle from '@/views/community/CreateArticle'
+import UpdateArticle from '@/views/community/UpdateArticle'
 import store from '@/store'
 
 Vue.use(VueRouter)
@@ -48,6 +52,30 @@ const routes = [
     path: '/login',
     name: 'LogInView',
     component: LogInView
+  },
+  
+  {
+    path: '/community',
+    name: 'community',
+    component: CommunityView
+  },
+
+  {
+    path: '/community/:articleId',
+    name: 'communityDetail',
+    component: CommunityDetailView
+  },
+
+  {
+    path: '/community/create',
+    name: 'CreateArticle',
+    component: CreateArticle
+  },
+
+  {
+    path: '/community/:articleId/update',
+    name: 'UpdateArticle',
+    component: UpdateArticle
   },
   
   {

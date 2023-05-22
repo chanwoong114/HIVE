@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import movie from '@/store/movie/movie'
+import community from '@/store/community/community.js'
 
 import axios from 'axios'
 import createPersistedState from 'vuex-persistedstate'
@@ -27,36 +28,17 @@ export default new Vuex.Store({
     }
   },
   mutations: {
-    GET_ARTICLES(state, movies) {
-      state.movies = movies
-    },
     // signup & login -> 완료하면 토큰 발급
     SAVE_TOKEN(state, token) {
       state.token = token
       console.log(token)
       router.push({name : 'MovieView'}) // store/index.js $router 접근 불가 -> import를 해야함
     },
-    SET_USERNAME(state, username) {
+    SAVE_USERNAME(state, username) {
       state.username = username;
     },
   },
   actions: {
-    getArticles(context) {
-      axios({
-        method: 'get',
-        url: `${API_URL}/movies/`,
-        headers:{
-          Authorization:`Token ${context.state.token}`
-        }
-      })
-        .then((res) => {
-        // console.log(res, context)
-          context.commit('GET_ARTICLES', res.data)
-        })
-        .catch((err) => {
-        console.log(err)
-      })
-    },
     signUp(context, payload) {
       const username = payload.username
       const password1 = payload.password1
@@ -90,13 +72,15 @@ export default new Vuex.Store({
         }
       })
         .then((res) => {
-        context.commit('SAVE_TOKEN', res.data.key)
-        context.commit('SAVE_USERNAME', res.data.username)
+          console.log(res.data)
+          context.commit('SAVE_TOKEN', res.data.key)
+          context.commit('SAVE_USERNAME', username)
         })
       .catch((err) => console.log(err))
     }
   },
   modules: {
-    movie
-  }
+    movie: movie,
+    community: community,
+  },
 })

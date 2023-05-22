@@ -20,6 +20,9 @@
           <li class="nav-item">
             <span class="nav-link">{{ this.$store.state.username }}</span>
           </li>
+          <li class="nav-item">
+            <a class="nav-link"><router-link :to="{name: 'community'}">community</router-link></a>
+          </li>
           <li class="nav-item ml-auto">
             <input type="text" placeholder="Search" class="form-control">
           </li>

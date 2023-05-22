@@ -1,8 +1,8 @@
 <template>
   
-  <div id="app" class="bg-dark">
+  <div id="app" class="bg-black">
     <div v-if="isLogin">
-      <nav id="navbar-example2" class="navbar bg-secondary px-3 mb-3 d-flex justify-content-between align-items-center">
+      <nav id="navbar-example2" class="navbar bg-dark px-3 mb-3 d-flex justify-content-between align-items-center">
         <a class="navbar-brand" href=""><img class="hive" src="./assets/hive.png" alt="nike"></a>
         <ul class="nav nav-pills">
           <!-- <li class="nav-item">
@@ -18,7 +18,7 @@
             <a class="nav-link"><router-link to="/favorites">favorites</router-link></a>
           </li>
           <li class="nav-item">
-            <span class="nav-link">{{ $store.state.username }}</span>
+            <span class="nav-link">{{ this.$store.state.username }}</span>
           </li>
           <li class="nav-item ml-auto">
             <input type="text" placeholder="Search" class="form-control">
@@ -38,10 +38,11 @@ export default {
       return this.$store.getters.isLogin
     }
   },
-  mounted() {
-   
-  
-  }
+  watch: {
+    $route() {
+      window.scrollTo(0, 0);
+    },
+  },
 }
 </script>
 <style>
@@ -51,7 +52,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: white;
-  min-height: 100vh;
 }
 
 nav {

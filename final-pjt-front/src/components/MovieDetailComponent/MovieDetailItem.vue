@@ -1,8 +1,11 @@
 <template>
   <div>
-    <h3>Item</h3>
-    <div>
-        <p>{{ movie.title }}</p>
+    <div class="card mb-4" @click="gotoDetail(movie?.id)">
+      <img :src="'https://image.tmdb.org/t/p/original/' + movie?.poster_path" :alt="movie.title"   
+      class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title" style="color: black">{{ movie?.title }}</h5>
+      </div>
     </div>
   </div>
 </template>

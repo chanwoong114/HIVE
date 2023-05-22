@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import movie from '@/store/movie/movie'
 
 import axios from 'axios'
 import createPersistedState from 'vuex-persistedstate'
@@ -90,10 +91,12 @@ export default new Vuex.Store({
       })
         .then((res) => {
         context.commit('SAVE_TOKEN', res.data.key)
+        context.commit('SAVE_USERNAME', res.data.username)
         })
       .catch((err) => console.log(err))
     }
   },
   modules: {
+    movie
   }
 })

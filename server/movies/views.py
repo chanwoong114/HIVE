@@ -16,9 +16,44 @@ import random
 @api_view(['GET'])
 def movie_list(request):
     if request.method == 'GET':
-        movies = get_list_or_404(Movie)[:20]
-        serializer = movieListSerializer(movies, many=True)
-        return Response(serializer.data, status=status.HTTP_200_OK)
+        movies = get_list_or_404(Movie)
+        random_movies = random.sample(movies, 20)
+        random_serializer = movieListSerializer(random_movies[:20], many=True)
+
+        likeMovies = get_object_or_404(get_user_model(), pk=request.user.pk)
+        genre_score = {}
+        for i in likeMovies.rated_movies.all():
+            for j in i.genre_ids.all():
+                genre_score[j.id] = genre_score.get(j.id, 0) + 1
+
+        def usermovie_sort(movie):
+            score = 0
+            for i in movie.genre_ids.all():
+                score += genre_score.get(i.id, 0)
+            return score
+        
+        movies.sort(reverse=True, key=lambda x: (usermovie_sort(x), x.release_date))
+        
+        user_serializer = movieListSerializer(movies[:20], many=True)
+
+        C = Movie.objects.aggregate(Sum('vote_average'))['vote_average__sum']/(len(movies))
+        m = Movie.objects.order_by('vote_count')[int(0.9*len(movies))].vote_count
+        
+        def weight_rating(movie):
+            v = movie.vote_count
+            R = movie.vote_average
+            return (v/(v+m) * R) + (m/(m+v) * C)
+        
+        movies.sort(key=lambda x: weight_rating(x), reverse=True)
+
+        weight_serializer = movieListSerializer(movies[:20], many=True)
+        
+        data = {
+            'random_data': random_serializer.data,
+            'user_data': user_serializer.data,
+            'weight_data': weight_serializer.data
+        }
+        return Response(data, status=status.HTTP_200_OK)
     
 
 @api_view(['GET'])
@@ -34,12 +69,12 @@ def user_recommend_list(request):
     if request.method == 'GET':
         movies = get_list_or_404(Movie)
         likeMovies = get_object_or_404(get_user_model(), pk=request.user.pk)
-        print(likeMovies.rated_movies.all())
+        
         genre_score = {}
         for i in likeMovies.rated_movies.all():
             for j in i.genre_ids.all():
                 genre_score[j.id] = genre_score.get(j.id, 0) + 1
-        print(genre_score)
+      
 
         def usermovie_sort(movie):
             score = 0
@@ -103,6 +138,17 @@ def like_movie(request, movie_id):
             movie.Like_users.add(request.user)
         return Response(movieListSerializer(movie).data, status=status.HTTP_200_OK)
     
+    elif request.method == 'GET':
+        if movie.Like_users.filter(pk=request.user.pk).exists():
+            is_like = True
+        else:
+            is_like = False
+
+        data = {
+            'state' : is_like
+        }
+        return Response(data, status=status.HTTP_200_OK)
+    
 @api_view(['GET'])
 def job_movies(request, job, job_id):
     if request.method == 'GET':
@@ -131,3 +177,4 @@ def genre(request):
     serializer = movieListSerializer(movies, many=True)
 
     return Response(serializer.data, status=status.HTTP_200_OK)
+

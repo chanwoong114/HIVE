@@ -10,9 +10,22 @@ class CommentSerializer(serializers.ModelSerializer):
 
 class movieListSerializer(serializers.ModelSerializer):
 
+    comments_rating = serializers.SerializerMethodField('get_comments_rating')
+
     class Meta:
         model = Movie
         fields = '__all__'
+
+    def get_comments_rating(self, obj):
+        comments = CommentMovie.objects.filter(movie=obj)
+        Sum = 0
+        if len(comments) > 0:
+            for comment in comments:
+                Sum += comment.rating
+        
+            Sum /= len(comments)
+
+        return Sum
 
 class movieDetailSerializer(serializers.ModelSerializer):
 
@@ -34,6 +47,7 @@ class movieDetailSerializer(serializers.ModelSerializer):
     genre_ids = genreSerializer(many=True, read_only=True)
     comments = CommentSerializer(many=True, read_only=True)
     comments_count = serializers.IntegerField(source='comments.count', read_only=True)
+    comments_rating = serializers.SerializerMethodField('get_comments_rating')
     crew_ids = crewSerializer(read_only=True)
     cast_ids = castSerializer(many=True, read_only=True)
     recommends = serializers.IntegerField(source='recommends.count', read_only=True)
@@ -44,3 +58,13 @@ class movieDetailSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
+    def get_comments_rating(self, obj):
+        comments = CommentMovie.objects.filter(movie=obj)
+        Sum = 0
+        if len(comments) > 0:
+            for comment in comments:
+                Sum += comment.rating
+        
+            Sum /= len(comments)
+
+        return Sum

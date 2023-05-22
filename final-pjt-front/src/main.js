@@ -17,22 +17,3 @@ new Vue({
 
 Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)
-
-import { Carousel } from "@fancyapps/ui/dist/carousel/carousel.esm.js";
-import "@fancyapps/ui/dist/carousel/carousel.css";
-
-// Main carousel
-const mainContainer = document.getElementById("myCarousel");
-const mainOptions = {};
-
-const mainCarousel = new Carousel(mainContainer, mainOptions);
-
-// Carousel for navigation
-const navContainer = document.getElementById("myNavigation");
-const navOptions = {
-  Sync: {
-    target: mainCarousel,
-  },
-};
-
-new Carousel(navContainer, navOptions)

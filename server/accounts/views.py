@@ -12,9 +12,7 @@ from rest_framework.decorators import api_view
 def mypage(request):
     user = get_object_or_404(get_user_model(), pk=request.user.pk)
     if request.method == 'GET':
-        print(1)
         serializer = UserSerializer(user)
-        print(serializer.data)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
 @api_view(['POST'])

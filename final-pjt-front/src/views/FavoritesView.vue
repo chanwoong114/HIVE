@@ -57,14 +57,14 @@
           <!-- Page content-->
           <div class="col-lg-9 pt-4 pb-2 pb-sm-4">
             <div class="d-flex align-items-center mb-4">
-              <h1 class="h2 mb-0">관심있는 영화 <span class='fs-base fw-normal text-muted'>{{ user.rated_movies.length }}개잇듬</span></h1>
+              <h1 class="h2 mb-0">관심있는 영화 <span class='fs-base fw-normal text-muted'>{{ likeMovies.length }}개잇듬</span></h1>
               <button class="btn btn-sm btn-outline-danger ms-auto" type="button"><i class="ai-trash ms-n1 me-2"></i>Clear all</button>
             </div>
             <div class="card border-0 py-1 p-md-2 p-xl-3 p-xxl-4">
               <div class="card-body pb-4">
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
                   <!-- Item-->
-                  <div class="col pb-2 pb-sm-3" v-for="movie in user.rated_movies" :key="movie.id">
+                  <div class="col pb-2 pb-sm-3" v-for="movie in likeMovies" :key="movie.id">
                     <MovieDetailItem :movie="movie" />
                     <div class="d-flex mb-1">
                       <h3 class="h6 mb-0"><a href="#">{{ movie.title }}</a></h3>
@@ -150,6 +150,13 @@ export default {
   },
   created() {
     this.getUserInfo()
+  },
+  computed: {
+    likeMovies() {
+      return this.user.rated_movies.filter(movie => {
+        return this.$store.getters.likeMovies.includes(movie.id)
+      })
+    }
   }
 }
 </script>

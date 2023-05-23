@@ -8,6 +8,9 @@ const movie = {
   getters: {
     likeCount(state) {
       return state.rated_movies.length
+    },
+    likeMovies(state) {
+      return state.rated_movies
     }
   },
   mutations: {

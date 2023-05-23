@@ -4,24 +4,44 @@
     <div class="page-wrapper">
       <div class="dark-mode">
         <!-- 네브바-->
-        <header class="navbar navbar-expand-lg fixed-top bg-dark ">
-          <div class="container"><a class="navbar-brand pe-sm-3" href="index.html">
+        <header class="navbar bg-secondary navbar-expand-lg fixed-top">
+          <div class="container"><a class="navbar-brand pe-sm-3" href="#">
             <img src="../assets/bighive.png" alt="Logo" width="35" height="32">
             HIVE
             </a>
-            <div>
             <div class="form-check form-switch mode-switch order-lg-2 me-3 me-lg-4 ms-auto" data-bs-toggle="mode">
               <input class="form-check-input" type="checkbox" id="theme-mode" v-model="darkMode" @click="toggleDarkMode()">
               <label class="form-check-label" for="theme-mode"><i class="ai-sun fs-lg"></i></label>
               <label class="form-check-label" for="theme-mode"><i class="ai-moon fs-lg"></i></label>
-              <div class="btn btn-primary btn-sm fs-sm order-lg-3 d-none d-sm-inline-flex" @click="gotoLogin()" target="_blank" rel="noopener">
-              <i class="ai-login fs-xl me-2 ms-n1"></i>로그인
-              </div>
+            </div>
+            <div class="btn btn-success btn-sm fs-sm order-lg-3 d-none d-sm-inline-flex" @click="gotoLogin()" target="_blank" rel="noopener">
+            <i class="ai-login fs-xl me-2 ms-n1"></i>로그인
             </div>
             
-            
-          </div>
-            
+            <nav class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav navbar-nav-scroll me-auto" style="--ar-scroll-height: 520px;">
+                <li class="nav-item dropdown"><a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown" aria-expanded="false">영화</a>
+                  <div class="dropdown-menu overflow-hidden p-0">
+                    <div class="d-lg-flex">
+                      <div class="mega-dropdown-column pt-1 pt-lg-3 pb-lg-4">
+                        <ul class="list-unstyled mb-0">
+                          <li><a class="dropdown-item" href="index.html">영화추천1</a><span class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 rounded-3 rounded-start-0" style="background-image: url(assets/img/megamenu/landings.jpg);"></span></li>
+                          <li><a class="dropdown-item" href="landing-mobile-app-showcase.html">영화추천2</a><span class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 zindex-2 opacity-0" style="background-image: url(assets/img/megamenu/mobile-app.jpg);"></span></li>
+                          
+                        </ul>
+                      </div>
+                     
+                      <div class="mega-dropdown-column position-relative border-start zindex-3"></div>
+                    </div>
+                  </div>
+                </li>
+                
+               
+                <li class="nav-item"><a class="nav-link" href="components/typography.html">게시판</a></li>
+                <li class="nav-item"><a class="nav-link" href="docs/getting-started.html">마이페이지</a></li>
+              </ul>
+              <div class="d-sm-none p-3 mt-n3"><a class="btn btn-primary w-100  mb-1" href="https://themes.getbootstrap.com/product/around-multipurpose-template-ui-kit/" target="_blank" rel="noopener"><i class="ai-cart fs-xl me-2 ms-n1"></i>Buy now</a></div>
+            </nav>
           </div>
         </header>
       </div>
@@ -89,7 +109,7 @@
           <div class="row justify-content-center justify-content-lg-start position-relative zindex-2">
             <div class="col-sm-10 col-md-8 col-lg-5 col-xl-4 text-center text-lg-start" data-aos="fade-up" data-aos-duration="850" data-aos-offset="120" data-disable-parallax-down="lg">
               <div class="ignore-dark-mode d-none d-lg-block">
-                <h2 class="display-5 mb-4">영화 추천의 새로운시작 HIVE</h2>
+                <h2 class="display-5 mb-4">영화 추천 HIVE</h2>
                 <p class="fs-lg text-dark pb-3 pb-sm-4 mb-lg-0">"하루의 피로를 한 번의 클릭으로 날려버리세요!  이제 한 번의 클릭으로 최고의 영화를 경험할 수 있습니다!"</p>
               </div>
               <div class="d-lg-none">
@@ -120,7 +140,7 @@
         
         <div class="row align-items-center py-4 mt-2 mt-sm-3 mt-md-4 mb-2 mb-md-3 mb-lg-4" data-aos="fade-up" data-aos-duration="600" data-aos-offset="300" data-disable-parallax-down="md">
           <div class="col-md-6 col-lg-7 order-md-2 d-flex justify-content-end"><img class="d-dark-mode-none" src="assets/Group5.png" width="593" alt="Colors"><img class="d-none d-dark-mode-block" src="assets/Group5.png" width="593" alt="Colors"></div>
-          <div class="col-md-6 col-lg-5 order-md-1 mt-md-n5" data-aos="fade-up" data-aos-duration="850" data-aos-offset="200" data-disable-parallax-down="md"><span class="badge fs-sm bg-faded-primary text-primary mb-4">콘텐츠 정보</span>
+          <div class="col-md-6 col-lg-5 order-md-1 mt-md-n5" data-aos="fade-up" data-aos-duration="850" data-aos-offset="200" data-disable-parallax-down="md">
             <h2 class="mb-4">감독/출연진</h2>
             <p class="fs-lg mb-0 mb-lg-4">선택한 감독/배우 별로 영화를 저희가 정성을 다해 선택해드려요!</p>
           </div>
@@ -129,42 +149,7 @@
       </section>
     
       <!-- 메일 -->
-      <div class="container">
-        <div class="bg-dark position-relative rounded-5 overflow-hidden px-4 pt-1 pb-2 py-sm-4 py-lg-5">
-          <div class="d-none d-dark-mode-block position-absolute top-0 start-0 w-100 h-100" style="background-color: rgba(255,255,255, .02);"></div>
-          <div class="position-absolute top-0 end-0 pe-5 zindex-2">
-            <svg class="me-5" width="514" height="254" viewBox="0 0 514 254" fill="white" fill-opacity=".03" xmlns="http://www.w3.org/2000/svg">
-              <ellipse cx="257" cy="0.5" rx="257" ry="253.5"></ellipse>
-            </svg>
-          </div>
-          <div class="d-none d-lg-flex position-absolute start-0 bottom-0 ms-n4">
-            <div data-aos="fade-left" data-aos-duration="700" data-aos-anchor-placement="bottom-bottom">  
-              <svg class="text-primary" width="117" height="117" viewBox="0 0 117 117" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="58.5" cy="58.5" r="58.5"></circle>
-              </svg>
-            </div>
-            <div data-aos="fade-right" data-aos-duration="700" data-aos-anchor-placement="bottom-bottom">
-              <svg class="text-warning" width="117" height="117" viewBox="0 0 117 117" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                <path d="M-2.51516e-06 58.5C-3.52666e-06 70.0702 3.43096 81.3806 9.85902 91.0008C16.2871 100.621 25.4235 108.119 36.113 112.547C46.8025 116.975 58.5649 118.133 69.9128 115.876C81.2607 113.619 91.6844 108.047 99.8657 99.8657C108.047 91.6844 113.619 81.2607 115.876 69.9128C118.133 58.5649 116.975 46.8025 112.547 36.113C108.119 25.4235 100.621 16.2871 91.0009 9.85903C81.3806 3.43096 70.0702 -4.24071e-06 58.5 -5.11423e-06L58.5 58.5L-2.51516e-06 58.5Z"></path>
-              </svg>
-            </div>
-          </div>
-          <div class="dark-mode position-relative zindex-3 text-center py-5 my-xl-3 mx-auto" style="max-width: 565px;">
-            <h2 class="display-5">메일 ㄱㄱ</h2>
-            <p class="fs-lg pb-3 mb-3 mb-lg-4">구독할라믄 메일 ㄱㄱ</p>
-            <form class="subscription-form validate mx-auto" action="https://studio.us12.list-manage.com/subscribe/post?u=c7103e2c981361a6639545bd5&amp;amp;id=29ca296126" method="post" name="mc-embedded-subscribe-form" target="_blank" novalidate style="max-width: 500px;">
-              <div class="input-group"><span class="input-group-text"><i class="ai-mail"></i></span>
-                <input class="form-control" type="email" name="EMAIL" placeholder="Enter your email" required id="subscr-email">
-                <button class="btn btn-primary" type="submit" name="subscribe">제출</button>
-              </div>
-              <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-              <div style="position: absolute; left: -5000px;" aria-hidden="true">
-                <input class="subscription-form-antispam" type="text" name="b_c7103e2c981361a6639545bd5_29ca296126" tabindex="-1">
-              </div>
-              <div class="subscription-status mx-auto"></div>
-            </form>
-          </div>
-        </div>
+     
       
     
       <footer class="footer py-4">
@@ -177,7 +162,7 @@
       </svg><i class="ai-arrow-up"></i>
     </a>
     </div>
-  </div>
+  
 </template>
 
 <script>

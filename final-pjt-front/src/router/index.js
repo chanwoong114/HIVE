@@ -12,7 +12,6 @@ import NotFound from '@/views/404NotFound'
 import CommunityDetailView from '@/views/community/CommunityDetailView'
 import CreateArticle from '@/views/community/CreateArticle'
 import UpdateArticle from '@/views/community/UpdateArticle'
-import UserPage from '@/views/userpage/UserPage'
 import store from '@/store'
 
 Vue.use(VueRouter)
@@ -59,12 +58,6 @@ const routes = [
     path: '/community',
     name: 'community',
     component: CommunityView
-  },
-
-  {
-    path: '/:username',
-    name: 'UserPage',
-    component: UserPage
   },
 
   {

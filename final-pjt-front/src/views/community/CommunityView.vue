@@ -23,8 +23,8 @@
       <tbody>
       <tr class="text-dark" v-for="(row, idx) in articles" :key="idx">
         <td>{{ row.id }}</td>
-        <td class="zoom" v-on:click="gotoArticle(row.id)">{{ row.title }}</td>
-        <td class="zoom" @click="gotoUser(row.user.username)">{{ row.user.username }}</td>
+        <td><a v-on:click="gotoArticle(row.id)">{{ row.title }}</a></td>
+        <td>{{ row.user.username }}</td>
         <td>{{ row.updated_at.slice(0, 10) }}</td>
         <td>{{ row.comment_counts }}</td>
       </tr>
@@ -111,10 +111,7 @@ export default {
         this.page = n
         this.fnGetList()
       }
-    },
-    gotoUser(username) {
-      this.$router.push({name: 'UserPage', params: {'username': username}})
-    },
+    }
   },
   computed: {
     articles() {
@@ -144,11 +141,6 @@ export default {
   .common-buttons {
       padding: 8px;
       text-align: right;
-  }
-
-  .zoom:hover {
-    transform: scale(1.2);
-    transition: 0.7s;
   }
 
 </style>

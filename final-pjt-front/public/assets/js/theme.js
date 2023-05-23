@@ -93,19 +93,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
    * @requires https://github.com/cferdinandi/smooth-scroll/
   */
 
-  var smoothScroll = function () {
-    var selector = '[data-scroll]',
-      fixedHeader = '[data-scroll-header]',
-      scroll = new SmoothScroll(selector, {
-        speed: 800,
-        speedAsDuration: true,
-        offset: function offset(anchor, toggle) {
-          return toggle.dataset.scrollOffset || 20;
-        },
-        header: fixedHeader,
-        updateURL: false
-      });
-  }();
+  
+ 
 
   /**
    * Animate scroll to top button in/off view

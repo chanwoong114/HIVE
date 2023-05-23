@@ -18,11 +18,13 @@
         
         <div class="d-flex flex-column align-items-center mx-auto w-lg-50 h-100 px-3 px-lg-5 pt-5">
           <img src="../assets/bighive.png" alt="Logo" width="200" height="200">
+          <h1>HIVE</h1>
+          <h1>로그인</h1>
           <div class="w-100 mt-auto" style="max-width: 526px;">
-            <h1>HIVE</h1>
-            <h1>로그인</h1>
+            
             <form class="needs-validation" novalidate>
               <div class="pb-3 mb-3">
+        
                 <div class="position-relative"><i class="ai-mail fs-lg position-absolute top-50 start-0 translate-middle-y ms-3"></i>
                   <input class="form-control form-control-lg ps-5" type="email" placeholder="아이디" required>
                 </div>

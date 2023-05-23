@@ -44,10 +44,10 @@
             </div>
             <!-- 로그인버튼 -->
             <!-- 로그인이면 마이페이지 아니면 로그인 -->
-            <div class="btn btn-success btn-sm fs-sm order-lg-3 d-none d-sm-inline-flex" @click="gotoLogin()" target="_blank" rel="noopener" v-if!="isLogin">
-            <i class="ai-login fs-xl me-2 ms-n1"></i>로그인
+            <div v-if="!isLogin" class="btn btn-success btn-sm fs-sm order-lg-3 d-none d-sm-inline-flex" target="_blank" rel="noopener" >
+            <i class="ai-login fs-xl me-2 ms-n1"></i><router-link class="nav-link" to="/login">로그인</router-link>
             </div>
-            <div class="btn btn-success btn-sm fs-sm order-lg-3 d-none d-sm-inline-flex"  target="_blank" rel="noopener" v-if="isLogin">
+            <div v-if="isLogin" class="btn btn-success btn-sm fs-sm order-lg-3 d-none d-sm-inline-flex"  target="_blank" rel="noopener" >
             <i class="ai-login fs-xl me-2 ms-n1"></i>마이페이지
             </div>
          
@@ -83,12 +83,16 @@
     <br>
     <br>
     <br>
-    <br>
     <router-view/>
   </div>
 </template>
 <script>
 export default {
+  data() {
+    return {
+      darkMode: false
+    };
+  },
   computed: {
     isLogin() {
       return this.$store.getters.isLogin
@@ -119,13 +123,7 @@ export default {
 }
 </script>
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: white;
-}
+
 
 nav {
   padding: 20px;

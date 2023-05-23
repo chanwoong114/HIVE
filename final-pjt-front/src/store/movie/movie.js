@@ -3,19 +3,18 @@ import index from "../index.js"
 
 const movie = {
   state: {
-    liked: {},
     rated_movies: [],
   },
   getters: {
-    checklike(state, movieId) {
-      return state.liked[movieId]
+    likeCount(state) {
+      return state.rated_movies.length
     }
   },
   mutations: {
     IS_LIKE(state, data) {
       if (!data[1]) {
         state.rated_movies = state.rated_movies.filter(movie => {
-          return movie == data[0]
+          return movie != data[0]
         })
       } else {
         state.rated_movies.push(data[0])

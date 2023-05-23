@@ -65,21 +65,7 @@
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
                   <!-- Item-->
                   <div class="col pb-2 pb-sm-3" v-for="movie in user.rated_movies" :key="movie.id">
-                    <div id="zoom" class="bg-dark card mb-4 border-dark" @click="gotoDetail(movie.id)">
-                      <img :src="'https://image.tmdb.org/t/p/original/' + movie.poster_path" :alt="movie.title"   
-                      class="card-img-top backgroundimg rounded">
-                      <img class="mainimg" :src="'https://image.tmdb.org/t/p/original/' + movie.poster_path" :alt="movie.title">
-                      <div v-if="movie.comments_rating > 0" id="movieInfo">
-                        <p>평점</p>
-                        <p>{{ movie.comments_rating }}</p>
-                      </div>
-                      <div v-else id="movieInfo">
-                        <p>리뷰가 없습니다.</p>
-                      </div>
-                      <div id="title">
-                        {{ movie.title }}
-                      </div>
-                    </div>
+                    <MovieDetailItem :movie="movie" />
                     <div class="d-flex mb-1">
                       <h3 class="h6 mb-0"><a href="#">{{ movie.title }}</a></h3>
                       <div class="d-flex ps-2 mt-n1 ms-auto">
@@ -130,11 +116,16 @@
 
 <script>
 import axios from 'axios'
+import MovieDetailItem from '@/components/MovieDetailComponent/MovieDetailItem.vue'
+
 export default {
   data() {
     return {
       user: null,
     }
+  },
+  components: {
+    MovieDetailItem
   },
   methods: {
     getUserInfo() {

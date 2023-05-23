@@ -260,12 +260,33 @@ h3 {
   #zoom:hover > #title {
     display: inline;
     opacity: 1;
-    top: 70%;
+    top: 90%;
     text-align: center;
     width: 60%;
     font-size: 8px;
     left: 20%;
     color: #FFD963;
     font-weight: bold;
+  }
+
+  #liked {
+    display: none;
+    position: absolute;
+    opacity: 0;
+  }
+
+  #zoom:hover > #liked {
+    display: inline;
+    opacity: 1;
+    top: 70%;
+    text-align: center;
+    width: 60%;
+    font-size: 8px;
+    left: 20%;
+  }
+
+  #zoom:hover > #liked:active {
+    transform: scale(1.2);
+    transition: 0.3s;
   }
 </style>

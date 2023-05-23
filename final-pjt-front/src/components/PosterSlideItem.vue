@@ -32,7 +32,6 @@ export default {
       this.liked = !this.liked
     },
     isLike() {
-      console.log(this.$store.state.movie.rated_movies.includes(this.movie.id))
       this.liked = this.$store.state.movie.rated_movies.includes(this.movie.id)
     },
     gotoDetail(movieId) {

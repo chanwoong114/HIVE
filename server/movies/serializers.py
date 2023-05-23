@@ -52,6 +52,7 @@ class movieDetailSerializer(serializers.ModelSerializer):
     cast_ids = castSerializer(many=True, read_only=True)
     recommends = serializers.IntegerField(source='recommends.count', read_only=True)
     recommend_movies = movieListSerializer(many=True, read_only=True)
+    Like_users_count = serializers.IntegerField(source='Like_users.count', read_only=True)
 
     class Meta:
         model = Movie

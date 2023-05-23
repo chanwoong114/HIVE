@@ -36,8 +36,8 @@ def follow(request, user_pk):
         return Response('팔로우')
     
 @api_view(['GET'])
-def userpage(request, user_pk):
+def userpage(request, username):
     if request.method == 'GET':
-        person = get_object_or_404(get_user_model(), pk=user_pk)
+        person = get_object_or_404(get_user_model(), username=username)
         serializer = UserSerializer(person)
         return Response(serializer.data, status=status.HTTP_200_OK)

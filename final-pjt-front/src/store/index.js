@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import movie from '@/store/movie/movie'
 import community from '@/store/community/community.js'
+import comment from '@/store/community/comment.js'
 
 import axios from 'axios'
 import createPersistedState from 'vuex-persistedstate'
@@ -80,7 +81,8 @@ export default new Vuex.Store({
     }
   },
   modules: {
-    movie: movie,
-    community: community,
+    movie,
+    community,
+    comment,
   },
 })

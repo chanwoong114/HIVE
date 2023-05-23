@@ -1,38 +1,44 @@
 <template>
   <div class="board-detail">
     <div class="common-buttons">
-      <button type="button" class="w3-button w3-round w3-blue-gray" @click="articleUpdate">수정</button>&nbsp;
-      <button type="button" class="w3-button w3-round w3-red" @click="articleDelete">삭제</button>&nbsp;
+      <span v-if="article.user.username===$store.state.username">
+        <button type="button" class="w3-button w3-round w3-blue-gray" @click="articleUpdate">수정</button>&nbsp;
+        <button type="button" class="w3-button w3-round w3-red" @click="articleDelete">삭제</button>&nbsp;
+      </span>
       <button type="button" class="w3-button w3-round w3-gray" @click="articleList">목록</button>
     </div>
     <div class="board-contents">
-      <h3>{{ title }}</h3>
+      <h3 class="text-white">{{ article.title }}</h3>
       <div>
-        <strong class="w3-large">{{ author }}</strong>
+        <strong class="w3-large">{{ article.user.username }}</strong>
         <br>
-        <span>{{ updated_at.slice(0, 10) }}</span>
+        <span>{{ article.updated_at.slice(0, 10) }}</span>
       </div>
     </div>
     <div class="board-contents">
-      <span>{{ contents }}</span>
+      <span>{{ article.content }}</span>
+    </div>
+    <div class="board-contents">
+      <CommentView :articleId="article.id" :comments="article.comments"/>
     </div>
   </div>
 </template>
 
 <script>
 import axios from 'axios'
+import CommentView from '@/components/community/CommentView.vue'
 
 export default {
   name: 'CommunityDetailView',
+  components: {
+    CommentView
+  },
   data() { //변수생성
     return {
       requestBody: this.$route.query,
       idx: this.$route.query.idx,
 
-      title: '',
-      author: '',
-      contents: '',
-      updated_at: ''
+      article: []
     }
   },
   mounted() {
@@ -49,10 +55,7 @@ export default {
       })
       .then((res) => {
         console.log(res)
-        this.title = res.data.title
-        this.author = res.data.user.username
-        this.contents = res.data.content
-        this.updated_at = res.data.updated_at
+        this.article = res.data
       })
       .catch((err) => {
         if (err.message.indexOf('Network Error') > -1) {
@@ -78,5 +81,7 @@ export default {
 
 
 <style>
-
+  .underbar {
+    border-bottom: 1px solid #999;
+  }
 </style>

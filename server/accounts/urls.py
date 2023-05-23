@@ -5,5 +5,6 @@ urlpatterns = [
     path('mypage/', views.mypage),
     path('delete/', views.delete),
     path('<int:user_pk>/follow/', views.follow),
-    path('<int:user_pk>/', views.userpage),
+    path('<str:username>/', views.userpage),
+
 ]

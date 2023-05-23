@@ -3,7 +3,8 @@ import index from "../index.js"
 
 const movie = {
   state: {
-    liked: {}
+    liked: {},
+    rated_movies: [],
   },
   getters: {
     checklike(state, movieId) {
@@ -12,42 +13,54 @@ const movie = {
   },
   mutations: {
     IS_LIKE(state, data) {
-      state.liked[data[0]] = data[1]
+      if (!data[1]) {
+        state.rated_movies = state.rated_movies.filter(movie => {
+          return movie == data[0]
+        })
+      } else {
+        state.rated_movies.push(data[0])
+      }
+    },
+    LOAD_USER_DATA(state, data) {
+      data.forEach(movie => {
+        state.rated_movies.push(movie.id)
+      })
     }
   },
   actions: {
-    movieLike(context, movieId) {
+    movieLike(context, payload) {
       console.log(context)
       axios({
         method: 'post',
-        url: `http://127.0.0.1:8000/movies/${movieId}/like/`,
+        url: `http://127.0.0.1:8000/movies/${payload[0]}/like/`,
         headers: {
           Authorization: `Token ${index.state.token}`
         }
       })
       .then(res => {
         console.log(res)
+        context.commit('IS_LIKE', payload)
       })
       .catch(error => {
         error
       })
     },
-    isLike(context, movieId) {
-      console.log(index.state.token)
+    loadUserData(context, Token) {
       axios({
         method: 'get',
-        url: `http://127.0.0.1:8000/movies/${movieId}/like/`,
+        url: `http://127.0.0.1:8000/accounts/mypage/`,
         headers: {
-          Authorization: `Token ${index.state.token}`
+          Authorization: `Token ${Token}`
         }
       })
       .then(res => {
-        context.commit('IS_LIKE', [movieId, res.data.state])
+        console.log(res.data)
+        context.commit('LOAD_USER_DATA', res.data.rated_movies)
       })
-      .catch(error => {
-        error
+      .catch(err => {
+        console.log(err)
       })
-    }
+    },
   },
 }
 

@@ -15,7 +15,6 @@
 </template>
 
 <script>
-import axios from 'axios'
 
 export default {
   name: 'PosterSlideItem',
@@ -29,23 +28,12 @@ export default {
   },
   methods: {
     movieLike() {
-      this.$store.dispatch('movieLike', this.movie.id)
+      this.$store.dispatch('movieLike', [this.movie.id, !this.liked])
       this.liked = !this.liked
     },
     isLike() {
-      axios({
-        method: 'get',
-        url: `http://127.0.0.1:8000/movies/${this.movie.id}/like/`,
-        headers: {
-          Authorization: `Token ${this.$store.state.token}`
-        }
-      })
-      .then(res => {
-        this.liked = res.data.state
-      })
-      .catch(error => {
-        error
-      })
+      console.log(this.$store.state.movie.rated_movies.includes(this.movie.id))
+      this.liked = this.$store.state.movie.rated_movies.includes(this.movie.id)
     },
     gotoDetail(movieId) {
       this.$router.push({name: 'MovieDetailView', params: {movieId: `${movieId}`}})

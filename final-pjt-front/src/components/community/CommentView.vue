@@ -51,7 +51,7 @@ export default {
       return this.$store.getters.getComments
     }
   },
-  created() {
+  mounted() {
     this.$store.dispatch('save_comments', [this.comments, this.articleId])
   }
 }

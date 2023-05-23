@@ -35,13 +35,13 @@ const comment = {
     }
   },
   actions: {
-    save_comments(context, comments) {
-      context.commit('SAVE_COMMENTS', comments)
+    save_comments(context, data) {
+      context.commit('SAVE_COMMENTS', data)
     },
     createComment(context, content) {
       axios({
         method: 'post',
-        url: `http://127.0.0.1:8000/articles/${this.state.articleId}/`,
+        url: `http://127.0.0.1:8000/articles/${context.state.articleId}/`,
         data: { content },
         headers: {
           Authorization: `Token ${store.state.token}`

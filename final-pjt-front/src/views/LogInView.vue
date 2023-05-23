@@ -22,17 +22,17 @@
           <h1>로그인</h1>
           <div class="w-100 mt-auto" style="max-width: 526px;">
             
-            <form class="needs-validation" novalidate>
+            <form class="needs-validation" novalidate @submit.prevent="login()">
               <div class="pb-3 mb-3">
         
                 <div class="position-relative"><i class="ai-mail fs-lg position-absolute top-50 start-0 translate-middle-y ms-3"></i>
-                  <input class="form-control form-control-lg ps-5" type="email" placeholder="아이디" required>
+                  <input class="form-control form-control-lg ps-5" type="email" v-model="username" placeholder="아이디" required>
                 </div>
               </div>
               <div class="mb-4">
                 <div class="position-relative"><i class="ai-lock-closed fs-lg position-absolute top-50 start-0 translate-middle-y ms-3"></i>
                   <div class="password-toggle">
-                    <input class="form-control form-control-lg ps-5" type="password" placeholder="비밀번호" required>
+                    <input class="form-control form-control-lg ps-5" type="password" v-model="password" placeholder="비밀번호" required>
                     <label class="password-toggle-btn" aria-label="Show/hide password">
                       <input class="password-toggle-check" type="checkbox"><span class="password-toggle-indicator"></span>
                     </label>
@@ -84,17 +84,6 @@ export default {
       }
 
       this.$store.dispatch('login', payload)
-      .then((res) => {
-          console.log(1)
-          // 로그인 성공 시 사용자 이름을 스토어에 저장
-          this.$store.commit('SAVE_TOKEN', res.data.key)
-          this.$store.commit('SET_USERNAME', username);
-          // this.$router.push({ name: 'MovieView' });
-        })
-        .catch((error) => {
-          // 로그인 실패 처리
-          console.error(error);
-        });
     },
     gotoSignup() {
       this.$router.push({name: 'SignUpView'})

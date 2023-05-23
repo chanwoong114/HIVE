@@ -14,6 +14,8 @@
       <div id="title">
         {{ movie.title }}
       </div>
+      <i class="bi bi-suit-heart-fill"></i>
+      <i class="bi bi-suit-heart"></i>
     </div>
   </div>
 </template>
@@ -26,8 +28,17 @@ export default {
     },
     methods: {
       gotoDetail(movieId) {
-        this.$router.push({name: 'MovieDetailView', params: {movieId: movieId}})
-        
+        if (!this.$route.params.movieId) {
+          this.$router.push({name: 'MovieDetailView', params: {movieId: movieId}})
+          return
+        }
+
+        if (movieId != this.$route.params.movieId) {
+          this.$router.push({name: 'MovieDetailView', params: {movieId: movieId}})
+          this.$router.go(this.$router.currentRoute)
+        } else {
+          this.$router.go(this.$router.currentRoute)
+        }
       }
     }
 }

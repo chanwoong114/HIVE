@@ -1,7 +1,7 @@
 <template>
   <div style="position: relative">
     <div v-if="URL" id="area" style="">
-      <iframe id="video" :src="`https://youtube.com/embed/${URL}?autoplay=1&mute=1&controls=0&playlist=${URL}&loop=1`" frameborder="0"
+      <iframe id="video" :src="`https://youtube.com/embed/?autoplay=1&mute=1&controls=0&playlist=${URL}&loop=1`" frameborder="0"
       style="position: absolute; top:0%; left: 0%; z-index: -1;" width="100%" height="100%"></iframe>
     </div>
     <div class="container">
@@ -64,8 +64,7 @@
         <h1 style="text-align: start;">연관 추천 영화</h1>
         <br>
         <div class="row row-cols-3 row-cols-md-6 g-2 mx-auto ">
-          <div class="col container"  v-for="(recommendMovie, index) in movie.recommend_movies" :key="index"
-          @click="gotoDetail(recommendMovie.id), reload()">
+          <div class="col container"  v-for="(recommendMovie, index) in movie.recommend_movies" :key="index">
             <MovieDetailItem  :movie="recommendMovie"/>
           </div>
         </div>
@@ -97,7 +96,7 @@ export default {
       API_URL: 'http://127.0.0.1:8000',
       liked: null, 
 
-      URL: null,
+      URL: 'N7uu8v34HU8',
     }
   },
   methods: {
@@ -221,6 +220,7 @@ export default {
     position: absolute;
     width: 100%; /* 부모에 맞게 꽉 채운다. */
     height: 100%;
+    opacity: 0.5;
   }
 
 </style>

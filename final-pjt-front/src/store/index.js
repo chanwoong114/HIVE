@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import movie from '@/store/movie/movie'
 import community from '@/store/community/community.js'
+import comment from '@/store/community/comment.js'
 
 import axios from 'axios'
 import createPersistedState from 'vuex-persistedstate'
@@ -54,6 +55,7 @@ export default new Vuex.Store({
         .then((res) => {
           // console.log(res)
           context.commit('SAVE_TOKEN', res.data.key)
+          context.commit('SAVE_USERNAME', username)
         })
         .catch((err) => {
         console.log(err)
@@ -75,12 +77,15 @@ export default new Vuex.Store({
           console.log(res.data)
           context.commit('SAVE_TOKEN', res.data.key)
           context.commit('SAVE_USERNAME', username)
+          context.dispatch('loadUserData', res.data.key)
+
         })
       .catch((err) => console.log(err))
-    }
+    },
   },
   modules: {
-    movie: movie,
-    community: community,
+    movie,
+    community,
+    comment,
   },
 })

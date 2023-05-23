@@ -111,7 +111,9 @@ export default {
   }
 }
 </script>
-<style>
-    
-      
-    </style>
+<style scoped>
+img {
+    position: relative;
+    z-index: -5;
+}
+</style>

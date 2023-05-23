@@ -24,13 +24,13 @@
             <form class="needs-validation" novalidate>
               <div class="pb-3 mb-3">
                 <div class="position-relative"><i class="ai-mail fs-lg position-absolute top-50 start-0 translate-middle-y ms-3"></i>
-                  <input class="form-control form-control-lg ps-5" type="email" placeholder="Email address" required>
+                  <input class="form-control form-control-lg ps-5" type="email" placeholder="아이디" required>
                 </div>
               </div>
               <div class="mb-4">
                 <div class="position-relative"><i class="ai-lock-closed fs-lg position-absolute top-50 start-0 translate-middle-y ms-3"></i>
                   <div class="password-toggle">
-                    <input class="form-control form-control-lg ps-5" type="password" placeholder="Password" required>
+                    <input class="form-control form-control-lg ps-5" type="password" placeholder="비밀번호" required>
                     <label class="password-toggle-btn" aria-label="Show/hide password">
                       <input class="password-toggle-check" type="checkbox"><span class="password-toggle-indicator"></span>
                     </label>
@@ -40,7 +40,7 @@
               <div class="d-flex flex-wrap align-items-center justify-content-between pb-4">
                 <form-check class="my-1">
                   <input class="form-check-input" type="checkbox" id="keep-signedin">
-                  <label class="form-check-label ms-1" for="keep-signedin">Keep me signed in</label>
+                  <label class="form-check-label ms-1" for="keep-signedin">로그인 상태유지</label>
                 </form-check><a class="fs-sm fw-semibold text-decoration-none my-1" href="#">비밀번호찾기</a>
               </div>
               <button class="btn btn-lg btn-success  w-100 mb-4" type="submit">로그인</button>
@@ -101,3 +101,9 @@ export default {
   
 }
 </script>
+<style scoped>
+img {
+    position: relative;
+    z-index: -1;
+}
+</style>

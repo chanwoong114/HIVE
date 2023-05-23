@@ -1,50 +1,9 @@
 <template>
   <div>
     <!-- Page wrapper-->
+
     <div class="page-wrapper">
-      <div class="dark-mode">
-        <!-- 네브바-->
-        <header class="navbar bg-secondary navbar-expand-lg fixed-top">
-          <div class="container"><a class="navbar-brand pe-sm-3" href="#">
-            <img src="../assets/bighive.png" alt="Logo" width="35" height="32">
-            HIVE
-            </a>
-            <div class="form-check form-switch mode-switch order-lg-2 me-3 me-lg-4 ms-auto" data-bs-toggle="mode">
-              <input class="form-check-input" type="checkbox" id="theme-mode" v-model="darkMode" @click="toggleDarkMode()">
-              <label class="form-check-label" for="theme-mode"><i class="ai-sun fs-lg"></i></label>
-              <label class="form-check-label" for="theme-mode"><i class="ai-moon fs-lg"></i></label>
-            </div>
-            <div class="btn btn-success btn-sm fs-sm order-lg-3 d-none d-sm-inline-flex" @click="gotoLogin()" target="_blank" rel="noopener">
-            <i class="ai-login fs-xl me-2 ms-n1"></i>로그인
-            </div>
-            
-            <nav class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav navbar-nav-scroll me-auto" style="--ar-scroll-height: 520px;">
-                <li class="nav-item dropdown"><a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown" aria-expanded="false">영화</a>
-                  <div class="dropdown-menu overflow-hidden p-0">
-                    <div class="d-lg-flex">
-                      <div class="mega-dropdown-column pt-1 pt-lg-3 pb-lg-4">
-                        <ul class="list-unstyled mb-0">
-                          <li><a class="dropdown-item" href="index.html">영화추천1</a><span class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 rounded-3 rounded-start-0" style="background-image: url(assets/img/megamenu/landings.jpg);"></span></li>
-                          <li><a class="dropdown-item" href="landing-mobile-app-showcase.html">영화추천2</a><span class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 zindex-2 opacity-0" style="background-image: url(assets/img/megamenu/mobile-app.jpg);"></span></li>
-                          
-                        </ul>
-                      </div>
-                     
-                      <div class="mega-dropdown-column position-relative border-start zindex-3"></div>
-                    </div>
-                  </div>
-                </li>
-                
-               
-                <li class="nav-item"><a class="nav-link" href="components/typography.html">게시판</a></li>
-                <li class="nav-item"><a class="nav-link" href="docs/getting-started.html">마이페이지</a></li>
-              </ul>
-              <div class="d-sm-none p-3 mt-n3"><a class="btn btn-primary w-100  mb-1" href="https://themes.getbootstrap.com/product/around-multipurpose-template-ui-kit/" target="_blank" rel="noopener"><i class="ai-cart fs-xl me-2 ms-n1"></i>Buy now</a></div>
-            </nav>
-          </div>
-        </header>
-      </div>
+    
       <!-- 젤처름 꿀벌 3마리 랑 스크롤-->
       
       <div class="bg-dark dark-mode position-relative min-vh-100 overflow-hidden pt-5">
@@ -76,25 +35,43 @@
             <div class="col">
               <div class="card-hover card-lifted mx-auto" style="max-width: 416px;">
                 <div class="card-lifted overflow-hidden rounded-3 mb-3"><img class="d-dark-mode-none" src="../assets/hh.png"><img class="d-none d-dark-mode-block" src="../assets/hh.png"></div>
-                <h3 class="h5 text-center mb-0"><a class="stretched-link" href="landing-mobile-app-showcase.html">영화추천</a></h3>
+                <h3 class="h5 text-center mb-0"><a class="stretched-link" href="landing-mobile-app-showcase.html">박범진</a></h3>
               </div>
             </div>
             <div class="col">
               <div class="card-hover card-lifted mx-auto" style="max-width: 416px;">
                 <div class="card-lifted overflow-hidden rounded-3 mb-3"><img class="d-dark-mode-none" src="../assets/hh.png" ><img class="d-none d-dark-mode-block" src="../assets/hh.png"></div>
-                <h2 class="h5 text-center mb-0"><a class="stretched-link" href="landing-product.html">즐겨찾기</a></h2>
+                <h2 class="h5 text-center mb-0"><a class="stretched-link" href="landing-product.html">박범진</a></h2>
               </div>
             </div>
             <div class="col">
               <div class="card-hover card-lifted mx-auto" style="max-width: 416px;">
                 <div class="card-lifted overflow-hidden rounded-3 mb-3"><img class="d-dark-mode-none" src="../assets/hh.png" ><img class="d-none d-dark-mode-block" src="../assets/hh.png"></div>
-                <h3 class="h5 text-center mb-0"><a class="stretched-link" href="#">장르별</a></h3>
+                <h3 class="h5 text-center mb-0"><a class="stretched-link" href="#">박범진</a></h3>
               </div>
             </div>
+            <div class="col">
+              <div class="card-hover card-lifted mx-auto" style="max-width: 416px;">
+                <div class="card-lifted overflow-hidden rounded-3 mb-3"><img class="d-dark-mode-none" src="../assets/hh.png"><img class="d-none d-dark-mode-block" src="../assets/hh.png"></div>
+                <h3 class="h5 text-center mb-0"><a class="stretched-link" href="landing-mobile-app-showcase.html">영화추천2</a></h3>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card-hover card-lifted mx-auto" style="max-width: 416px;">
+                <div class="card-lifted overflow-hidden rounded-3 mb-3"><img class="d-dark-mode-none" src="../assets/hh.png" ><img class="d-none d-dark-mode-block" src="../assets/hh.png"></div>
+                <h2 class="h5 text-center mb-0"><a class="stretched-link" href="landing-product.html">즐겨찾기2</a></h2>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card-hover card-lifted mx-auto" style="max-width: 416px;">
+                <div class="card-lifted overflow-hidden rounded-3 mb-3"><img class="d-dark-mode-none" src="../assets/hh.png" ><img class="d-none d-dark-mode-block" src="../assets/hh.png"></div>
+                <h3 class="h5 text-center mb-0"><a class="stretched-link" href="#">장르별3</a></h3>
+              </div>
             </div>
           </div>
         </div>
       </div>
+    </div>
       <!-- 사이트 목업 보여주는곳-->
 
       <section class="overflow-hidden pt-2 pt-sm-3 pt-md-4 pt-lg-3 pb-1 pb-sm-3 pb-md-4 pb-lg-5">
@@ -178,21 +155,7 @@ export default {
   mounted() {
    
   },
-  methods: {
-    toggleDarkMode() {
-      this.darkMode = !this.darkMode;
-      if (this.darkMode) {
-        // 다크 모드 클래스를 추가
-        document.body.classList.add('dark-mode');
-      } else {
-        // 다크 모드 클래스를 제거
-        document.body.classList.remove('dark-mode');
-      }
-    },
-    gotoLogin() {
-      this.$router.push({name: 'LogInView'})
-    }
-  }
+  
 };
 </script>
 

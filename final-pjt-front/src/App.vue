@@ -1,8 +1,9 @@
 <template>
   
   <div id="app" class="">
-    <div v-if="isLogin">
-      <nav id="navbar-example2" class="navbar bg-dark px-3 mb-3 d-flex justify-content-between align-items-center">
+    <div>
+    <!-- <div v-if="isLogin"> -->
+      <!-- <nav id="navbar-example2" class="navbar bg-dark px-3 mb-3 d-flex justify-content-between align-items-center">
         <span class="d-flex align-items-center">
           <a class="navbar-brand" :href="`http://localhost:8080/movies`"><img class="hive" src="./assets/hive.png" alt="nike"></a>
   
@@ -18,12 +19,7 @@
             </li>
           </ul>
         </span>
-
         <ul class="nav nav-pills">
-          <!-- <li class="nav-item">
-            <a class="nav-link"><router-link to="/home">home</router-link></a>
-          </li> -->
-          
           <li class="nav-item">
             <a class="nav-link"><router-link to="/favorites">mypage</router-link></a>
           </li>
@@ -31,11 +27,62 @@
           <li class="nav-item ml-auto">
             <input type="text" placeholder="Search" class="form-control">
           </li>
-        
         </ul>
-      </nav>
+      </nav> -->
+      <div class="dark-mode">
+        <!-- 네브바-->
+        <header class="navbar bg-white navbar-expand-lg fixed-top" >
+          
+          <div class="container"><a class="navbar-brand pe-sm-3" :href="`http://localhost:8080/movies`">
+            <img src="./assets/bighive.png"  alt="Logo" width="35" height="32">
+            HIVE
+            </a>
+            <div class="form-check form-switch mode-switch order-lg-2 me-3 me-lg-4 ms-auto" data-bs-toggle="mode">
+              <input class="form-check-input" type="checkbox" id="theme-mode" v-model="darkMode" @click="toggleDarkMode()">
+              <label class="form-check-label" for="theme-mode"><i class="ai-sun fs-lg"></i></label>
+              <label class="form-check-label" for="theme-mode"><i class="ai-moon fs-lg"></i></label>
+            </div>
+            <!-- 로그인버튼 -->
+            <!-- 로그인이면 마이페이지 아니면 로그인 -->
+            <div class="btn btn-success btn-sm fs-sm order-lg-3 d-none d-sm-inline-flex" @click="gotoLogin()" target="_blank" rel="noopener" v-if!="isLogin">
+            <i class="ai-login fs-xl me-2 ms-n1"></i>로그인
+            </div>
+            <div class="btn btn-success btn-sm fs-sm order-lg-3 d-none d-sm-inline-flex"  target="_blank" rel="noopener" v-if="isLogin">
+            <i class="ai-login fs-xl me-2 ms-n1"></i>마이페이지
+            </div>
+         
+         
+            <!-- 영화추천 -->
+            <nav class="collapse navbar-collapse" id="navbarNav" >
+              <ul class="navbar-nav navbar-nav-scroll me-auto " style="--ar-scroll-height: 520px;">
+                <li class="nav-item dropdown "><a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown" aria-expanded="false">영화</a>
+                  <div class="dropdown-menu overflow-hidden p-0 ">
+                    <div class="d-lg-flex bg-white">
+                      <div class="mega-dropdown-column pt-1 pt-lg-3 pb-lg-4">
+                        <ul class="list-unstyled mb-0">
+                          <li><router-link class="dropdown-item" to="/movies">영화추천</router-link>
+                            <span class="mega-dropdown-column position-absolute top-0 end-0 h- bg-size-cover bg-repeat-0 rounded-3 rounded-start-0" style="background-image: url(assets/img/megamenu/bee.png)"></span></li>
+                          <li><router-link class="dropdown-item" to="/genre">장르별 영화</router-link>
+                            <span class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 zindex-2 opacity-0" style="background-image: url(assets/img/megamenu/C.png)"></span></li>  
+                        </ul>
+                      </div>
+                      <div class="mega-dropdown-column position-relative border-start zindex-3"></div>
+                    </div>
+                  </div>
+                </li>
+                <!-- 게시판,마이페이지 -->
+                <li class="nav-item"><router-link class="nav-link" to="/community">게시판</router-link></li>
+                <!-- <li class="nav-item"><a class="nav-link" href="docs/getting-started.html">마이페이지</a></li> -->
+              </ul>
+              <div class="d-sm-none p-3 mt-n3"><a class="btn btn-primary w-100  mb-1" href="https://themes.getbootstrap.com/product/around-multipurpose-template-ui-kit/" target="_blank" rel="noopener"><i class="ai-cart fs-xl me-2 ms-n1"></i>Buy now</a></div>
+            </nav>
+          </div>
+        </header>
+      </div>
     </div>
-  
+    <br>
+    <br>
+    <br>
     <router-view/>
   </div>
 </template>
@@ -45,6 +92,23 @@ export default {
     isLogin() {
       return this.$store.getters.isLogin
     }
+  },
+  methods:{
+    toggleDarkMode() {
+      this.darkMode = !this.darkMode;
+      if (this.darkMode) {
+        // 다크 모드 클래스를 추가
+        document.body.classList.add('dark-mode');
+      } else {
+        // 다크 모드 클래스를 제거
+        document.body.classList.remove('dark-mode');
+      }
+    },
+   
+    gotoLogin() {
+      this.$router.push({name: 'LogInView'})
+    }
+  
   },
   watch: {
     $route() {
@@ -96,94 +160,9 @@ h3 {
   object-fit: cover;
   z-index: -1; /* Ensure the video is behind the content */
 }
-.page-loading {
-        position: fixed;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        -webkit-transition: all .4s .2s ease-in-out;
-        transition: all .4s .2s ease-in-out;
-        background-color: #fff;
-        opacity: 0;
-        visibility: hidden;
-        z-index: 9999;
-      }
-      .dark-mode .page-loading {
-        background-color: #121519;
-      }
-      .page-loading.active {
-        opacity: 1;
-        visibility: visible;
-      }
-      .page-loading-inner {
-        position: absolute;
-        top: 50%;
-        left: 0;
-        width: 100%;
-        text-align: center;
-        -webkit-transform: translateY(-50%);
-        transform: translateY(-50%);
-        -webkit-transition: opacity .2s ease-in-out;
-        transition: opacity .2s ease-in-out;
-        opacity: 0;
-      }
-      .page-loading.active > .page-loading-inner {
-        opacity: 1;
-      }
-      .page-loading-inner > span {
-        display: block;
-        font-family: 'Inter', sans-serif;
-        font-size: 1rem;
-        font-weight: normal;
-        color: #6f788b;
-      }
-      .dark-mode .page-loading-inner > span {
-        color: #fff;
-        opacity: .6;
-      }
-      .page-spinner {
-        display: inline-block;
-        width: 2.75rem;
-        height: 2.75rem;
-        margin-bottom: .75rem;
-        vertical-align: text-bottom;
-        background-color: #d7dde2; 
-        border-radius: 50%;
-        opacity: 0;
-        -webkit-animation: spinner .75s linear infinite;
-        animation: spinner .75s linear infinite;
-      }
-      .dark-mode .page-spinner {
-        background-color: rgba(255,255,255,.25);
-      }
-      @-webkit-keyframes spinner {
-        0% {
-          -webkit-transform: scale(0);
-          transform: scale(0);
-        }
-        50% {
-          opacity: 1;
-          -webkit-transform: none;
-          transform: none;
-        }
-      }
-      @keyframes spinner {
-        0% {
-          -webkit-transform: scale(0);
-          transform: scale(0);
-        }
-        50% {
-          opacity: 1;
-          -webkit-transform: none;
-          transform: none;
-        }
-      }
-      #zoom {
-    position: relative;
-  }
+#zoom {
+  position: relative;
+}
 
   #zoom:hover {
     transform: scale(2);

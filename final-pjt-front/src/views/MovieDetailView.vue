@@ -1,14 +1,17 @@
 <template>
-  <div class="container">
+  <div  style="position: relative">
+    <iframe :src="`https://youtube.com/embed/${URL}?autoplay=1&mute=1&controls=0&loop=1&playlist=ibYD23-dtjo`" frameborder="0"
+    style="position: absolute; top:0%; left: 0%; z-index: -1;" width="100%" height="30%"></iframe>
+
     <div class="row">
-      <div class="col-md-4 col-12" >
+      <div class="col-md-4 col-12 container" >
         <h1 style="text-align: start;">{{ movie.title }}</h1>
         <br>
         <img :src="`https://image.tmdb.org/t/p/original/${movie.poster_path}`" width="50%" alt="">
       </div>
-  
+
       <div class="col-md-8 col-12 d-flex-column justify-content-between">
-        <h4 class="text-start">감독</h4>
+        <h4 style="color: white;" class="text-start">감독</h4>
         <div style="width: 10%;">
           <a class="personBox" href="" data-fancybox @click="trigger('crew', movie.crew_ids.id)" style="width: 10%;" data-src="#crew-content">
             <img id="personimg" :src="`https://image.tmdb.org/t/p/original/${movie.crew_ids.profile_path}`" width="100" class="rounded-2" alt="">
@@ -25,7 +28,7 @@
           </div>
         </div>
 
-        <h4>출연진</h4>
+        <h4 style="color: white;">출연진</h4>
         <div class="row">
           <div class="col" v-for="cast in movie.cast_ids" :key="cast.id">
             <a class="personBox" href="" data-fancybox @click="trigger('cast', cast.id)" :data-src="`#${cast.id}`">
@@ -46,17 +49,20 @@
       </div>
     </div>
     <br>
-    <h1 style="text-align: start;">연관 추천 영화</h1>
-    <br>
-    <div class="row row-cols-3 row-cols-md-6 g-2 mx-auto ">
-      <div class="col container"  v-for="(recommendMovie, index) in movie.recommend_movies" :key="index"
-      @click="gotoDetail(recommendMovie.id), reload()">
-        <MovieDetailItem  :movie="recommendMovie"/>
-      </div>
-    </div>
+    <div class="bg-dark">
 
-    <div>
-      <MovieComment :movieComments="movie.comments" :movieId="movie.id"/>
+      <h1 style="text-align: start;">연관 추천 영화</h1>
+      <br>
+      <div class="row row-cols-3 row-cols-md-6 g-2 mx-auto ">
+        <div class="col container"  v-for="(recommendMovie, index) in movie.recommend_movies" :key="index"
+        @click="gotoDetail(recommendMovie.id), reload()">
+          <MovieDetailItem  :movie="recommendMovie"/>
+        </div>
+      </div>
+  
+      <div>
+        <MovieComment :movieComments="movie.comments" :movieId="movie.id"/>
+      </div>
     </div>
   </div>
 </template>
@@ -80,7 +86,7 @@ export default {
       API_URL: 'http://127.0.0.1:8000',
       liked: null, 
 
-      URL: 'yJIl-hpPVDA',
+      URL: null,
     }
   },
   methods: {
@@ -126,6 +132,11 @@ export default {
       })
       .then(res => {
         console.log(res.data)
+        res.data.results.forEach(result => {
+          if (result.type==="Trailer") {
+            this.URL = result.key
+          }
+        })
       })
       .catch(error => {
         console.log(error)

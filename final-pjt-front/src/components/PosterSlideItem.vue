@@ -6,10 +6,10 @@
     </div>
     <button class="btn btn-success" v-if="liked" @click="movieLike">
       좋아요 취소
-    </button>
+    </button> 
     <button class="btn btn-primary" v-if="!liked" @click="movieLike">
       좋아요
-    </button>
+    </button>&nbsp;
     <button class="btn btn-light border-light" @click="gotoDetail(movie.id)">상세 정보 보기</button>
   </div>
 </template>

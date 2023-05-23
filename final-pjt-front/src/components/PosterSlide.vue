@@ -63,7 +63,6 @@ export default {
 
     min-height: 100px;
     text-align: center;
-    background: #000;
     font-size: 1.25rem;
   }
 

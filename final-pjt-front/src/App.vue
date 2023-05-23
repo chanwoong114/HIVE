@@ -1,35 +1,39 @@
 <template>
   
-  <div id="app" class="bg-dark">
+  <div id="app" class="">
     <div v-if="isLogin">
       <nav id="navbar-example2" class="navbar bg-dark px-3 mb-3 d-flex justify-content-between align-items-center">
-        <a class="navbar-brand" href=""><img class="hive" src="./assets/hive.png" alt="nike"></a>
+        <span class="d-flex align-items-center">
+          <a class="navbar-brand" :href="`http://localhost:8080/movies`"><img class="hive" src="./assets/hive.png" alt="nike"></a>
+  
+          <ul class="nav nav-pills">
+            <li class="nav-item">
+              <a class="nav-link" ><router-link to="/movies">movies</router-link></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link"><router-link to="/genre">genre</router-link></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link"><router-link :to="{name: 'community'}">community</router-link></a>
+            </li>
+          </ul>
+        </span>
+
         <ul class="nav nav-pills">
           <!-- <li class="nav-item">
             <a class="nav-link"><router-link to="/home">home</router-link></a>
           </li> -->
+          
           <li class="nav-item">
-            <a class="nav-link" ><router-link to="/movies">movies</router-link></a>
+            <a class="nav-link"><router-link to="/favorites">mypage</router-link></a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link"><router-link to="/genre">genre</router-link></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link"><router-link to="/favorites">favorites</router-link></a>
-          </li>
-          <li class="nav-item">
-            <span class="nav-link">{{ this.$store.state.username }}</span>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link"><router-link :to="{name: 'community'}">community</router-link></a>
-          </li>
+          
           <li class="nav-item ml-auto">
             <input type="text" placeholder="Search" class="form-control">
           </li>
         
         </ul>
       </nav>
-      
     </div>
   
     <router-view/>
@@ -78,6 +82,11 @@ nav a.router-link-exact-active {
 h1 {
   color: #FFD963;
 }
+
+h3 {
+  color: #FFD963;
+}
+
 #video-bg {
   position: absolute;
   top: 0;
@@ -172,5 +181,57 @@ h1 {
           transform: none;
         }
       }
-      
+      #zoom {
+    position: relative;
+  }
+
+  #zoom:hover {
+    transform: scale(2);
+    transition: 0.5s;
+    z-index: 1;
+  }
+
+  #zoom:hover > .backgroundimg {
+    opacity: 0.3;
+  }
+
+  .mainimg {
+    position: absolute;
+    opacity: 0;
+  }
+
+  #movieInfo {
+    position: absolute;
+    opacity: 0;
+  }
+
+  #title {
+    position: absolute;
+    opacity: 0;
+  }
+
+  #zoom:hover > .mainimg {
+    opacity: 1;
+    width: 40%;
+    top: 15%;
+    left: 10%
+  }
+
+  #zoom:hover > #movieInfo {
+    opacity: 1;
+    top: 15%;
+    left: 60%;
+    font-size: 4px;
+  }
+
+  #zoom:hover > #title {
+    opacity: 1;
+    top: 70%;
+    text-align: center;
+    width: 60%;
+    font-size: 8px;
+    left: 20%;
+    color: #FFD963;
+    font-weight: bold;
+  }
 </style>

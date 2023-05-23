@@ -1,9 +1,12 @@
 <template>
   <div class="container">
-    <h1>MovieDetailView</h1>
-    {{ movie.title }} {{ movie.comments_rating }}
-    <div>
-      <div>
+    <div class="row">
+      <div class="col-md-4 col-12" style="text-align: start;">
+        <h1>{{ movie.title }}</h1>
+        {{ movie.comments_rating }}
+      </div>
+      
+      <div class="col-md-4 col-12">
         <h4>감독</h4>
         <div class="col btn btn-light mx-3">
           <a href="" data-fancybox @click="trigger('crew', movie.crew_ids.id)" data-src="#crew-content">

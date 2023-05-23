@@ -71,23 +71,28 @@
       </div>
     </div>
     <br>
-    <div style="align-content: start;" class="bg-dark" >
+    <div class="bg-dark" style="text-align: center;" >
 
-      <div class="container">
-  
-        <h1 style="text-align: start;">연관 추천 영화</h1>
+      <div class="container mt-2 pt-5" >
+        <span style="font-size:xx-large;">
+          <span @click="selectContentToggle" :class="{'selected': selectContent}">연관 추천 영화</span> &nbsp;
+          <span><strong>|</strong></span>&nbsp;&nbsp;
+          <span @click="selectContentToggle" :class="{'selected': !selectContent}">리뷰</span>
+        </span>
         <br>
-        <div class="row row-cols-3 row-cols-md-6 g-2 mx-auto ">
+        <br>
+        <div v-if="selectContent" class="row row-cols-3 row-cols-md-6 g-2 mx-auto pt-5">
           <div class="col container"  v-for="(recommendMovie, index) in movie.recommend_movies" :key="index">
             <MovieDetailItem  :movie="recommendMovie"/>
           </div>
         </div>
     
-        <div>
+        <div class="pt-5" v-else>
           <MovieComment :movieComments="movie.comments" :movieId="movie.id"/>
         </div>
       </div>
     </div>
+    
   </div>
 </template>
 
@@ -111,6 +116,7 @@ export default {
       liked: null, 
       likeCount: null,
       URL: 'N7uu8v34HU8',
+      selectContent: true,
     }
   },
   methods: {
@@ -180,6 +186,9 @@ export default {
     },
     isLike() {
       this.liked = this.$store.state.movie.rated_movies.includes(parseInt(`${this.$route.params.movieId}`))
+    },
+    selectContentToggle() {
+      this.selectContent = !this.selectContent
     }
   },
   created() {
@@ -250,6 +259,11 @@ export default {
     width: 100%; /* 부모에 맞게 꽉 채운다. */
     height: 100%;
     opacity: 0.5;
+  }
+
+  .selected {
+    color: #FFD963;
+    font-weight: bold;
   }
 
 </style>

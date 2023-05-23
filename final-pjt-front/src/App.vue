@@ -131,6 +131,11 @@
     </div>
     
     <router-view class="pt-2"/>
+    <footer class="footer py-4">
+      <div class="container text-center py-3">
+        <span class="text-muted">&copy; <span class='text-danger'></span></span>
+        <a class="nav-link d-inline fw-normal p-0" href="https://createx.studio/" target="_blank" rel="noopener">Team HIVE</a></div>
+    </footer>
   </div>
 </template>
 <script>

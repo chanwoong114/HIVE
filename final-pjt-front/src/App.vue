@@ -37,6 +37,7 @@
             <img src="./assets/bighive.png"  alt="Logo" width="35" height="32">
             HIVE
             </a>
+            
             <div class="form-check form-switch mode-switch order-lg-2 me-3 me-lg-4 ms-auto" data-bs-toggle="mode">
               <input class="form-check-input" type="checkbox" id="theme-mode" v-model="darkMode" @click="toggleDarkMode()">
               <label class="form-check-label" for="theme-mode"><i class="ai-sun fs-lg"></i></label>
@@ -48,9 +49,9 @@
             <i class="ai-login fs-xl me-2 ms-n1"></i><router-link class="nav-link" to="/login">로그인</router-link>
             </div>
             <div v-if="isLogin" class="btn btn-success btn-sm fs-sm order-lg-3 d-none d-sm-inline-flex"  target="_blank" rel="noopener" >
-            <i class="ai-login fs-xl me-2 ms-n1"></i>마이페이지
+            <i class="ai-login fs-xl me-2 ms-n1"></i><router-link class="nav-link" to="/favorites">마이페이지</router-link>
             </div>
-         
+            
          
             <!-- 영화추천 -->
             <nav class="collapse navbar-collapse" id="navbarNav" >

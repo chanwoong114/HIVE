@@ -35,7 +35,7 @@ def follow(request, user_pk):
         person.followers.add(request.user)
         return Response('팔로우')
     
-@api_view(['GET'])
+@api_view(['GET', 'POST'])
 def userpage(request, username):
     if request.method == 'GET':
         person = get_object_or_404(get_user_model(), username=username)

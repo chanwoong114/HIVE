@@ -46,11 +46,11 @@ export default {
       return this.$store.getters.isLogin
     }
   },
-  watch: {
-    $route() {
-      window.scrollTo(0, 0);
-    },
-  },
+  // watch: {
+  //   $route() {
+  //     window.scrollTo(0, 0);
+  //   },
+  // },
 }
 </script>
 <style>
@@ -181,8 +181,9 @@ h3 {
           transform: none;
         }
       }
-      #zoom {
+  #zoom {
     position: relative;
+    border: none;
   }
 
   #zoom:hover {
@@ -198,19 +199,23 @@ h3 {
   .mainimg {
     position: absolute;
     opacity: 0;
+    display: none;
   }
 
   #movieInfo {
     position: absolute;
     opacity: 0;
+    display: none;
   }
 
   #title {
     position: absolute;
     opacity: 0;
+    display: none;
   }
 
   #zoom:hover > .mainimg {
+    display: inline;
     opacity: 1;
     width: 40%;
     top: 15%;
@@ -218,6 +223,7 @@ h3 {
   }
 
   #zoom:hover > #movieInfo {
+    display: inline;
     opacity: 1;
     top: 15%;
     left: 60%;
@@ -225,6 +231,7 @@ h3 {
   }
 
   #zoom:hover > #title {
+    display: inline;
     opacity: 1;
     top: 70%;
     text-align: center;

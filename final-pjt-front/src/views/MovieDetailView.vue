@@ -1,57 +1,56 @@
 <template>
   <div class="container">
     <div class="row">
-      <div class="col-md-4 col-12" style="text-align: start;">
-        <h1>{{ movie.title }}</h1>
-        {{ movie.comments_rating }}
+      <div class="col-md-4 col-12" >
+        <h1 style="text-align: start;">{{ movie.title }}</h1>
+        <br>
+        <img :src="`https://image.tmdb.org/t/p/original/${movie.poster_path}`" width="50%" alt="">
       </div>
-      
-      <div class="col-md-4 col-12">
-        <h4>감독</h4>
-        <div class="col btn btn-light mx-3">
-          <a href="" data-fancybox @click="trigger('crew', movie.crew_ids.id)" data-src="#crew-content">
-            <div class="btn btn-light my-2 ">
-              <p>{{ movie.crew_ids.name }}</p>
-              <p>{{ movie.crew_ids.id }}</p>
-            </div>
+  
+      <div class="col-md-8 col-12 d-flex-column justify-content-between">
+        <h4 class="text-start">감독</h4>
+        <div style="width: 10%;">
+          <a class="personBox" href="" data-fancybox @click="trigger('crew', movie.crew_ids.id)" style="width: 10%;" data-src="#crew-content">
+            <img id="personimg" :src="`https://image.tmdb.org/t/p/original/${movie.crew_ids.profile_path}`" width="100" class="rounded-2" alt="">
+            <p id="personP">{{ movie.crew_ids.name }}</p>
           </a>
-          <div id="crew-content" style="display:none;width:80%;">
+          <div id="crew-content" style="display:none;width:70%;">
             <h1>{{ movie.crew_ids.name }}</h1>
-            <img :src="`https://image.tmdb.org/t/p/original/${movie.crew_ids.profile_path}`" width="50px" height="70px" alt="">
-            <div v-for="(crewMovie, index) in personMovie" :key="index">
-              <div @click="gotoDetail(crewMovie.id), loadMovieDetail(), reload()">
-                {{ crewMovie.title }}  
-              </div>
+            <br>
+            <br>
+            <h3>제작한 영화</h3>
+            <div id="cardbox" class="row mx-auto">
+              <MovieDetailItem class="col-2" v-for="(crewMovie, index) in personMovie" :key="index" :movie="crewMovie"/>
             </div>
           </div>
         </div>
+
         <h4>출연진</h4>
         <div class="row">
-          <div class="col btn btn-light mx-3" v-for="cast in movie.cast_ids" :key="cast.id">
-            <a href="" data-fancybox @click="trigger('cast', cast.id)" :data-src="`#${cast.id}`">
-              <div class="btn btn-light my-2 ">
-                <p>{{ cast.name }}</p>
-                <p>{{ cast.id }}</p>
-                <p>{{ cast.character }}</p>
-              </div>
+          <div class="col" v-for="cast in movie.cast_ids" :key="cast.id">
+            <a class="personBox" href="" data-fancybox @click="trigger('cast', cast.id)" :data-src="`#${cast.id}`">
+              <img id="personimg" :src="`https://image.tmdb.org/t/p/original/${cast.profile_path}`" width="100" class="rounded-2" alt="">
+              <p id="personP">{{ cast.name }}</p>
             </a>
-            <div :id="cast.id" style="display:none;width:80%;">
+            <div :id="cast.id" style="display:none;width:70%;">
               <h1>{{ cast.name }}</h1>
-              <img :src="`https://image.tmdb.org/t/p/original/${cast.profile_path}`" width="50px" height="70px" alt="">
-              <div v-for="(crewMovie, index) in personMovie" :key="index">
-                <div @click="gotoDetail(crewMovie.id), loadMovieDetail(), reload()">
-                  {{ crewMovie.title }}  
-                </div>
+              <br>
+              <br>
+              <h3>참여</h3>
+              <div class="row">
+                <MovieDetailItem class="col-2" v-for="(castMovie, index) in personMovie" :key="index" :movie="castMovie" />
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <h1>연관 추천 영화</h1>
-    <div class="row row-cols-3 row-cols-md-6 g-2">
-      <div class="col"  v-for="(recommendMovie, index) in movie.recommend_movies" :key="index"
-      @click="gotoDetail(recommendMovie.id), loadMovieDetail()">
+    <br>
+    <h1 style="text-align: start;">연관 추천 영화</h1>
+    <br>
+    <div class="row row-cols-3 row-cols-md-6 g-2 mx-auto ">
+      <div class="col container"  v-for="(recommendMovie, index) in movie.recommend_movies" :key="index"
+      @click="gotoDetail(recommendMovie.id), reload()">
         <MovieDetailItem  :movie="recommendMovie"/>
       </div>
     </div>
@@ -81,6 +80,7 @@ export default {
       API_URL: 'http://127.0.0.1:8000',
       liked: null, 
 
+      URL: 'yJIl-hpPVDA',
     }
   },
   methods: {
@@ -115,17 +115,27 @@ export default {
     },
     reload() {
       this.$router.go(this.$router.currentRoute)
+    },
+    loadUrl() {
+      axios({
+        method: 'get',
+        url: `https://api.themoviedb.org/3/movie/${this.$route.params.movieId}/videos?language=ko-KR/`,
+        params: {
+          api_key: 'c0277ff053c36cf743bb896821c5f0f1'
+        }
+      })
+      .then(res => {
+        console.log(res.data)
+      })
+      .catch(error => {
+        console.log(error)
+      })
     }
   },
   created() {
     this.loadMovieDetail()
+    this.loadUrl()
   },
-  beforeRouteUpdate(to, from, next){
-    this.movie.id = to.params.movieId
-    this.loadMovieDetail()
-    window.scrollTo(0, 0);
-    next()
-  }
 }
 </script>
 
@@ -144,5 +154,32 @@ export default {
   a {
     z-index: 2;
   } */
+
+  .personBox {
+    position: relative;
+  }
+
+  .personBox:hover #personimg {
+    opacity: 0.5;
+    border: 2px solid;
+    border-color:white;
+    margin-bottom: 2px;
+  }
+
+  .personBox:hover #cardbox {
+    opacity: 1;
+  }
+
+  #personP {
+    display: none;
+    color: white;
+  }
+
+  .personBox:hover #personP {
+    position: absolute;
+    left: 8%;
+    top: 0%;
+    display: inline;
+  }
 
 </style>

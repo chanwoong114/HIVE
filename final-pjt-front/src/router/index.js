@@ -97,6 +97,7 @@ const router = new VueRouter({
 })
 
 export default router
+import swal from 'sweetalert';
 
 router.beforeEach((to, from, next) => {
   const isLoggedIn =  store.getters.isLogin
@@ -104,7 +105,7 @@ router.beforeEach((to, from, next) => {
   const isAuth = !authPage.includes(to.name)
   // 로그인이 필요한 페이지에 접근하려고 할 때
   if (isAuth && !isLoggedIn) {
-    alert('로그인하세요')
+    swal("로그인을 하세요");
     next({ name: 'HomeView' }); // HomeView로 리디렉션합니다.
     
   } else {

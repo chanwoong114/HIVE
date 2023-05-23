@@ -28,8 +28,9 @@
       <!-- HIVE란?-->
       <div class="bg-gray py-2 py-lg-3 py-xl-4 py-xxl-5" id="landings">
         <div class="container py-5 mt-1 mb-2 mt-sm-2 mb-sm-3 mt-md-3 mb-md-4 my-lg-4 my-xl-5">
-          <h2 class="display-5 text-center pt-xxl-2">HIVE란?</h2>
-          <h3 class="fs-lg text-center pb-3 pb-lg-0 mb-lg-5">"당신을 위해 최고의 영화를 선택해봤어요! 영화 속 세계로 여행을 떠나보세요. 잠깐의 시간을 잊고 즐거운 시간을 보내실 수 있을 거예요. 여러분을 감동시키고 웃음을 안겨줄 영화를 선별했습니다. 편안한 자리에 앉아서 최고의 영화와 함께 특별한 순간을 즐겨보세요!"</h3>
+          <h1 class="display-5 text-center pt-xxl-2">HIVE란?</h1>
+          <h2 class="display-5 text-center pt-xxl-2">당신을 위해 최고의 영화를 선택해봤어요! 영화 속 세계로 여행을 떠나보세요.</h2>
+          <h3 class="fs-lg text-center  pb-3 pb-lg-0 mb-lg-5">"잠깐의 시간을 잊고 즐거운 시간을 보내실 수 있을 거예요. 여러분을 감동시키고 웃음을 안겨줄 영화를 선별했습니다. 편안한 자리에 앉아서 최고의 영화와 함께 특별한 순간을 즐겨보세요!"</h3>
           <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 gy-5 pb-xl-3">
             <!-- 사진들어가는곳-->
             <div class="col">

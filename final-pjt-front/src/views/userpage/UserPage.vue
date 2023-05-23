@@ -35,7 +35,7 @@ export default {
     getUserInfo() {
       axios({
         method: 'get',
-        url: `http://127.0.0.1:8000/accounts/${this.$route.params.username}/`,
+        url: `http://127.0.0.1:8000/accounts/username/${this.$route.params.username}/`,
         headers: `Token ${this.$store.state.token}`
       })
       .then(res => {

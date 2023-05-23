@@ -83,7 +83,6 @@
     <br>
     <br>
     <br>
-    <br>
     <router-view/>
   </div>
 </template>
@@ -161,9 +160,9 @@ h3 {
   object-fit: cover;
   z-index: -1; /* Ensure the video is behind the content */
 }
-  #zoom {
-    position: relative;
-  }
+#zoom {
+  position: relative;
+}
 
   #zoom:hover {
     transform: scale(2);
@@ -178,23 +177,19 @@ h3 {
   .mainimg {
     position: absolute;
     opacity: 0;
-    display: none;
   }
 
   #movieInfo {
     position: absolute;
     opacity: 0;
-    display: none;
   }
 
   #title {
     position: absolute;
     opacity: 0;
-    display: none;
   }
 
   #zoom:hover > .mainimg {
-    display: inline;
     opacity: 1;
     width: 40%;
     top: 15%;
@@ -202,7 +197,6 @@ h3 {
   }
 
   #zoom:hover > #movieInfo {
-    display: inline;
     opacity: 1;
     top: 15%;
     left: 60%;
@@ -210,7 +204,6 @@ h3 {
   }
 
   #zoom:hover > #title {
-    display: inline;
     opacity: 1;
     top: 70%;
     text-align: center;

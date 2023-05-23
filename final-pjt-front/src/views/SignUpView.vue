@@ -29,7 +29,7 @@
       <div class="w-100 mt-auto" style="max-width: 526px;">
         <h1>HIVE</h1>
         <h1>회원가입</h1>
-        <form class="needs-validation" @submit.prevent="signUp()" novalidate>
+        <form class="needs-validation" @submit.prevent="signUp" novalidate>
           <div class="pb-3 mb-3">
             <div class="position-relative"><i class="ai-mail fs-lg position-absolute top-50 start-0 translate-middle-y ms-3"></i>
               <input class="form-control form-control-lg ps-5" v-model="username" type="email" placeholder="아이디" required>

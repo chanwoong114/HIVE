@@ -21,16 +21,16 @@
           <div class="w-100 mt-auto" style="max-width: 526px;">
             <h1>HIVE</h1>
             <h1>로그인</h1>
-            <form class="needs-validation" @submit.prevent="login()" novalidate>
+            <form class="needs-validation" novalidate>
               <div class="pb-3 mb-3">
                 <div class="position-relative"><i class="ai-mail fs-lg position-absolute top-50 start-0 translate-middle-y ms-3"></i>
-                  <input class="form-control form-control-lg ps-5" type="email" placeholder="아이디" required v-model="username">
+                  <input class="form-control form-control-lg ps-5" type="email" placeholder="아이디" required>
                 </div>
               </div>
               <div class="mb-4">
                 <div class="position-relative"><i class="ai-lock-closed fs-lg position-absolute top-50 start-0 translate-middle-y ms-3"></i>
                   <div class="password-toggle">
-                    <input class="form-control form-control-lg ps-5" type="password" placeholder="비밀번호" required v-model="password">
+                    <input class="form-control form-control-lg ps-5" type="password" placeholder="비밀번호" required>
                     <label class="password-toggle-btn" aria-label="Show/hide password">
                       <input class="password-toggle-check" type="checkbox"><span class="password-toggle-indicator"></span>
                     </label>
@@ -43,8 +43,8 @@
                   <label class="form-check-label ms-1" for="keep-signedin">로그인 상태유지</label>
                 </form-check><a class="fs-sm fw-semibold text-decoration-none my-1" href="#">비밀번호찾기</a>
               </div>
-              <input class="btn btn-lg btn-success  w-100 mb-4" type="submit" value="로그인">
-              <button class="btn btn-lg btn-success w-100 mb-4"  @click="gotoSignup()">회원가입</button>
+              <button class="btn btn-lg btn-success  w-100 mb-4" type="submit">로그인</button>
+              <button class="btn btn-lg btn-success w-100 mb-4" type="submit" @click="gotoSignup()">회원가입</button>
               <h2 class="h6 text-center pt-3 pt-lg-4 mb-4">다른방법 로그인</h2>
               <div class="row row-cols-1 row-cols-sm-2 gy-3">
                 <div class="col"><a class="btn btn-icon btn-outline-secondary btn-google btn-lg w-100" href="#"><i class="ai-google fs-xl me-2"></i>Google</a></div>
@@ -82,6 +82,17 @@ export default {
       }
 
       this.$store.dispatch('login', payload)
+      .then((res) => {
+          console.log(1)
+          // 로그인 성공 시 사용자 이름을 스토어에 저장
+          this.$store.commit('SAVE_TOKEN', res.data.key)
+          this.$store.commit('SET_USERNAME', username);
+          // this.$router.push({ name: 'MovieView' });
+        })
+        .catch((error) => {
+          // 로그인 실패 처리
+          console.error(error);
+        });
     },
     gotoSignup() {
       this.$router.push({name: 'SignUpView'})

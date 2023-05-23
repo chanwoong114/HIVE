@@ -54,14 +54,12 @@ export default new Vuex.Store({
         .then((res) => {
           // console.log(res)
           context.commit('SAVE_TOKEN', res.data.key)
-          context.commit('SAVE_USERNAME', username)
         })
         .catch((err) => {
         console.log(err)
       })
     },
     login(context, payload) {
-
       const username = payload.username
       const password = payload.password
       console.log(payload)
@@ -73,16 +71,12 @@ export default new Vuex.Store({
           username, password
         }
       })
-      .then((res) => {
-        console.log(1)
-        // 로그인 성공 시 사용자 이름을 스토어에 저장
-        context.commit('SAVE_TOKEN', res.data.key)
-        context.commit('SAVE_USERNAME', username);
-      })
-      .catch((error) => {
-        // 로그인 실패 처리
-        console.error(error);
-      });
+        .then((res) => {
+          console.log(res.data)
+          context.commit('SAVE_TOKEN', res.data.key)
+          context.commit('SAVE_USERNAME', username)
+        })
+      .catch((err) => console.log(err))
     }
   },
   modules: {

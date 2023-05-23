@@ -1,17 +1,18 @@
 <template>
-  <div>
-    <button v-for="genreId in genreIds" 
-    :key="genreId.id" @click="genreSelect(genreId.id), getGenreMovie()">{{ genreId.name }}, {{ isSelect(genreId.id) }}</button>
+  <div class="container">
+    <br>
+    <div>
+      <button class="btn btn-danger" @click="AllToggle">Clear All</button>
+    </div>
+    <br>
+    <span v-for="genreId in genreIds" :key="genreId.id">
+      <button v-if="!isSelect(genreId.id)" class="btn btn-light btn-border-light mx-2 my-2" @click="genreSelect(genreId.id), getGenreMovie()">{{ genreId.name }}</button>
+      <button v-if="isSelect(genreId.id)" class="btn btn-primary btn-border-light mx-2 my-2" @click="genreSelect(genreId.id), getGenreMovie()">{{ genreId.name }}</button>
+    </span>
 
     <div class="row">
       <div class="col-2" v-for="movie in movies" :key="movie.id">
-        <div class="card mb-4" @click="gotoDetail(movie?.id)">
-          <img :src="'https://image.tmdb.org/t/p/original/' + movie?.poster_path" :alt="movie.title"   
-          class="card-img-top">
-          <div class="card-body">
-            <h5 class="card-title" style="color: black">{{ movie?.title }}</h5>
-          </div>
-        </div>
+        <MovieDetailItem :movie="movie"/>
       </div>
     </div>
 
@@ -20,8 +21,12 @@
 
 <script>
 import axios from 'axios';
+import MovieDetailItem from '@/components/MovieDetailComponent/MovieDetailItem.vue';
 
 export default {
+  components: {
+    MovieDetailItem
+  },
   data (){
     return {
       genreIds: [
@@ -81,6 +86,10 @@ export default {
       .catch(error => {
         console.log(error)
       })
+    },
+    AllToggle() {
+      this.genres = []
+      this.getGenreMovie()
     }
   },
 }

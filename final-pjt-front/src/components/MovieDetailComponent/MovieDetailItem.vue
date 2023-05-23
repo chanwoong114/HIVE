@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div id="zoom" class="bg-dark card mb-4 border-dark" @click="gotoDetail(movie?.id)">
+    <div id="zoom" class="bg-dark card mb-4 border-dark" @click="gotoDetail(movie.id)">
       <img :src="'https://image.tmdb.org/t/p/original/' + movie.poster_path" :alt="movie.title"   
       class="card-img-top backgroundimg">
       <img class="mainimg" :src="'https://image.tmdb.org/t/p/original/' + movie.poster_path" :alt="movie.title">
@@ -24,7 +24,11 @@ export default {
     props: {
         movie: Object,
     },
-    method: {
+    methods: {
+      gotoDetail(movieId) {
+        this.$router.push({name: 'MovieDetailView', params: {movieId: movieId}})
+        
+      }
     }
 }
 </script>

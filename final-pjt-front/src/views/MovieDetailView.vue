@@ -1,12 +1,13 @@
 <template>
   <div style="position: relative">
+   <div style="height: 100vh;">
     <div v-if="URL" id="area" style="">
       <iframe id="video" :src="`https://youtube.com/embed/?autoplay=1&mute=1&controls=0&playlist=${URL}&loop=1`" frameborder="0"
-      style="position: absolute; top:0%; left: 0%; z-index: -1;" width="100%" height="100%"></iframe>
+      style="position: absolute; top:0%; left: 0%; z-index: -1;" ></iframe>
     </div>
     <div class="container">
-      <div class="row">
-        <div class="col-md-4 col-12" style="color: white;">
+      <div class="row" >
+        <div class="col-md-4 col-12" style="color: white;" >
           <h1 style="text-align: start;">{{ movie?.title }}</h1>
           <br>
           <div class="row">
@@ -27,8 +28,32 @@
         </div>
         <div class="col-md-8 col-12 d-flex align-items-center">
           <p style="color: white;">줄거리 : {{ movie.overview }}</p>
+        </div>    
+      </div>
+    </div>
+    <br>
+    </div>
+    
+    <div class="bg-dark" style="text-align: center;" >
+      <div class="container mt-2 pt-5" >
+        
+        <span style="font-size:xx-large;">
+          <span @click="selectContentToggle" :class="{'selected': selectContent}">연관 추천 영화</span> &nbsp;
+          <span><strong>|</strong></span>&nbsp;&nbsp;
+          <span @click="selectContentToggle" :class="{'selected': !selectContent}">리뷰</span>
+        </span>
+        <br>
+        <br>
+        <div v-if="selectContent" class="row row-cols-3 row-cols-md-6 g-2 mx-auto pt-5">
+          <div class="col container"  v-for="(recommendMovie, index) in movie.recommend_movies" :key="index">
+            <MovieDetailItem  :movie="recommendMovie"/>
+          </div>
         </div>
-  
+    
+        <div class="pt-5" v-else>
+          <MovieComment :movieComments="movie.comments" :movieId="movie.id"/>
+        </div>
+
         <div class="d-flex-column justify-content-between">
           <h4 style="color: white;" class="text-start">감독</h4>
           <div style="width: 10%;">
@@ -67,28 +92,6 @@
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-    <br>
-    <div class="bg-dark" style="text-align: center;" >
-
-      <div class="container mt-2 pt-5" >
-        <span style="font-size:xx-large;">
-          <span @click="selectContentToggle" :class="{'selected': selectContent}">연관 추천 영화</span> &nbsp;
-          <span><strong>|</strong></span>&nbsp;&nbsp;
-          <span @click="selectContentToggle" :class="{'selected': !selectContent}">리뷰</span>
-        </span>
-        <br>
-        <br>
-        <div v-if="selectContent" class="row row-cols-3 row-cols-md-6 g-2 mx-auto pt-5">
-          <div class="col container"  v-for="(recommendMovie, index) in movie.recommend_movies" :key="index">
-            <MovieDetailItem  :movie="recommendMovie"/>
-          </div>
-        </div>
-    
-        <div class="pt-5" v-else>
-          <MovieComment :movieComments="movie.comments" :movieId="movie.id"/>
         </div>
       </div>
     </div>

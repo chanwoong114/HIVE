@@ -13,6 +13,7 @@ import CommunityDetailView from '@/views/community/CommunityDetailView'
 import CreateArticle from '@/views/community/CreateArticle'
 import UpdateArticle from '@/views/community/UpdateArticle'
 import UserPage from '@/views/userpage/UserPage'
+import ChangePassword from '@/views/userpage/ChangePassword'
 import store from '@/store'
 
 Vue.use(VueRouter)
@@ -65,6 +66,12 @@ const routes = [
     path: '/:username',
     name: 'UserPage',
     component: UserPage
+  },
+  
+  {
+    path: '/password',
+    name: 'ChangePassword',
+    component: ChangePassword
   },
 
   {

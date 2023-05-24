@@ -22,6 +22,7 @@ export default new Vuex.Store({
     ],
     token: null,
     username:null,
+    likeUsers: []
   },
   getters: {
     isLogin(state) {
@@ -38,6 +39,9 @@ export default new Vuex.Store({
     SAVE_USERNAME(state, username) {
       state.username = username;
     },
+    SAVE_LIKE_USERS(state, data){
+      state.likeUsers = data
+    }
   },
   actions: {
     signUp(context, payload) {
@@ -74,14 +78,61 @@ export default new Vuex.Store({
         }
       })
         .then((res) => {
-          console.log(res.data)
           context.commit('SAVE_TOKEN', res.data.key)
           context.commit('SAVE_USERNAME', username)
           context.dispatch('loadUserData', res.data.key)
-
+          
         })
-      .catch((err) => console.log(err))
+        .catch((err) => console.log(err))
+      },
+      signOut(context) {
+      alert('로그아웃 되었습니다.')
+      console.log(context)
+      router.push({name: 'HomeView'})
+      window.localStorage.clear();
     },
+    deleteUser(context) {
+      console.log(context.state.token)
+      axios({
+        method: 'post',
+        url: `${API_URL}/accounts/delete/`,
+        headers: {
+          Authorization: `Token ${context.state.token}`
+        }
+      })
+      .then(res => {
+        console.log(res)
+      })
+      .catch(err => {
+        console.log(err)
+      })
+      alert('회원탈퇴가 성공적으로 완료되었습니다.')
+      router.push({name: 'HomeView'})
+      window.localStorage.clear();
+    },
+    changePassword(context, payload) {
+      const new_password1 = payload.new_password1
+      const new_password2 = payload.new_password2
+
+      axios({
+        method: 'post',
+        url: `${API_URL}/accounts/password/change/`,
+        headers: {
+          Authorization: `Token ${context.state.token}`
+        },
+        data: {
+          new_password1, new_password2
+        }
+      })
+      .then(res => {
+        console.log(res)
+        alert('비밀번호 변경이 성공적으로 완료되었습니다.')
+        router.push({name: 'MovieView'})
+      })
+      .catch(error => {
+        console.log(error)
+      })
+    }
   },
   modules: {
     movie,

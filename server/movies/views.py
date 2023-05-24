@@ -65,6 +65,13 @@ def random_list(request):
         return Response(serializer.data, status=status.HTTP_200_OK)
     
 @api_view(['GET'])
+def all_movies(request):
+    if request.method == 'GET':
+        movies = get_list_or_404(Movie)
+        serializer = movieListSerializer(movies, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+    
+@api_view(['GET'])
 def user_recommend_list(request):
     if request.method == 'GET':
         movies = get_list_or_404(Movie)

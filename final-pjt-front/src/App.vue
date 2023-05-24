@@ -115,7 +115,7 @@
 export default {
   data() {
     return {
-      darkMode: false
+      darkMode: true
     };
   },
   computed: {
@@ -160,6 +160,7 @@ export default {
 
 #app {
   font-family: 'jua';
+  color: white;
 }
 
 nav {

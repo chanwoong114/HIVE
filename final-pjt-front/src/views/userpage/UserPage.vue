@@ -14,10 +14,10 @@
                   <p class="fs-sm text-muted mb-0">팔로잉 : {{ user?.followings_count }}</p>
                   <p class="fs-sm text-muted mb-0"> 팔로워 : {{ follower_count }}</p>
                   <br>
-                  <span v-if="!isFollow" @click="follow" id="followBtn" class="fs-sm nav-link btn btn-outline-primary py-2 px-0 text-primary" style="width: 50%;">
+                  <span v-if="!isFollow" @click="follow" class="fs-sm nav-link btn btn-outline-primary py-2 px-0 " style="width: 50%;">
                     팔로우
                   </span>
-                  <span v-else @click="follow" id="followBtn" class="fs-sm nav-link btn btn-outline-danger py-2 px-0 text-danger" style="width: 50%;">
+                  <span v-else @click="follow" class="fs-sm nav-link btn btn-outline-danger py-2 px-0 " style="width: 50%;">
                     언팔로우
                   </span>
                 </div>

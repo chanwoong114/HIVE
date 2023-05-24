@@ -9,6 +9,7 @@ import SignUpView from '@/views/SignUpView'
 import LogInView from '@/views/LogInView'
 import CommunityView from '@/views/community/CommunityView'
 import NotFound from '@/views/404NotFound'
+import SearchView from '@/views/SearchView'
 import CommunityDetailView from '@/views/community/CommunityDetailView'
 import CreateArticle from '@/views/community/CreateArticle'
 import UpdateArticle from '@/views/community/UpdateArticle'
@@ -34,6 +35,11 @@ const routes = [
     path: '/genre',
     name: 'GenreView',
     component: GenreView
+  },
+  {
+    path: '/search',
+    name: 'SearchView',
+    component: SearchView
   },
   {
     path: '/favorites',

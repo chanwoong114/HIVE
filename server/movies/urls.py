@@ -11,4 +11,5 @@ urlpatterns = [
     path('<str:job>/<int:job_id>/', views.job_movies),
     path('user_recommend_list/', views.user_recommend_list),
     path('genre/', views.genre),
+    path('all/', views.all_movies),
 ]

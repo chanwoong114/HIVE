@@ -148,7 +148,19 @@ export default {
 }
 </script>
 <style>
+  @font-face {
+    font-family: 'dohyeon';
+    src: url('../public/font/BMDOHYEON_ttf.ttf');
+  }
 
+  @font-face {
+    font-family: 'jua';
+    src: url('../public/font/BMJUA_ttf.ttf');
+  }
+
+#app {
+  font-family: 'jua';
+}
 
 nav {
   padding: 20px;
@@ -167,6 +179,16 @@ nav a.router-link-exact-active {
   width: 130px;
   height: 90px;
 }
+<<<<<<< HEAD
+=======
+h1 {
+  font-family: 'jua';
+}
+
+h3 {
+  font-family: 'jua';
+}
+>>>>>>> 0986cd33fee926b5c374c104607008b26ebb4398
 
 #video-bg {
   position: absolute;
@@ -259,5 +281,9 @@ nav a.router-link-exact-active {
   #zoom:hover > #liked:active {
     transform: scale(1.2);
     transition: 0.3s;
+  }
+
+  #pointer {
+    cursor: pointer;
   }
 </style>

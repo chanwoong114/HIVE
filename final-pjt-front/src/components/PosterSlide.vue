@@ -38,7 +38,9 @@ export default {
   updated() {
     const mainContainer = document.getElementById(`myCarousel${this.num}`);
     const mainOptions = {
-      
+      Autoplay: {
+        timeout: 3000,
+      },
     };
 
     const mainCarousel = new Carousel(mainContainer, mainOptions);

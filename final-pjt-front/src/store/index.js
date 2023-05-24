@@ -40,7 +40,19 @@ export default new Vuex.Store({
       state.username = username;
     },
     SAVE_LIKE_USERS(state, data){
-      state.likeUsers = data
+      data.forEach(userInfo => {
+        state.likeUsers.push(userInfo.id)
+      })
+    },
+    IS_FOLLOW(state, data) {
+      console.log(data)
+      if (data.follow) {
+        state.likeUsers.push(data.id)
+      } else {
+        state.likeUsers = state.likeUsers.filter(userId => {
+          return userId != data.id
+        })
+      }
     }
   },
   actions: {
@@ -131,6 +143,24 @@ export default new Vuex.Store({
       })
       .catch(error => {
         console.log(error)
+      })
+    },
+    follow(context, userId) {
+      axios({
+        method: 'post',
+        url: `${API_URL}/accounts/${userId}/follow/`,
+        headers: {
+          Authorization: `Token ${context.state.token}`
+        }
+      })
+      .then(res => {
+        console.log(res)
+        context.commit('IS_FOLLOW', res.data)
+      })
+      .catch(error => {
+        console.log(error)
+        alert(error.response.data)
+        return
       })
     }
   },

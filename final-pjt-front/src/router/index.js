@@ -48,13 +48,29 @@ const routes = [
   {
     path: '/signup',
     name: 'SignUpView',
-    component: SignUpView
+    component: SignUpView,
+    beforeEnter(to, from, next) {
+      if(store.state.token) {
+        alert('이미 로그인 되어있습니다.')
+        next({name: 'MovieView'})
+      } else {
+        next()
+      }
+    }
   },
 
   {
     path: '/login',
     name: 'LogInView',
-    component: LogInView
+    component: LogInView,
+    beforeEnter(to, from, next) {
+      if(store.state.token) {
+        alert('이미 로그인 되어있습니다.')
+        next({name: 'MovieView'})
+      } else {
+        next()
+      }
+    }
   },
   
   {
@@ -66,7 +82,14 @@ const routes = [
   {
     path: '/:username',
     name: 'UserPage',
-    component: UserPage
+    component: UserPage,
+    beforeEnter(to, from, next) {
+      if(store.state.username == to.params.username) {
+        next({name: 'FavoritesView'})
+      } else {
+        next()
+      }
+    }
   },
   
   {
@@ -120,7 +143,7 @@ router.beforeEach((to, from, next) => {
   // 로그인이 필요한 페이지에 접근하려고 할 때
   if (isAuth && !isLoggedIn) {
     alert('로그인하세요')
-    next({ name: 'HomeView' }); // HomeView로 리디렉션합니다.
+    next({ name: 'LogInView' }); // HomeView로 리디렉션합니다.
     
   } else {
     next(); // 정상적으로 다음 단계로 진행합니다.

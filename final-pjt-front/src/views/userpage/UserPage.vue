@@ -12,12 +12,12 @@
                 <div class="pb-2 pb-lg-0 mb-4 mb-lg-5"><img class="d-block rounded-circle mb-2" :src="`http://127.0.0.1:8000${user?.profile}`" width="80">
                   <h3 class="h5 mb-1">{{ user?.username }}</h3>
                   <p class="fs-sm text-muted mb-0">팔로잉 : {{ user?.followings_count }}</p>
-                  <p class="fs-sm text-muted mb-0"> 팔로워 : {{ user?.follower_count }}</p>
+                  <p class="fs-sm text-muted mb-0"> 팔로워 : {{ follower_count }}</p>
                   <br>
-                  <span @click="follow" id="followBtn" class="fs-sm nav-link btn btn-outline-primary py-2 px-0 text-primary" style="width: 50%;">
+                  <span v-if="!isFollow" @click="follow" id="followBtn" class="fs-sm nav-link btn btn-outline-primary py-2 px-0 text-primary" style="width: 50%;">
                     팔로우
                   </span>
-                  <span @click="follow" id="followBtn" class="fs-sm nav-link btn btn-outline-danger py-2 px-0 text-danger" style="width: 50%;">
+                  <span v-else @click="follow" id="followBtn" class="fs-sm nav-link btn btn-outline-danger py-2 px-0 text-danger" style="width: 50%;">
                     언팔로우
                   </span>
                 </div>
@@ -63,6 +63,7 @@ export default {
   data() {
     return {
       user: null,
+      follower_count: null,
     }
   },
   methods: {
@@ -75,6 +76,7 @@ export default {
       .then(res => {
         console.log(res)
         this.user = res.data
+        this.follower_count = res.data.follower_count
       })
       .catch(error => {
         console.log(error)
@@ -84,11 +86,24 @@ export default {
       this.$router.push({name: 'MovieDetailView', params: {movieId: `${movieId}`}})
     },
     follow() {
-      
+      if (this.$store.state.username == this.user.username) return
+
+      if (this.$store.state.likeUsers.includes(this.user.id)) {
+        this.follower_count -= 1
+      } else {
+        this.follower_count += 1
+      }
+
+      this.$store.dispatch('follow', this.user.id)
     }
   },
   created() {
     this.getUserInfo()
+  },
+  computed: {
+    isFollow() {
+      return this.$store.state.likeUsers.includes(this.user.id)
+    }
   }
 }
 </script>

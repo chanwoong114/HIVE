@@ -3,7 +3,7 @@
    <div style="height: 100vh;">
     <div v-if="URL" id="area" style="">
       <iframe id="video" :src="`https://youtube.com/embed/?autoplay=1&mute=1&controls=0&playlist=${URL}&loop=1`" frameborder="0"
-      style="position: absolute; top:0%; left: 0%; z-index: -1;" ></iframe>
+      style="position: absolute; top:-5%; left: 0%; z-index: -1;" ></iframe>
     </div>
     <div class="container">
       <div class="row" >
@@ -11,7 +11,7 @@
           <h1 style="text-align: start;">{{ movie?.title }}</h1>
           <br>
           <div class="row">
-            <img class="col-6"  :src="`https://image.tmdb.org/t/p/original/${movie?.poster_path}`" width="50%" alt="">
+            <img class="col-md-6 col-2"  :src="`https://image.tmdb.org/t/p/original/${movie?.poster_path}`" width="50%" alt="">
             <div class="col-6">
               <p>평점 : {{ movie?.comments_rating.toFixed(1) }}</p>
               <p>좋아요 수 : {{ likeCount }}</p>

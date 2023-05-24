@@ -83,13 +83,13 @@ const routes = [
     path: '/:username',
     name: 'UserPage',
     component: UserPage,
-    beforeEnter(to, from, next) {
+    beforeRouteEnter(to, from, next) {
       if(store.state.username == to.params.username) {
         next({name: 'FavoritesView'})
       } else {
         next()
       }
-    }
+    },
   },
   
   {

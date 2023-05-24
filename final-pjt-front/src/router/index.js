@@ -37,11 +37,6 @@ const routes = [
     component: GenreView
   },
   {
-    path: '/search',
-    name: 'SearchView',
-    component: SearchView
-  },
-  {
     path: '/favorites',
     name: 'FavoritesView',
     component: FavoritesView
@@ -86,22 +81,21 @@ const routes = [
   },
 
   {
-    path: '/:username',
+    path: '/userpage/:username',
     name: 'UserPage',
     component: UserPage,
-    beforeRouteEnter(to, from, next) {
-      if(store.state.username == to.params.username) {
-        next({name: 'FavoritesView'})
-      } else {
-        next()
-      }
-    },
   },
   
   {
     path: '/password',
     name: 'ChangePassword',
     component: ChangePassword
+  },
+
+  {
+    path: '/search',
+    name: 'SearchView',
+    component: SearchView
   },
 
   {

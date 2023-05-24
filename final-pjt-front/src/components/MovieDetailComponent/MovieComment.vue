@@ -5,10 +5,15 @@
         <p>작성자 : {{ comment.user.username }}</p>
         <p>내용 : {{ comment.content }}</p>
         <star-rating :star-size="25" :border-width="2" border-color="#d8d8d8" :rounded-corners="true" :star-points="[23,2, 14,17, 0,19, 10,34, 7,50, 23,43, 38,50, 36,34, 46,19, 31,17]" 
-        :rating="comment.rating" :read-only="true" :increment="0.5"></star-rating>
+        :rating="comment.rating" :read-only="true" :inline="true" :increment="0.5"></star-rating>
+        <br>
+        <div class="mt-2" v-if="comment.user.username === $store.state.username">
+          <button class="btn btn-success mx-1" >수정</button>
+          <button class="btn btn-danger mx-1">삭제</button>
+        </div>
         <hr>
       </div>
-      <form @submit.prevent="createComment()">
+      <form v-if="!isComment" @submit.prevent="createComment()">
         <div class="input-group mb-3 ">
           <input type="text" class="form-control" v-model="content"
           aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
@@ -18,6 +23,7 @@
             &nbsp;&nbsp;작성&nbsp;&nbsp;</button>
         </div>
       </form>
+      <h3 v-else>이미 리뷰를 작성했습니다.</h3>
   </div>
 </template>
 
@@ -39,6 +45,7 @@ export default {
       comments: [],
       content: null,
       rating: null,
+      userCommentId: null,
     }
   },
   methods: {
@@ -69,12 +76,20 @@ export default {
         console.log(error)
       })
     },
-    getComment() {
-      axios
-    }
   },
   created() {
     this.getstart()
+  },
+  computed: {
+    isComment() {
+      return this.comments.some(comment => {
+        return comment.user.username === this.$store.state.username
+      })
+    },
+    // commentsRating() {
+    //   return
+    // }
+
   }
 }
 </script>

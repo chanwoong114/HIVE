@@ -1,7 +1,7 @@
 <template>
   
-  <div id="app" class="">
-    <div>
+  <div id="app">
+    <div >
       <div class="">
         <!-- 네브바-->
         <header class="navbar bg-white navbar-expand-lg fixed-top" >
@@ -9,63 +9,60 @@
           <div class="container"><a class="navbar-brand pe-sm-3" :href="`http://localhost:8080/movies`">
             <img src="./assets/logo.png"  alt="Logo" width="35" height="32">
             HIVE
-            </a>
-            <!-- 검색 -->
-
-            <div class="order-lg-2 me-3 me-lg-4 ms-auto d-none d-lg-block" >
-              <form class="d-flex ms-auto">
-                <input class="form-control me-2" type="search" placeholder="검색" aria-label="Search">
-                <button class="btn btn-primary" type="submit">검색</button>
-              </form>
-            </div>
-            
-            <div class="form-check form-switch mode-switch order-lg-2 me-3 me-lg-4 ms-auto" data-bs-toggle="mode">
-              <input class="form-check-input" type="checkbox" id="theme-mode" v-model="darkMode" @click="toggleDarkMode()">
-              <label class="form-check-label" for="theme-mode"><i class="ai-sun fs-lg"></i></label>
-              <label class="form-check-label" for="theme-mode"><i class="ai-moon fs-lg"></i></label>
-            </div>
-            
-            <!-- 로그인버튼 -->
-            <!-- 로그인이면 마이페이지 아니면 로그인 -->
-            <div v-if="!isLogin" class="btn btn-success btn-sm fs-sm order-lg-3 d-none d-sm-inline-flex" target="_blank" rel="noopener" >
+          </a>
+          <!-- 검색 -->
+          
+          
+          <div class="form-check form-switch mode-switch order-lg-2 me-3 me-lg-4 ms-auto" data-bs-toggle="mode">
+            <input class="form-check-input" type="checkbox" id="theme-mode" v-model="darkMode" @click="toggleDarkMode()">
+            <label class="form-check-label" for="theme-mode"><i class="ai-sun fs-lg"></i></label>
+            <label class="form-check-label" for="theme-mode"><i class="ai-moon fs-lg"></i></label>
+          </div>
+          
+          <!-- 로그인버튼 -->
+          <!-- 로그인이면 마이페이지 아니면 로그인 -->
+          <div v-if="!isLogin" class="btn btn-success btn-sm fs-sm order-lg-3 d-none d-sm-inline-flex" target="_blank" rel="noopener" >
             <i class="ai-login fs-xl me-2 ms-n1"></i><router-link class="nav-link" to="/login">로그인</router-link>
-            </div>
-            <div v-if="isLogin" class="btn btn-success btn-sm fs-sm order-lg-3 d-none d-sm-inline-flex"  target="_blank" rel="noopener" >
+          </div>
+          <div v-if="isLogin" class="btn btn-success btn-sm fs-sm order-lg-3 d-none d-sm-inline-flex"  target="_blank" rel="noopener" >
             <i class="ai-login fs-xl me-2 ms-n1"></i><router-link class="nav-link" to="/favorites">마이페이지</router-link>
-            </div>
-            
-            <div>
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-              </svg>
-            </div>
-         
-            <!-- 영화추천 -->
-            <nav class="collapse navbar-collapse" id="navbarNav" >
-              <ul class="navbar-nav navbar-nav-scroll me-auto " style="--ar-scroll-height: 520px;">
-                <li class="nav-item dropdown "><a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown" aria-expanded="false">영화</a>
-                  <div class="dropdown-menu overflow-hidden p-0 ">
-                    <div class="d-lg-flex bg-white">
-                      <div class="mega-dropdown-column pt-1 pt-lg-3 pb-lg-4">
-                        <ul class="list-unstyled mb-0">
-                          <li><router-link class="dropdown-item" to="/movies">영화추천</router-link>
-                            <span class="mega-dropdown-column position-absolute top-0 end-0 h- bg-size-cover bg-repeat-0 rounded-3 rounded-start-0" style="background-image: url(assets/img/megamenu/bee.png)"></span></li>
+          </div>
+
+          
+          <!-- 영화추천 -->
+          <nav class="collapse navbar-collapse" id="navbarNav" >
+            <ul class="navbar-nav navbar-nav-scroll me-auto " style="--ar-scroll-height: 520px;">
+              <li class="nav-item dropdown "><a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown" aria-expanded="false">영화</a>
+                <div class="dropdown-menu overflow-hidden p-0 ">
+                  <div class="d-lg-flex bg-white">
+                    <div class="mega-dropdown-column pt-1 pt-lg-3 pb-lg-4">
+                      <ul class="list-unstyled mb-0">
+                        <li><router-link class="dropdown-item" to="/movies">영화추천</router-link>
+                          <span class="mega-dropdown-column position-absolute top-0 end-0 h- bg-size-cover bg-repeat-0 rounded-3 rounded-start-0" style="background-image: url(assets/img/megamenu/bee.png)"></span></li>
                           <li><router-link class="dropdown-item" to="/genre">장르별 영화</router-link>
                             <span class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 zindex-2 opacity-0" style="background-image: url(assets/img/megamenu/C.png)"></span></li>  
-                        </ul>
+                          </ul>
+                        </div>
+                        <div class="mega-dropdown-column position-relative border-start zindex-3"></div>
                       </div>
-                      <div class="mega-dropdown-column position-relative border-start zindex-3"></div>
                     </div>
-                  </div>
-                </li>
-                <!-- 게시판,마이페이지 -->
-                <li class="nav-item"><router-link class="nav-link" to="/community">게시판</router-link></li>
-                <!-- <li class="nav-item"><a class="nav-link" href="docs/getting-started.html">마이페이지</a></li> -->
-              </ul>
-            </nav>
-          </div>
+                  </li>
+                  <!-- 게시판,마이페이지 -->
+                  <li class="nav-item"><router-link class="nav-link" to="/community">게시판</router-link></li>
+                  <!-- <li class="nav-item"><a class="nav-link" href="docs/getting-started.html">마이페이지</a></li> -->
+                </ul>
+                <!-- 검색 돋보기 -->
+                <form class="d-flex ms-auto">
+                  <button class="btn btn-outline-success rounded" type="submit" @click="gotoSearch">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                      <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                    </svg>
+                  </button>
+                </form>
+              </nav>
+            </div>
         </header>
-
+        
         <!-- 네브바2 -->
         <header class="position-relative navbar bg-white navbar-expand-lg" >
           
@@ -82,7 +79,7 @@
             <!-- 로그인버튼 -->
             <!-- 로그인이면 마이페이지 아니면 로그인 -->
             <div v-if="!isLogin" class="btn btn-success btn-sm fs-sm order-lg-3 d-none d-sm-inline-flex" target="_blank" rel="noopener" >
-            <i class="ai-login fs-xl me-2 ms-n1"></i><router-link class="nav-link" to="/login">로그인</router-link>
+            <router-link class="nav-link" to="/login"><i class="ai-login fs-xl me-2 ms-n1"></i>로그인</router-link>
             </div>
             <div v-if="isLogin" class="btn btn-success btn-sm fs-sm order-lg-3 d-none d-sm-inline-flex"  target="_blank" rel="noopener" >
             <router-link class="nav-link" :to="{name: 'FavoritesView'}">
@@ -157,7 +154,11 @@ export default {
    
     gotoLogin() {
       this.$router.push({name: 'LogInView'})
-    }
+    },
+
+    gotoSearch(){
+      this.$router.push({name: 'SearchView'})
+    },
   
   },
   created() {

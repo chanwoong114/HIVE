@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+    <br>
     <h1>영화 검색</h1>
     <div class="input-group mb-3">
       <input type="text" class="form-control bg-dark border-bottom text-white" aria-label="Sizing example input"

@@ -1,6 +1,6 @@
 <template>
   <div style="position: relative">
-   <div style="height: 100vh;">
+   <div style="min-height: 100vh;">
     <div v-if="URL" id="area" style="">
       <iframe id="video" :src="`https://youtube.com/embed/?autoplay=1&mute=1&controls=0&playlist=${URL}&loop=1`" frameborder="0"
       style="position: absolute; top:-5%; left: 0%; z-index: -1;" ></iframe>
@@ -46,6 +46,7 @@
         </span>
         <br>
         <br>
+        <h3 v-if="selectContent===0 && movie.recommend_movies.length === 0">관련 영화가 없습니다...</h3>
         <div v-if="selectContent===0" class="row row-cols-3 row-cols-md-6 g-2 mx-auto pt-5">
           <div class="col container"  v-for="(recommendMovie, index) in movie.recommend_movies" :key="index">
             <MovieDetailItem  :movie="recommendMovie"/>

@@ -152,7 +152,11 @@ export default {
       }
     },
     gotoUser(username) {
-      this.$router.push({name: 'UserPage', params: {'username': username}})
+      if ( username === this.$store.state.username) {
+        this.$router.push({name: 'FavoritesView'})
+      } else {
+        this.$router.push({name: 'UserPage', params: {'username': username}})
+      }
     },
   },
   computed: {

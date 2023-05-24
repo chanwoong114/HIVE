@@ -1,6 +1,6 @@
 <template>
   
-  <div id="app" class="">
+  <div id="app">
     <div>
     <!-- <div v-if="isLogin"> -->
       <!-- <nav id="navbar-example2" class="navbar bg-dark px-3 mb-3 d-flex justify-content-between align-items-center">
@@ -175,7 +175,19 @@ export default {
 }
 </script>
 <style>
+  @font-face {
+    font-family: 'dohyeon';
+    src: url('../public/font/BMDOHYEON_ttf.ttf');
+  }
 
+  @font-face {
+    font-family: 'jua';
+    src: url('../public/font/BMJUA_ttf.ttf');
+  }
+
+#app {
+  font-family: 'jua';
+}
 
 nav {
   padding: 20px;
@@ -195,11 +207,11 @@ nav a.router-link-exact-active {
   height: 90px;
 }
 h1 {
-  color: #FFD963;
+  font-family: 'jua';
 }
 
 h3 {
-  color: #FFD963;
+  font-family: 'jua';
 }
 
 #video-bg {
@@ -293,5 +305,9 @@ h3 {
   #zoom:hover > #liked:active {
     transform: scale(1.2);
     transition: 0.3s;
+  }
+
+  #pointer {
+    cursor: pointer;
   }
 </style>

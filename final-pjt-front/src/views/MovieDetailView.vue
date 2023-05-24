@@ -38,24 +38,24 @@
       <div class="container mt-2 pt-5" >
         
         <span style="font-size:xx-large;">
-          <span @click="selectContentToggle" :class="{'selected': selectContent}">연관 추천 영화</span> &nbsp;
+          <span id="pointer" @click="selectContentToggle(0)" :class="{'selected': selectContent===0}">연관 추천 영화</span> &nbsp;
           <span><strong>|</strong></span>&nbsp;&nbsp;
-          <span @click="selectContentToggle" :class="{'selected': !selectContent}">리뷰</span>
+          <span id="pointer" @click="selectContentToggle(1)" :class="{'selected': selectContent===1}">출연진</span>&nbsp;
+          <span><strong>|</strong></span>&nbsp;&nbsp;
+          <span id="pointer" @click="selectContentToggle(2)" :class="{'selected': selectContent===2}">리뷰</span>
         </span>
         <br>
         <br>
-        <div v-if="selectContent" class="row row-cols-3 row-cols-md-6 g-2 mx-auto pt-5">
+        <div v-if="selectContent===0" class="row row-cols-3 row-cols-md-6 g-2 mx-auto pt-5">
           <div class="col container"  v-for="(recommendMovie, index) in movie.recommend_movies" :key="index">
             <MovieDetailItem  :movie="recommendMovie"/>
           </div>
         </div>
     
-        <div class="pt-5" v-else>
-          <MovieComment :movieComments="movie.comments" :movieId="movie.id"/>
-        </div>
-
-        <div class="d-flex-column justify-content-between">
+        
+        <div class="d-flex-column justify-content-between" v-if="selectContent===1">
           <h4 style="color: white;" class="text-start">감독</h4>
+          <br>
           <div style="width: 10%;">
             <a class="personBox" href="" data-fancybox @click="trigger('crew', movie?.crew_ids.id)" style="width: 10%;" data-src="#crew-content">
               <img id="personimg" :src="`https://image.tmdb.org/t/p/original/${movie?.crew_ids.profile_path}`" width="100" class="rounded-2" alt="">
@@ -71,9 +71,11 @@
               </div>
             </div>
           </div>
-  
-          <h4 style="color: white;">출연진</h4>
-          <div class="row">
+          <br>
+
+          <h4 class="text-start" style="color: white;">출연진</h4>
+          <br>
+          <div class="row text-start" >
             <div class="col" v-for="cast in movie?.cast_ids" :key="cast.id">
               <a class="personBox" href="" data-fancybox @click="trigger('cast', cast.id)" :data-src="`#${cast.id}`">
                 <img id="personimg" :src="`https://image.tmdb.org/t/p/original/${cast.profile_path}`" width="100" class="rounded-2" alt="">
@@ -83,7 +85,7 @@
                 <h1>{{ cast.name }}</h1>
                 <br>
                 <br>
-                <h3>참여</h3>
+                <h3>참여한 영화</h3>
                 <div class="row">
                   <div class="col-2" v-for="(castMovie, index) in personMovie" :key="index">
                     <MovieDetailItem class="rounded" :movie="castMovie"/>
@@ -93,6 +95,11 @@
             </div>
           </div>
         </div>
+        
+        <div class="pt-5" v-if="selectContent===2">
+          <MovieComment :movieComments="movie.comments" :movieId="movie.id"/>
+        </div>
+        
       </div>
     </div>
     
@@ -119,7 +126,7 @@ export default {
       liked: null, 
       likeCount: null,
       URL: 'N7uu8v34HU8',
-      selectContent: true,
+      selectContent: 0,
     }
   },
   methods: {
@@ -190,8 +197,8 @@ export default {
     isLike() {
       this.liked = this.$store.state.movie.rated_movies.includes(parseInt(`${this.$route.params.movieId}`))
     },
-    selectContentToggle() {
-      this.selectContent = !this.selectContent
+    selectContentToggle(num) {
+      this.selectContent = num
     }
   },
   created() {

@@ -1,21 +1,23 @@
 <template>
-  <div class="container">
-    <br>
-    <div>
-      <button class="btn btn-danger" @click="AllToggle">Clear All</button>
-    </div>
-    <br>
-    <span v-for="genreId in genreIds" :key="genreId.id">
-      <button v-if="!isSelect(genreId.id)" class="btn btn-light btn-border-light mx-2 my-2" @click="genreSelect(genreId.id), getGenreMovie()">{{ genreId.name }}</button>
-      <button v-if="isSelect(genreId.id)" class="btn btn-primary btn-border-light mx-2 my-2" @click="genreSelect(genreId.id), getGenreMovie()">{{ genreId.name }}</button>
-    </span>
-
-    <div class="row">
-      <div class="col-2" v-for="movie in movies" :key="movie.id">
-        <MovieDetailItem :movie="movie"/>
+  <div class="bg-gray">
+    <div class="container">
+      <br>
+      <div>
+        <button class="btn btn-danger" @click="AllToggle">Clear All</button>
       </div>
-    </div>
+      <br>
+      <span v-for="genreId in genreIds" :key="genreId.id">
+        <button v-if="!isSelect(genreId.id)" class="btn btn-light btn-border-light mx-2 my-2" @click="genreSelect(genreId.id), getGenreMovie()">{{ genreId.name }}</button>
+        <button v-if="isSelect(genreId.id)" class="btn btn-primary btn-border-light mx-2 my-2" @click="genreSelect(genreId.id), getGenreMovie()">{{ genreId.name }}</button>
+      </span>
 
+      <div class="row">
+        <div class="col-2" v-for="movie in movies" :key="movie.id">
+          <MovieDetailItem :movie="movie"/>
+        </div>
+      </div>
+
+    </div>
   </div>
 </template>
 

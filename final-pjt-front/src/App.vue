@@ -1,8 +1,8 @@
 <template>
   
   <div id="app">
-    <div >
-      <div class="">
+    <div class="bg-gray">
+      <div>
         <!-- 네브바-->
         <header class="navbar bg-white navbar-expand-lg fixed-top" >
           
@@ -119,20 +119,21 @@
         </header>
       </div>
     </div>
+    <router-view style="min-height: 89vh" class="pt-2"/>
     
-    <router-view class="pt-2"/>
-    <footer class="footer py-4 bg-dark">
+    <!-- <footer class="footer bg-gray py-2 fixed-bottom">
       <div class="container text-center py-3">
         <span class="text-muted">&copy; <span class='text-danger'></span></span>
-        <a class="nav-link d-inline fw-normal p-0" href="https://www.instagram.com/non_inss/" target="_blank" rel="noopener">Team HIVE</a></div>
-    </footer>
+        <a class="nav-link d-inline p-0" style="color:black;" href="https://www.instagram.com/non_inss/" target="_blank">Team HIVE</a>
+      </div>
+    </footer> -->
   </div>
 </template>
 <script>
 export default {
   data() {
     return {
-      darkMode: false
+      darkMode: true
     };
   },
   computed: {
@@ -159,19 +160,24 @@ export default {
     gotoSearch(){
       this.$router.push({name: 'SearchView'})
     },
-  
+    
   },
-  created() {
-    this.toggleDarkMode()
-  }
   // watch: {
   //   $route() {
   //     window.scrollTo(0, 0);
   //   },
   // },
+  created() {
+    document.body.classList.add('dark-mode');
+  }
 }
 </script>
 <style>
+  @import url("//fonts.googleapis.com/earlyaccess/nanumgothic.css" );
+  input[type=password] {
+    font-family:"Nanum Gothic", sans-serif !important;
+    color: black;
+  }
   @font-face {
     font-family: 'dohyeon';
     src: url('../public/font/BMDOHYEON_ttf.ttf');
@@ -184,7 +190,6 @@ export default {
 
 #app {
   font-family: 'jua';
-  color: white;
 }
 
 nav {
@@ -216,9 +221,15 @@ h3 {
   font-family: 'jua';
 }
 
+
+
 h4 {
   font-family: 'jua';
 }
+
+  input[type=password]::placeholder {
+    font-family: "jua"; 
+  }
 
 #video-bg {
   position: absolute;
@@ -231,14 +242,24 @@ h4 {
 }
   #zoom {
     position: relative;
-    border-radius: 5%;
+    border-radius: 3%;
   }
 
   #zoom:hover {
     transform: scale(2);
     transition: 0.5s;
     z-index: 1;
+    border-radius: 3%;
+  }
+  
+  .card-img {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .backgroundimg {
     border-radius: 5%;
+    height: 100%
   }
 
   #zoom:hover > .backgroundimg {
@@ -315,5 +336,9 @@ h4 {
 
   #pointer {
     cursor: pointer;
+  }
+
+  footer {
+    height: 3%;
   }
 </style>

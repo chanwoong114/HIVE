@@ -1,25 +1,27 @@
 <template>
-  <div class="board-detail">
-    <div class="common-buttons">
-      <span v-if="article.user.username===$store.state.username">
-        <button type="button" class="w3-button w3-round w3-blue-gray" @click="articleUpdate">수정</button>&nbsp;
-        <button type="button" class="w3-button w3-round w3-red" @click="articleDelete">삭제</button>&nbsp;
-      </span>
-      <button type="button" class="w3-button w3-round w3-gray" @click="articleList">목록</button>
-    </div>
-    <div class="board-contents">
-      <h3 class="text-white">{{ article.title }}</h3>
-      <div>
-        <strong class="w3-large">{{ article.user.username }}</strong>
-        <br>
-        <span>{{ article.updated_at.slice(0, 10) }}</span>
+  <div class="bg-gray">
+    <div class="board-detail">
+      <div class="common-buttons">
+        <span v-if="article.user.username===$store.state.username">
+          <button type="button" class="w3-button w3-round w3-blue-gray" @click="articleUpdate">수정</button>&nbsp;
+          <button type="button" class="w3-button w3-round w3-red" @click="articleDelete">삭제</button>&nbsp;
+        </span>
+        <button type="button" class="w3-button w3-round w3-gray" @click="articleList">목록</button>
       </div>
-    </div>
-    <div class="board-contents">
-      <span>{{ article.content }}</span>
-    </div>
-    <div class="board-contents">
-      <CommentView :articleId="article.id" :comments="article.comments"/>
+      <div class="board-contents">
+        <h3>{{ article.title }}</h3>
+        <div>
+          <strong class="w3-large">{{ article.user.username }}</strong>
+          <br>
+          <span>{{ article.updated_at.slice(0, 10) }}</span>
+        </div>
+      </div>
+      <div class="board-contents">
+        <span>{{ article.content }}</span>
+      </div>
+      <div class="board-contents">
+        <CommentView :articleId="article.id" :comments="article.comments"/>
+      </div>
     </div>
   </div>
 </template>

@@ -92,7 +92,7 @@ body {
   line-height: var(--ar-body-line-height);
   color: var(--ar-body-color);
   text-align: var(--ar-body-text-align);
-  background-color: var(--ar-body-bg);
+  background-color: var(--ar-gray-900);
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
@@ -158,8 +158,34 @@ h6, .h6 {
 }
 
 p {
+  color: var(--ar-gray-900);
   margin-top: 0;
   margin-bottom: 1.125rem;
+}
+
+span {
+  color: var(--ar-gray-900);
+}
+
+div {
+  color: var(--ar-gray-900);
+}
+
+li {
+  color: var(--ar-gray-900);
+}
+
+a {
+  color: var(--ar-gray-900);
+}
+
+strong {
+  color: var(--ar-gray-900);
+}
+
+
+.bordercard {
+  color: var(--ar-gray-900);
 }
 
 abbr[title] {

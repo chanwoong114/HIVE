@@ -1,10 +1,10 @@
 <template>
-  <div>
+  <div class="bg-gray">
     <h3>댓글 작성</h3>
     <div class="input-group mb-3 ">
       <input type="text" class="form-control" v-model="content"
       aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-      <span @click="createComment" class="input-group-text btn bg-primary text-white" id="inputGroup-sizing-default">&nbsp;&nbsp;작성&nbsp;&nbsp;</span>
+      <span @click="createComment" class="input-group-text btn bg-primary text-white" id="inputGroup-sizing-default">작성</span>
     </div>
 
     <hr>

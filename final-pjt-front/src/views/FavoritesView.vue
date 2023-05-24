@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="bg-gray">
     <div class="container py-5 mt-4 mt-lg-5 mb-lg-4 my-xl-5">
         <div class="row pt-sm-2 pt-lg-0">
           <!-- 프로필 바 사진은 992px)-->

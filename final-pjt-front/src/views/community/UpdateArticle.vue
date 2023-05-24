@@ -1,5 +1,5 @@
 <template>
-  <div class="board-detail">
+  <div class="board-detail bg-gray">
     <h1>글 수정</h1>
     <form @submit.prevent="updateArtiecle">
       <div class="board-contents">

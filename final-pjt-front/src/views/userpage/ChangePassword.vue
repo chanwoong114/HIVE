@@ -1,12 +1,12 @@
 <template>
-  <div>
+  <div class="bg-gray">
     <main class="page-wrapper">
       <!-- Page content-->
       <div class="d-lg-flex position-relative">
         <!-- Sign in form-->
         
         <div class="d-flex flex-column align-items-center mx-auto w-lg-50 h-100 px-3 px-lg-5 pt-5">
-          <img src="../../assets/bighive.png" alt="Logo" width="200" height="200">
+          <img src="../../assets/bighive.png" style="z-index: 1" alt="Logo" width="200" height="200">
           <h1>HIVE</h1>
           <h1>비밀번호 변경</h1>
           <div class="w-100 mt-auto" style="max-width: 526px;">

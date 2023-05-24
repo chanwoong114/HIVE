@@ -1,17 +1,20 @@
 <template>
-  <div class="container">
-    <br>
-    <h1>영화 검색</h1>
-    <div class="input-group mb-3">
-      <input type="text" class="form-control bg-dark border-bottom text-white" aria-label="Sizing example input"
-      placeholder="제목을 입력하세요" v-model.trim="searchWord" aria-describedby="inputGroup-sizing-default">
-    <span class="input-group-text btn btn-dark" id="inputGroup-sizing-default">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;검색</span>
-  </div>
-    <br><br><br><br>
-    <div>
-      <h3>{{ searchWord }} 을/를 검색한 결과입니다.</h3>
-      <div class="row row-cols-6">
-        <MovieDetailItem class="col" v-for="movie in searchMovie" :key="movie.id" :movie="movie"/>
+  <div class="bg-gray">
+    <div class="container">
+      <br>
+      <h1>영화 검색</h1>
+      <div class="pb-3 mb-3">
+        
+        <div class="position-relative"><i class="ai-mail fs-lg position-absolute top-50 start-0 translate-middle-y ms-3"></i>
+          <input class="form-control form-control-lg ps-5" type="email" v-model.trim="searchWord" placeholder="제목을 입력하세요" required>
+        </div>
+      </div>
+      <br><br><br><br>
+      <div>
+        <h3>{{ searchWord }} 을/를 검색한 결과입니다.</h3>
+        <div class="row row-cols-6">
+          <MovieDetailItem class="col" v-for="movie in searchMovie" :key="movie.id" :movie="movie"/>
+        </div>
       </div>
     </div>
   </div>

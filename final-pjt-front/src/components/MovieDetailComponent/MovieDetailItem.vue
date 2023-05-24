@@ -1,9 +1,9 @@
 <template>
   <div>
-    <div id="zoom" class="bg-dark card mb-4 border-dark" @click="gotoDetail(movie.id)">
+    <div id="zoom" class="bg-dark card mb-4 bordercard" @click="gotoDetail(movie.id)">
       <img :src="'https://image.tmdb.org/t/p/original/' + movie.poster_path" :alt="movie.title"   
-      class="card-img-top backgroundimg">
-      <img class="mainimg" :src="'https://image.tmdb.org/t/p/original/' + movie.poster_path" :alt="movie.title">
+      class="card-img backgroundimg">
+      <img class="mainimg rounded" :src="'https://image.tmdb.org/t/p/original/' + movie.poster_path" :alt="movie.title">
       <div v-if="movie.comments_rating > 0" id="movieInfo">
         <p>평점</p>
         <p>{{ movie.comments_rating }}</p>

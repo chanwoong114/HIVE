@@ -185,3 +185,15 @@ def genre(request):
 
     return Response(serializer.data, status=status.HTTP_200_OK)
 
+@api_view(['GET', 'POST', 'PUT', 'DELETE'])
+def comment_fix(request, comment_id):
+    comment = get_object_or_404(CommentMovie, pk=comment_id)
+    print(comment, request.data)
+    if request.method == 'PUT':
+        serializer = CommentSerializer(comment, data=request.data)
+        if serializer.is_valid(raise_exception=True):
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_200_OK)
+    elif request.method == 'DELETE':
+        comment.delete()
+        return Response('리뷰가 삭제되었습니다.', status=status.HTTP_204_NO_CONTENT)

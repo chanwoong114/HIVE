@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="bg-gray">
     <div class="container py-5 mt-4 mt-lg-5 mb-lg-4 my-xl-5">
       <div class="row pt-sm-2 pt-lg-0">
         <!-- 프로필 바 사진은 992px)-->
@@ -14,10 +14,10 @@
                   <p class="fs-sm text-muted mb-0">팔로잉 : {{ user?.followings_count }}</p>
                   <p class="fs-sm text-muted mb-0"> 팔로워 : {{ follower_count }}</p>
                   <br>
-                  <span type="button" v-if="!isFollow" @click="follow" class="fs-sm nav-link btn btn-outline-primary py-2 px-0 " style="width: 50%;">
+                  <span type="button" v-if="!isFollow" @click="follow" class="fs-sm btn btn-outline-primary py-2 px-0 " style="width: 50%;">
                     팔로우
                   </span>
-                  <span v-else @click="follow" class="fs-sm nav-link btn btn-outline-danger py-2 px-0 " style="width: 50%;">
+                  <span v-else @click="follow" class="fs-sm btn btn-outline-danger py-2 px-0 " style="width: 50%;">
                     언팔로우
                   </span>
                 </div>
@@ -109,4 +109,5 @@ export default {
 </script>
 
 <style scoped>
+
 </style>

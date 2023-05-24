@@ -2,7 +2,7 @@
   
   <div id="app" class="">
     <div>
-      <div class="dark-mode">
+      <div class="">
         <!-- 네브바-->
         <header class="navbar bg-white navbar-expand-lg fixed-top" >
           
@@ -115,7 +115,7 @@
 export default {
   data() {
     return {
-      darkMode: true
+      darkMode: false
     };
   },
   computed: {
@@ -140,6 +140,9 @@ export default {
     }
   
   },
+  created() {
+    this.toggleDarkMode()
+  }
   // watch: {
   //   $route() {
   //     window.scrollTo(0, 0);
@@ -180,16 +183,21 @@ nav a.router-link-exact-active {
   width: 130px;
   height: 90px;
 }
-<<<<<<< HEAD
-=======
 h1 {
+  font-family: 'jua';
+}
+
+h2 {
   font-family: 'jua';
 }
 
 h3 {
   font-family: 'jua';
 }
->>>>>>> 0986cd33fee926b5c374c104607008b26ebb4398
+
+h4 {
+  font-family: 'jua';
+}
 
 #video-bg {
   position: absolute;

@@ -9,7 +9,26 @@
               <div class="offcanvas-lg offcanvas-start" id="sidebarAccount">
                 <button class="btn-close position-absolute top-0 end-0 mt-3 me-3 d-lg-none" type="button" data-bs-dismiss="offcanvas" data-bs-target="#sidebarAccount"></button>
                 <div class="offcanvas-body">
-                  <div class="pb-2 pb-lg-0 mb-4 mb-lg-5"><img class="d-block rounded-circle mb-2" :src="`http://127.0.0.1:8000${user.profile}`" width="80">
+                  <div class="pb-2 pb-lg-0 mb-4 mb-lg-5">
+                    <img id="profileimg" class="d-block rounded-circle mb-2" :src="`http://127.0.0.1:8000${user.profile}`" 
+                    data-fancybox data-src="#profile" width="80">
+                    <div id="profile" style="display:none;width:70%; color:black;">
+                      <h2 style="color:black;">프로필 변경</h2>
+                      <div class="row">
+                        <div class="col-4">
+                          <img class="d-block rounded-circle mb-2" width="80" :src="`http://127.0.0.1:8000${user.profile}`">
+                        </div>
+                        <div class="col-7 row">
+                          <img id="changeimg" class="col-2 d-block rounded-circle mb-2" width="80" v-for="(image, index) in images" :key="index" 
+                          :src="`http://127.0.0.1:8000/media/accounts/${image}.png`" @click="isSelect(image)" :class="{'isSelected': selectimg===image}">
+                        </div>
+                        
+                        <div>
+                          <button class="btn btn-success" @click="change_profile">프로필 변경</button>
+                        </div>
+                      </div>
+                    </div>
+
                     <h3 class="h5 mb-1">{{ user.username }}</h3>
                     <p class="fs-sm text-muted mb-0">팔로잉 : {{ user.followings_count }}</p>
                     <p class="fs-sm text-muted mb-0"> 팔로워 : {{ user.follower_count }}</p>
@@ -46,39 +65,6 @@
                       </div>
                     </div>
                   </div>
-
-        
-                  <!-- Item-->
-                  <!-- <div class="col pb-2 pb-sm-3">
-                    <div class="card-hover position-relative bg-secondary rounded-1 p-3 mb-4"><span class="badge bg-faded-primary text-primary position-absolute top-0 start-0 mt-3 ms-3">New</span>
-                      <button class="btn btn-icon btn-sm btn-light bg-light border-0 rounded-circle position-absolute top-0 end-0 mt-3 me-3 zindex-5 opacity-0" type="button"><i class="ai-trash fs-xl text-danger"></i></button>
-                      <div class="swiper swiper-nav-onhover" data-swiper-options="{&quot;loop&quot;: true, &quot;navigation&quot;: {&quot;prevEl&quot;: &quot;.btn-prev&quot;, &quot;nextEl&quot;: &quot;.btn-next&quot;}}"><a class="swiper-wrapper" href="shop-single.html">
-                          <div class="swiper-slide p-2 p-xl-4"><img class="d-block mx-auto" src="assets/img/shop/products/05.png" width="226" alt="Product"></div></a>
-                        <button class="btn btn-prev btn-icon btn-sm btn-light bg-light border-0 rounded-circle start-0" type="button"><i class="ai-chevron-left fs-xl d-dark-mode-none"></i><i class="ai-chevron-left text-nav fs-xl d-none d-dark-mode-block"></i></button>
-                        <button class="btn btn-next btn-icon btn-sm btn-light bg-light border-0 rounded-circle end-0" type="button"><i class="ai-chevron-right fs-xl d-dark-mode-none"></i><i class="ai-chevron-right text-nav fs-xl d-none d-dark-mode-block"></i></button>
-                      </div>
-                    </div>
-                    <div class="d-flex mb-1">
-                      <h3 class="h6 mb-0"><a href="shop-single.html">Pendant lamp</a></h3>
-                      <div class="d-flex ps-2 mt-n1 ms-auto">
-                        <div class="ms-1">
-                          <input class="btn-check" type="radio" name="color4" value="Gray" checked id="color4-1">
-                          <label class="btn btn-icon btn-xs btn-outline-secondary rounded-circle" for="color4-1"><span class="d-block rounded-circle" style="width: .625rem; height: .625rem; background-color: #bab8b7;"></span></label>
-                        </div>
-                        <div class="ms-1">
-                          <input class="btn-check" type="radio" name="color4" value="Woody brown" id="color4-2">
-                          <label class="btn btn-icon btn-xs btn-outline-secondary rounded-circle" for="color4-2"><span class="d-block bg-size-cover bg-position-center rounded-circle" style="width: .625rem; height: .625rem; background-color: #c0c0c0; background-image: url(assets/img/shop/pattern/wood.jpg);"></span></label>
-                        </div>
-                        <div class="ms-1">
-                          <input class="btn-check" type="radio" name="color4" value="Gray marble" id="color4-3">
-                          <label class="btn btn-icon btn-xs btn-outline-secondary rounded-circle" for="color4-3"><span class="d-block bg-size-cover bg-position-center rounded-circle" style="width: .625rem; height: .625rem; background-color: #c0c0c0; background-image: url(assets/img/shop/pattern/marble.jpg);"></span></label>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="d-flex align-items-center"><span class="me-2">$22.00</span>
-                      <div class="nav ms-auto" data-bs-toggle="tooltip" data-bs-template="&lt;div class=&quot;tooltip fs-xs&quot; role=&quot;tooltip&quot;&gt;&lt;div class=&quot;tooltip-inner bg-light text-muted p-0&quot;&gt;&lt;/div&gt;&lt;/div&gt;" data-bs-placement="left" title="Add to cart"><a class="nav-link fs-lg py-2 px-1" href="#"><i class="ai-cart"></i></a></div>
-                    </div>
-                  </div> -->
                 </div>
               </div>
             </div>
@@ -96,6 +82,8 @@ export default {
   data() {
     return {
       user: null,
+      images: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+      selectimg: null,
     }
   },
   components: {
@@ -134,6 +122,34 @@ export default {
     },
     changePassword() {
       this.$router.push({name: 'ChangePassword'})
+    },
+    isSelect(imgId) {
+      if (this.selectimg === imgId) {
+        this.selectimg = null
+        return
+      }
+
+      this.selectimg = imgId
+    },
+    change_profile() {
+      if (!this.selectimg) {
+        alert('바꿀 이미지를 선택해주세요')
+      } 
+
+      axios({
+        method: 'put',
+        url: `http://127.0.0.1:8000/accounts/profile_change/${this.selectimg}/`,
+        headers: {
+          Authorization: `Token ${this.$store.state.token}`
+        }
+      })
+      .then(res => {
+        console.log(res)
+        this.$router.go(this.$router.currentRoute)
+      })
+      .catch(error => {
+        console.log(error)
+      })
     }
   },
   created() {
@@ -150,5 +166,18 @@ export default {
 </script>
 
 <style>
+  #profileimg:hover {
+    border: 2px solid white;
+    margin-bottom: 4px;
+  }
 
+  #changeimg:hover {
+    border: 2px solid black;
+    margin-bottom: 4px;
+  }
+
+  .isSelected {
+    border: 2px solid black;
+    margin-bottom: 4px;
+  }
 </style>

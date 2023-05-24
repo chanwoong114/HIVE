@@ -41,3 +41,11 @@ def userpage(request, username):
         person = get_object_or_404(get_user_model(), username=username)
         serializer = UserSerializer(person)
         return Response(serializer.data, status=status.HTTP_200_OK)
+
+@api_view(['PUT'])
+def profile_change(request, profile_num):
+    person = get_object_or_404(get_user_model(), pk=request.user.pk)
+    if request.method == 'PUT':
+        person.profile = f'accounts/{profile_num}.png'
+        person.save()
+        return Response('프로필 변경 완료', status=status.HTTP_200_OK)

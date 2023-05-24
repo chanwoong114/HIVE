@@ -6,5 +6,5 @@ urlpatterns = [
     path('delete/', views.delete),
     path('<int:user_pk>/follow/', views.follow),
     path('username/<str:username>/', views.userpage),
-
+    path('profile_change/<int:profile_num>/', views.profile_change),
 ]

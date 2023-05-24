@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import MovieView from '../views/MovieView.vue'
+// import MovieView from '../views/MovieView.vue'
 import HomeView from '../views/HomeView.vue'
 import GenreView from '../views/GenreView.vue'
 import FavoritesView from '../views/FavoritesView.vue'
@@ -22,7 +22,8 @@ const routes = [
   {
     path: '/movies',
     name: 'MovieView',
-    component: MovieView
+    // component:MovieView
+    component:()=> import('../views/MovieView.vue')
   },
   {
     path: '/',

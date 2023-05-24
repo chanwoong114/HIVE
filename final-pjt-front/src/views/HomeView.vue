@@ -3,10 +3,10 @@
     <!-- Page wrapper-->
 
     <div class="page-wrapper">
-    
+        
       <!-- 젤처름 꿀벌 3마리 랑 스크롤-->
       
-      <div class="bg-dark dark-mode position-relative min-vh-100 overflow-hidden pt-0">
+      <section class="bg-dark dark-mode position-relative min-vh-100 overflow-hidden pt-0">
         <svg class="position-absolute top-0" width="262" height="160" viewBox="0 0 262 160" fill="none" xmlns="http://www.w3.org/2000/svg" style="left: 6%;">
           <ellipse cx="131" cy="30.5" rx="131" ry="129.5" fill="white" fill-opacity=".03"></ellipse>
         </svg>
@@ -24,58 +24,56 @@
           <div class="parallax-layer zindex-2" data-depth="0.9" style="margin-top: -3cm;"><img src="../assets/C.png" alt="Foreground shape"></div>
           <div class="parallax-layer" data-depth="-0.1"><img src="assets/img/landing/intro/hero/01.png" alt="Background shapes"></div>
         </div>
-      </div>
+      </section>
       <!-- HIVE란?-->
       <div class="bg-gray py-2 py-lg-3 py-xl-4 py-xxl-5" id="landings">
         <div class="container py-5 mt-1 mb-2 mt-sm-2 mb-sm-3 mt-md-3 mb-md-4 my-lg-4 my-xl-5">
           <h1 class="display-5 text-center pt-xxl-2">HIVE란?</h1>
-          <h3 class="display-5 text-center pt-xxl-2">당신을 위해 최고의 영화를 선택해봤어요! 영화 속 세계로 여행을 떠나보세요.</h3>
-          <h3 class="fs-lg text-center  pb-3 pb-lg-0 mb-lg-5">"잠깐의 시간을 잊고 즐거운 시간을 보내실 수 있을 거예요. 여러분을 감동시키고 웃음을 안겨줄 영화를 선별했습니다. 편안한 자리에 앉아서 최고의 영화와 함께 특별한 순간을 즐겨보세요!"</h3>
+          <h3 class="display-5 text-center pt-xxl-2">당신을 위해 최고의 영화를 선택해봤어요!</h3>
+          <h3 class="display-5 text-center pt-xxl-2">영화 속 세계로 여행을 떠나보세요.</h3>
+          <h5 class="fs-lg text-center  pb-3 pb-lg-0 mb-lg-5">"잠깐의 시간을 잊고 즐거운 시간을 보내실 수 있을 거예요. 여러분을 감동시키고 웃음을 안겨줄 영화를 선별했습니다. 편안한 자리에 앉아서 최고의 영화와 함께 특별한 순간을 즐겨보세요!"</h5>
           <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 gy-5 pb-xl-3">
             <!-- 사진들어가는곳-->
             <div class="col">
               <div class="card-hover card-lifted mx-auto" style="max-width: 416px;">
                 <div class="card-lifted overflow-hidden rounded-3 mb-3"><img class="d-dark-mode-none" src="../assets/hh.png"><img class="d-none d-dark-mode-block" src="../assets/hh.png"></div>
-                <h3 class="h5 text-center mb-0"><a class="stretched-link" href="landing-mobile-app-showcase.html">박범진</a></h3>
+                <h3 class="text-center mb-0"><a class="stretched-link" href="#">박범진</a></h3>
               </div>
             </div>
             <div class="col">
               <div class="card-hover card-lifted mx-auto" style="max-width: 416px;">
                 <div class="card-lifted overflow-hidden rounded-3 mb-3"><img class="d-dark-mode-none" src="../assets/hh.png" ><img class="d-none d-dark-mode-block" src="../assets/hh.png"></div>
-                <h2 class="h5 text-center mb-0"><a class="stretched-link" href="landing-product.html">박범진</a></h2>
+                <h3 class="text-center mb-0"><a class="stretched-link" href="#">박범진</a></h3>
               </div>
             </div>
             <div class="col">
               <div class="card-hover card-lifted mx-auto" style="max-width: 416px;">
                 <div class="card-lifted overflow-hidden rounded-3 mb-3"><img class="d-dark-mode-none" src="../assets/hh.png" ><img class="d-none d-dark-mode-block" src="../assets/hh.png"></div>
-                <h3 class="h5 text-center mb-0"><a class="stretched-link" href="#">박범진</a></h3>
+                <h3 class="text-center mb-0"><a class="stretched-link" href="#">박범진</a></h3>
               </div>
             </div>
             <div class="col">
               <div class="card-hover card-lifted mx-auto" style="max-width: 416px;">
                 <div class="card-lifted overflow-hidden rounded-3 mb-3"><img class="d-dark-mode-none" src="../assets/hh.png"><img class="d-none d-dark-mode-block" src="../assets/hh.png"></div>
-                <h3 class="h5 text-center mb-0"><a class="stretched-link" href="landing-mobile-app-showcase.html">영화추천2</a></h3>
+                <h3 class="text-center mb-0"><a class="stretched-link" href="#">영화추천2</a></h3>
               </div>
             </div>
+            
             <div class="col">
               <div class="card-hover card-lifted mx-auto" style="max-width: 416px;">
                 <div class="card-lifted overflow-hidden rounded-3 mb-3"><img class="d-dark-mode-none" src="../assets/hh.png" ><img class="d-none d-dark-mode-block" src="../assets/hh.png"></div>
-                <h2 class="h5 text-center mb-0"><a class="stretched-link" href="landing-product.html">즐겨찾기2</a></h2>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card-hover card-lifted mx-auto" style="max-width: 416px;">
-                <div class="card-lifted overflow-hidden rounded-3 mb-3"><img class="d-dark-mode-none" src="../assets/hh.png" ><img class="d-none d-dark-mode-block" src="../assets/hh.png"></div>
-                <h3 class="h5 text-center mb-0"><a class="stretched-link" href="#">장르별3</a></h3>
+                <h3 class="text-center mb-0"><a class="stretched-link" href="#">장르별3</a></h3>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+    <br>
+    <br>
       <!-- 사이트 목업 보여주는곳-->
-
-      <section class="overflow-hidden pt-2 pt-sm-3 pt-md-4 pt-lg-3 pb-1 pb-sm-3 pb-md-4 pb-lg-5" >
+      <div class="bg-gray">
+      <section class="pt-2 pt-sm-3 pt-md-4 pt-lg-3 pb-1 pb-sm-3 pb-md-4 pb-lg-5" >
         <div class="container position-relative py-5 my-lg-3 my-xl-4 my-xxl-5">
           <div class="position-absolute" style="margin-left: -9.7%;" data-aos="zoom-in" data-aos-duration="500" data-aos-offset="300" data-disable-parallax-down="lg">
             <svg class="text-warning d-none d-lg-block" width="744" height="744" viewBox="0 0 744 744" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -101,18 +99,19 @@
           <div class="d-flex position-relative zindex-2 mb-3">
             <div class="flex-xxl-shrink-0 position-relative zindex-2" style="max-width: 700px; margin-top: 26%; margin-right: 5.6%;" data-aos="fade-up" data-aos-duration="500" data-aos-delay="400" data-disable-parallax-down="lg">
               <img class="rounded-3 mt-n5 mt-lg-0 d-block d-dark-mode-none" src="assets/Group3.png" alt="Page" style="box-shadow: 1.875rem .625rem 5rem rgba(65,81,98, .2);">
-              <img class="border rounded-3 mt-n5 mt-lg-0 d-none d-dark-mode-block" src="assets/Group3.png" alt="Page" style="box-shadow: 1.875rem .625rem 5rem rgba(0,0,0, .2);"></div>
+              <img class="rounded-3 mt-n5 mt-lg-0 d-none d-dark-mode-block" src="assets/Group3.png" alt="Page" style="box-shadow: 1.875rem .625rem 5rem rgba(0,0,0, .2);"></div>
             <div class="flex-xxl-shrink-0 position-relative zindex-1" style="max-width: 600px; margin-top: 17.6%; margin-right: 5.5%;" data-aos="fade-up" data-aos-duration="500" data-aos-delay="200" data-disable-parallax-down="lg">
               <img class="rounded-3 mt-n5 mt-lg-0 d-block d-dark-mode-none" src="assets/Group5.png" alt="Page" style="box-shadow: 1.875rem .625rem 5rem rgba(65,81,98, .2);">
-              <img class="border rounded-3 mt-n5 mt-lg-0 d-none d-dark-mode-block" src="assets/Group5.png" alt="Page" style="box-shadow: 1.875rem .625rem 5rem rgba(0,0,0, .2);"></div>
+              <img class="rounded-3 mt-n5 mt-lg-0 d-none d-dark-mode-block" src="assets/Group5.png" alt="Page" style="box-shadow: 1.875rem .625rem 5rem rgba(0,0,0, .2);"></div>
             <div class="flex-xxl-shrink-0" style="max-width: 600px;" data-aos="fade-up" data-aos-duration="500" data-aos-offset="250" data-disable-parallax-down="lg">
               <img class="rounded-3 d-block d-dark-mode-none" src="assets/Group6.png" alt="Page" style="box-shadow: 1.875rem .625rem 5rem rgba(65,81,98, .2);">
-              <img class="border rounded-3 d-none d-dark-mode-block" src="assets/Group6.png" alt="Page" style="box-shadow: 1.875rem .625rem 5rem rgba(0,0,0, .2);"></div>
+              <img class="rounded-3 d-none d-dark-mode-block" src="assets/Group6.png" alt="Page" style="box-shadow: 1.875rem .625rem 5rem rgba(0,0,0, .2);"></div>
           </div>
         </div>
       </section>
-      
+    </div>
       <!-- 출연진별-->
+      <div class="bg-gray">
       <section class="container pt-5 mt-lg-3 mt-xl-4 mt-xxl-5">
         <h2 class="display-5 text-center pt-2 pt-sm-3 pt-md-4 pt-lg-5 pb-lg-3 mt-xxl-2 mb-0">출연진별 모아보기</h2>
         
@@ -120,19 +119,17 @@
           <div class="col-md-6 col-lg-7 order-md-2 d-flex justify-content-end"><img class="d-dark-mode-none" src="assets/Group5.png" width="593" alt="Colors"><img class="d-none d-dark-mode-block" src="assets/Group5.png" width="593" alt="Colors"></div>
           <div class="col-md-6 col-lg-5 order-md-1 mt-md-n5" data-aos="fade-up" data-aos-duration="850" data-aos-offset="200" data-disable-parallax-down="md">
             <h2 class="mb-4">감독/출연진</h2>
-            <p class="fs-lg mb-0 mb-lg-4">선택한 감독/배우 별로 영화를 저희가 정성을 다해 선택해드려요!</p>
+            <h3 class="fs-lg mb-0 mb-lg-4">선택한 감독/배우 별로 영화를 저희가 정성을 다해 선택해드려요!</h3>
           </div>
         </div>
         
       </section>
-    
+      </div>
       <!-- 메일 -->
      
       
     
-      <footer class="footer py-4">
-        <div class="container text-center py-3"><span class="text-muted">&copy; <span class='text-danger'>❤명인❤찬웅❤</span> by </span><a class="nav-link d-inline fw-normal p-0" href="https://createx.studio/" target="_blank" rel="noopener">Team HIVE</a></div>
-      </footer>
+      
     <!-- Back to top button-->
     <a class="btn-scroll-top" href="#top" data-scroll>
       <svg viewBox="0 0 40 40" fill="currentColor" xmlns="http://www.w3.org/2000/svg">

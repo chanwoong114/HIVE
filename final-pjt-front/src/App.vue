@@ -10,12 +10,21 @@
             <img src="./assets/logo.png"  alt="Logo" width="35" height="32">
             HIVE
             </a>
+            <!-- 검색 -->
+
+            <div class="order-lg-2 me-3 me-lg-4 ms-auto d-none d-lg-block" >
+              <form class="d-flex ms-auto">
+                <input class="form-control me-2" type="search" placeholder="검색" aria-label="Search">
+                <button class="btn btn-primary" type="submit">검색</button>
+              </form>
+            </div>
             
             <div class="form-check form-switch mode-switch order-lg-2 me-3 me-lg-4 ms-auto" data-bs-toggle="mode">
               <input class="form-check-input" type="checkbox" id="theme-mode" v-model="darkMode" @click="toggleDarkMode()">
               <label class="form-check-label" for="theme-mode"><i class="ai-sun fs-lg"></i></label>
               <label class="form-check-label" for="theme-mode"><i class="ai-moon fs-lg"></i></label>
             </div>
+            
             <!-- 로그인버튼 -->
             <!-- 로그인이면 마이페이지 아니면 로그인 -->
             <div v-if="!isLogin" class="btn btn-success btn-sm fs-sm order-lg-3 d-none d-sm-inline-flex" target="_blank" rel="noopener" >
@@ -48,10 +57,11 @@
                 <li class="nav-item"><router-link class="nav-link" to="/community">게시판</router-link></li>
                 <!-- <li class="nav-item"><a class="nav-link" href="docs/getting-started.html">마이페이지</a></li> -->
               </ul>
-              <div class="d-sm-none p-3 mt-n3"><a class="btn btn-primary w-100  mb-1" href="https://themes.getbootstrap.com/product/around-multipurpose-template-ui-kit/" target="_blank" rel="noopener"><i class="ai-cart fs-xl me-2 ms-n1"></i>Buy now</a></div>
             </nav>
           </div>
         </header>
+
+        <!-- 네브바2 -->
         <header class="position-relative navbar bg-white navbar-expand-lg" >
           
           <div class="container"><a class="navbar-brand pe-sm-3" :href="`http://localhost:8080/movies`">
@@ -63,6 +73,7 @@
               <label class="form-check-label" for="theme-mode"><i class="ai-sun fs-lg"></i></label>
               <label class="form-check-label" for="theme-mode"><i class="ai-moon fs-lg"></i></label>
             </div>
+
             <!-- 로그인버튼 -->
             <!-- 로그인이면 마이페이지 아니면 로그인 -->
             <div v-if="!isLogin" class="btn btn-success btn-sm fs-sm order-lg-3 d-none d-sm-inline-flex" target="_blank" rel="noopener" >
@@ -92,11 +103,15 @@
                     </div>
                   </div>
                 </li>
+                
+     
+                
                 <!-- 게시판,마이페이지 -->
                 <li class="nav-item"><router-link class="nav-link" to="/community">게시판</router-link></li>
                 <!-- <li class="nav-item"><a class="nav-link" href="docs/getting-started.html">마이페이지</a></li> -->
+                
               </ul>
-              <div class="d-sm-none p-3 mt-n3"><a class="btn btn-primary w-100  mb-1" href="https://themes.getbootstrap.com/product/around-multipurpose-template-ui-kit/" target="_blank" rel="noopener"><i class="ai-cart fs-xl me-2 ms-n1"></i>Buy now</a></div>
+            
             </nav>
           </div>
         </header>

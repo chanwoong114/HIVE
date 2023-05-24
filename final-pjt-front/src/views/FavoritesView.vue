@@ -19,7 +19,7 @@
                           <img class="d-block rounded-circle mb-2" width="80" :src="`http://127.0.0.1:8000${user.profile}`">
                         </div>
                         <div class="col-7 row">
-                          <img id="changeimg" class="col-2 d-block rounded-circle mb-2" width="80" v-for="(image, index) in images" :key="index" 
+                          <img id="changeimg" class="col-2 d-block rounded mb-2 mx-2 px-auto" width="100%" v-for="(image, index) in images" :key="index" 
                           :src="`http://127.0.0.1:8000/media/accounts/${image}.png`" @click="isSelect(image)" :class="{'isSelected': selectimg===image}">
                         </div>
                         

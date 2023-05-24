@@ -1,5 +1,5 @@
 <template>
-  <div >
+  <div class="bg-gray">
     <h1 style="padding: 30px;">HIVE 추천 영화</h1>
     <PosterSlide :movies="movies?.user_data" :num="1"/>
     <h1 style="padding: 30px;">죽기전 꼭봐야하는 영화</h1>

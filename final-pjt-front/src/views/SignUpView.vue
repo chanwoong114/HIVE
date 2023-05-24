@@ -21,11 +21,11 @@
     </div> -->
   <main class="page-wrapper">
   <!-- Page content-->
-  <div class="d-lg-flex position-relative">
+  <div class="d-lg-flex position-relative bg-gray">
     <!-- Sign in form-->
     
-    <div class="d-flex flex-column align-items-center mx-auto w-lg-50 h-100 px-3 px-lg-5 pt-5"> <!-- 변경: 가운데 정렬을 위해 mx-auto 추가 -->
-      <img src="../assets/logo.png" alt="Logo" width="200" height="200">
+    <div class="d-flex flex-column align-items-center mx-auto w-lg-50 h-100 px-3 px-lg-5"> 
+      <div class="card-lifted overflow-hidden rounded-3"><img class="d-dark-mode-none" src="../assets/logo.png"><img class="d-none d-dark-mode-block" src="../assets/logo.png"></div>
       <H1>회원가입</H1>
       <div class="w-100 mt-auto" style="max-width: 526px;">
         <form class="needs-validation" @submit.prevent="signUp" novalidate>

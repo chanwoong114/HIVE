@@ -11,13 +11,14 @@
       <input type="submit" value="logIn">
     </form>
     <button @click="gotoSignup()">Sign Up</button> -->
-    <main class="page-wrapper">
+
       <!-- Page content-->
-      <div class="d-lg-flex position-relative">
+      <div class="d-lg-flex position-relative bg-gray">
         <!-- Sign in form-->
         
-        <div class="d-flex flex-column align-items-center mx-auto w-lg-50 h-100 px-3 px-lg-5 pt-5">
-          <img src="../assets/logo.png" alt="Logo" width="200" height="200">
+        <div class="d-flex flex-column align-items-center mx-auto w-lg-50 h-100 px-3 px-lg-5">
+          <div class="card-lifted overflow-hidden rounded-3 "><img class="d-dark-mode-none" src="../assets/logo.png"><img class="d-none d-dark-mode-block" src="../assets/logo.png"></div>
+      
           <h1>로그인</h1>
           <div class="w-100 mt-auto" style="max-width: 526px;">
             
@@ -59,7 +60,7 @@
         <!-- Cover image-->
         <!-- <div class="w-50 bg-size-cover bg-repeat-0 bg-position-center" style="background-image: url(assets/hive.png);"></div> -->
       </div>
-    </main>
+   
      
   </div>
 </template>
@@ -96,4 +97,5 @@ img {
     position: relative;
     z-index: -1;
 }
+
 </style>

@@ -1,7 +1,8 @@
 <template>
   <div>
-    <div class="f-carousel" :id="`myCarousel${num}`">
-      <div class="f-carousel__slide poster" v-for="(movie) in movies" :key="movie.id">
+    <div class="f-carousel" :id="`myCarousel${num}`" >
+      <div id="carouselPoster" class="f-carousel__slide poster" v-for="(movie) in movies" :key="movie.id" >
+        <img class="back" :src="'https://image.tmdb.org/t/p/original/' + movie?.poster_path" >
         <img class="bgimg" :src="'https://image.tmdb.org/t/p/original/' + movie?.poster_path" 
         :alt="movie?.title">
         <div class="title">
@@ -102,9 +103,20 @@ export default {
     height: 400px;
     object-fit: cover;
   }
-
+  .back{
+    position: absolute;
+    opacity: 0.3;
+    z-index: -1;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
   
   .zoom {
+    position: relative;
+  }
+
+  #carouselPoster {
     position: relative;
   }
 

@@ -1,10 +1,10 @@
 <template>
-  <div class="container">
-    <h1>유저 추천 영화</h1>
+  <div >
+    <h1 style="padding: 30px;">HIVE 추천 영화</h1>
     <PosterSlide :movies="movies?.user_data" :num="1"/>
-    <h1>높은 평점 추천 영화</h1>
+    <h1 style="padding: 30px;">죽기전 꼭봐야하는 영화</h1>
     <PosterSlide :movies="movies?.weight_data" :num="2"/>
-    <h1>랜덤 영화</h1>
+    <h1 style="padding: 30px;">오늘 이거 어때요?</h1>
     <PosterSlide :movies="movies?.random_data" :num="3"/>
   </div>
 </template>

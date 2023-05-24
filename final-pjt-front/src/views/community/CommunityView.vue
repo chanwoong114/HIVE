@@ -1,35 +1,11 @@
 <template>
-  <!-- <div>
-    <h1>커뮤니티</h1>
-    <router-link :to="{name: 'CreateArticle'}">글 작성하기</router-link>
-    <div v-for="article in articles" :key="article.id" @click="gotoArticle(article.id)">
-      {{ article.title }} : {{ article.content }}
-    </div>
-  </div> -->
+  
   <div class="board-list">
+    <!-- 게시글생성 버튼 -->
     <div class="common-buttons">
-      <button type="button" class="w3-button w3-round w3-blue-gray" @click="createArticle()">등록</button>
+      <button type="button" class="w3-button w3-round w3-blue-gray" @click="createArticle()">글쓰기</button>
     </div>
-    <table class="w3-table-all text-dark">
-      <thead>
-      <tr class="text-dark">
-        <th>No</th>
-        <th>제목</th>
-        <th>작성자</th>
-        <th>등록일자</th>
-        <th>댓글 수</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr class="text-dark" v-for="(row, idx) in articles" :key="idx">
-        <td>{{ row.id }}</td>
-        <td class="zoom" v-on:click="gotoArticle(row.id)">{{ row.title }}</td>
-        <td class="zoom" @click="gotoUser(row.user.username)">{{ row.user.username }}</td>
-        <td>{{ row.updated_at.slice(0, 10) }}</td>
-        <td>{{ row.comment_counts }}</td>
-      </tr>
-      </tbody>
-    </table>
+    
     <div class="pagination w3-bar w3-padding-16 w3-small" v-if="paging.total_list_cnt > 0">
       <span class="pg">
       <a href="javascript:;" @click="fnPage(1)" class="first w3-button w3-border">&lt;&lt;</a>
@@ -48,8 +24,67 @@
       <a href="javascript:;" @click="fnPage(`${paging.total_page_cnt}`)" class="last w3-button w3-border">&gt;&gt;</a>
       </span>
     </div>
+
+    <div class="container pt-5 pb-lg-5 pb-md-4 pb-2 my-5">
+        <!-- 게시글 네브바 -->
+        <div class="row align-items-center gy-2 mb-4 pb-1 pb-sm-2 pb-lg-3">
+          <div class="col-lg-5">
+            <h1 class="mb-lg-0">게시판</h1>
+          </div>
+          <div class="col-xl-2 offset-xl-1 col-lg-3 col-sm-5">
+            <select class="form-select">
+              <option>All categories</option>
+              <option>뭐별</option>
+              <option>뭐별</option>
+            </select>
+          </div>
+          <div class="col-lg-4 col-sm-7">
+            <div class="position-relative"><i class="ai-search position-absolute top-50 start-0 translate-middle-y ms-3"></i>
+              <input class="form-control ps-5" type="search" placeholder="Enter keyword">
+            </div>
+          </div>
+        </div>
+        <!-- 게시글들 -->
+        <article class="row g-0 border-0 mb-4" v-for="(row, idx) in articles" :key="idx">
+          <a class="col-sm-5 col-lg-4 bg-repeat-0 bg-size-cover bg-position-center rounded-5" href="#" style="background-color: blueviolet; min-height: 16rem"></a>
+          <div class="col-sm-7 col-lg-8">
+            <div class="pt-4 pb-sm-4 ps-sm-4 pe-lg-4">
+              <h3>No.{{ row.id }}</h3>
+              <h3 class="zoom" v-on:click="gotoArticle(row.id)"><a :href="row.url">제목 {{ row.title }}</a></h3>
+              <p class="zoom d-sm-none d-md-block" @click="gotoUser(row.user.username)">작성자 {{ row.user.username }}</p>
+              <p>등록일자 {{ row.updated_at.slice(0, 10) }}</p>
+              <p>댓글 {{ row.comment_counts }}</p>
+            </div>
+          </div>
+        </article>
+  
+        <div class="row gy-3 align-items-center mt-lg-5 pt-2 pt-md-3 pt-lg-0 mb-md-2 mb-xl-4">
+          <div class="col col-md-4 col-6 order-md-1 order-1">
+            
+          </div>
+       
+          <div class="col col-md-4 col-6 order-md-3 order-2">
+            <nav aria-label="Page navigation">
+              <ul class="pagination pagination-sm justify-content-end">
+                <li class="page-item active" aria-current="page"><span class="page-link">1<span class="visually-hidden">(current)</span></span></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">4</a></li>
+                <li class="page-item"><a class="page-link" href="#">5</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+   
+    <!-- Subscription-->
+    
   </div>
 </template>
+
+
+
+
 
 <script>
 export default {

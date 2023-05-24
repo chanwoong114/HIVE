@@ -44,9 +44,13 @@
             </div>
           </div>
         </div>
+
         <!-- 게시글들 -->
         <article class="row g-0 border-0 mb-4" v-for="(row, idx) in articles" :key="idx">
-          <a class="col-sm-5 col-lg-4 bg-repeat-0 bg-size-cover bg-position-center rounded-5" href="#" style="background-color: blueviolet; min-height: 16rem"></a>
+        
+          <a class="col-sm-5 col-lg-4 bg-repeat-0 bg-size-cover bg-position-center rounded-5" href="#" style="background-color: gray; min-height: 2rem; position: relative;">
+            <img class="position-absolute top-0 start-0 h-100 w-100 rounded-5" src="assets/img/hh.png" alt="">
+          </a>
           <div class="col-sm-7 col-lg-8">
             <div class="pt-4 pb-sm-4 ps-sm-4 pe-lg-4">
               <h3>No.{{ row.id }}</h3>
@@ -185,5 +189,5 @@ export default {
     transform: scale(1.2);
     transition: 0.7s;
   }
-
+  
 </style>

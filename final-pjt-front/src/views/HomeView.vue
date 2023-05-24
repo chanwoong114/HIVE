@@ -6,7 +6,7 @@
     
       <!-- 젤처름 꿀벌 3마리 랑 스크롤-->
       
-      <div class="bg-dark dark-mode position-relative min-vh-100 overflow-hidden pt-5">
+      <div class="bg-dark dark-mode position-relative min-vh-100 overflow-hidden pt-0">
         <svg class="position-absolute top-0" width="262" height="160" viewBox="0 0 262 160" fill="none" xmlns="http://www.w3.org/2000/svg" style="left: 6%;">
           <ellipse cx="131" cy="30.5" rx="131" ry="129.5" fill="white" fill-opacity=".03"></ellipse>
         </svg>
@@ -29,7 +29,7 @@
       <div class="bg-gray py-2 py-lg-3 py-xl-4 py-xxl-5" id="landings">
         <div class="container py-5 mt-1 mb-2 mt-sm-2 mb-sm-3 mt-md-3 mb-md-4 my-lg-4 my-xl-5">
           <h1 class="display-5 text-center pt-xxl-2">HIVE란?</h1>
-          <h2 class="display-5 text-center pt-xxl-2">당신을 위해 최고의 영화를 선택해봤어요! 영화 속 세계로 여행을 떠나보세요.</h2>
+          <h3 class="display-5 text-center pt-xxl-2">당신을 위해 최고의 영화를 선택해봤어요! 영화 속 세계로 여행을 떠나보세요.</h3>
           <h3 class="fs-lg text-center  pb-3 pb-lg-0 mb-lg-5">"잠깐의 시간을 잊고 즐거운 시간을 보내실 수 있을 거예요. 여러분을 감동시키고 웃음을 안겨줄 영화를 선별했습니다. 편안한 자리에 앉아서 최고의 영화와 함께 특별한 순간을 즐겨보세요!"</h3>
           <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 gy-5 pb-xl-3">
             <!-- 사진들어가는곳-->
@@ -75,7 +75,7 @@
     </div>
       <!-- 사이트 목업 보여주는곳-->
 
-      <section class="overflow-hidden pt-2 pt-sm-3 pt-md-4 pt-lg-3 pb-1 pb-sm-3 pb-md-4 pb-lg-5">
+      <section class="overflow-hidden pt-2 pt-sm-3 pt-md-4 pt-lg-3 pb-1 pb-sm-3 pb-md-4 pb-lg-5" >
         <div class="container position-relative py-5 my-lg-3 my-xl-4 my-xxl-5">
           <div class="position-absolute" style="margin-left: -9.7%;" data-aos="zoom-in" data-aos-duration="500" data-aos-offset="300" data-disable-parallax-down="lg">
             <svg class="text-warning d-none d-lg-block" width="744" height="744" viewBox="0 0 744 744" fill="currentColor" xmlns="http://www.w3.org/2000/svg">

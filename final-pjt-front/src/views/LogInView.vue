@@ -17,8 +17,7 @@
         <!-- Sign in form-->
         
         <div class="d-flex flex-column align-items-center mx-auto w-lg-50 h-100 px-3 px-lg-5 pt-5">
-          <img src="../assets/bighive.png" alt="Logo" width="200" height="200">
-          <h1>HIVE</h1>
+          <img src="../assets/logo.png" alt="Logo" width="200" height="200">
           <h1>로그인</h1>
           <div class="w-100 mt-auto" style="max-width: 526px;">
             

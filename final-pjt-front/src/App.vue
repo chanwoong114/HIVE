@@ -2,39 +2,12 @@
   
   <div id="app" class="">
     <div>
-    <!-- <div v-if="isLogin"> -->
-      <!-- <nav id="navbar-example2" class="navbar bg-dark px-3 mb-3 d-flex justify-content-between align-items-center">
-        <span class="d-flex align-items-center">
-          <a class="navbar-brand" :href="`http://localhost:8080/movies`"><img class="hive" src="./assets/hive.png" alt="nike"></a>
-  
-          <ul class="nav nav-pills">
-            <li class="nav-item">
-              <a class="nav-link" ><router-link to="/movies">movies</router-link></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link"><router-link to="/genre">genre</router-link></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link"><router-link :to="{name: 'community'}">community</router-link></a>
-            </li>
-          </ul>
-        </span>
-        <ul class="nav nav-pills">
-          <li class="nav-item">
-            <a class="nav-link"><router-link to="/favorites">mypage</router-link></a>
-          </li>
-          
-          <li class="nav-item ml-auto">
-            <input type="text" placeholder="Search" class="form-control">
-          </li>
-        </ul>
-      </nav> -->
       <div class="dark-mode">
         <!-- 네브바-->
         <header class="navbar bg-white navbar-expand-lg fixed-top" >
           
           <div class="container"><a class="navbar-brand pe-sm-3" :href="`http://localhost:8080/movies`">
-            <img src="./assets/bighive.png"  alt="Logo" width="35" height="32">
+            <img src="./assets/logo.png"  alt="Logo" width="35" height="32">
             HIVE
             </a>
             
@@ -193,13 +166,6 @@ nav a.router-link-exact-active {
 .hive {
   width: 130px;
   height: 90px;
-}
-h1 {
-  color: #FFD963;
-}
-
-h3 {
-  color: #FFD963;
 }
 
 #video-bg {

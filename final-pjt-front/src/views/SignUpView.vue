@@ -25,9 +25,8 @@
     <!-- Sign in form-->
     
     <div class="d-flex flex-column align-items-center mx-auto w-lg-50 h-100 px-3 px-lg-5 pt-5"> <!-- 변경: 가운데 정렬을 위해 mx-auto 추가 -->
-      <img src="../assets/bighive.png" alt="Logo" width="200" height="200">
-      <h1>HIVE</h1>
-      <h1>회원가입</h1>
+      <img src="../assets/logo.png" alt="Logo" width="200" height="200">
+      <H1>회원가입</H1>
       <div class="w-100 mt-auto" style="max-width: 526px;">
         <form class="needs-validation" @submit.prevent="signUp" novalidate>
           <div class="pb-3 mb-3">

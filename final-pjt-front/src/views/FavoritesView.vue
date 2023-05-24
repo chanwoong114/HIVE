@@ -9,19 +9,21 @@
               <div class="offcanvas-lg offcanvas-start" id="sidebarAccount">
                 <button class="btn-close position-absolute top-0 end-0 mt-3 me-3 d-lg-none" type="button" data-bs-dismiss="offcanvas" data-bs-target="#sidebarAccount"></button>
                 <div class="offcanvas-body">
-                  <div class="pb-2 pb-lg-0 mb-4 mb-lg-5"><img class="d-block rounded-circle mb-2" src="assets/img/avatar/23.jpg" width="80">
+                  <div class="pb-2 pb-lg-0 mb-4 mb-lg-5"><img class="d-block rounded-circle mb-2" :src="`http://127.0.0.1:8000${user.profile}`" width="80">
                     <h3 class="h5 mb-1">{{ user.username }}</h3>
                     <p class="fs-sm text-muted mb-0">팔로잉 : {{ user.followings_count }}</p>
                     <p class="fs-sm text-muted mb-0"> 팔로워 : {{ user.follower_count }}</p>
-                    <p class="fs-sm text-muted mb-0">자기소개</p>
                   </div>
                   <nav class="nav flex-column pb-2 pb-lg-4 mb-3">
-                    <h4 class="fs-xs fw-medium text-muted text-uppercase pb-1 mb-2">Account</h4><a class="nav-link fw-semibold py-2 px-0" href="account-overview.html"><i class="ai-user-check fs-5 opacity-60 me-2"></i>Overview</a><a class="nav-link fw-semibold py-2 px-0" href="account-settings.html"><i class="ai-settings fs-5 opacity-60 me-2"></i>Settings</a><a class="nav-link fw-semibold py-2 px-0" href="account-billing.html"><i class="ai-wallet fs-5 opacity-60 me-2"></i>Billing</a>
+                    <h4 class="fs-xs fw-medium text-muted text-uppercase pb-1 mb-2">Account</h4>
+                      <span class="nav-link fw-semibold py-2 px-0" @click="changePassword"><i class="ai-settings fs-5 opacity-60 me-2"></i>Password Change</span>
                   </nav>
-                  <nav class="nav flex-column pb-2 pb-lg-4 mb-1">
-                    <h4 class="fs-xs fw-medium text-muted text-uppercase pb-1 mb-2">Dashboard</h4><a class="nav-link fw-semibold py-2 px-0" href="account-orders.html"><i class="ai-cart fs-5 opacity-60 me-2"></i>Orders</a><a class="nav-link fw-semibold py-2 px-0" href="account-earnings.html"><i class="ai-activity fs-5 opacity-60 me-2"></i>Earnings</a><a class="nav-link fw-semibold py-2 px-0" href="account-chat.html"><i class="ai-messages fs-5 opacity-60 me-2"></i>Chat<span class="badge bg-danger ms-auto">4</span></a><a class="nav-link fw-semibold py-2 px-0 active" href="account-favorites.html"><i class="ai-heart fs-5 opacity-60 me-2"></i>Favorites</a>
+                  <nav class="nav flex-column">
+                    <a class="nav-link fw-semibold py-2 px-0" @click="signOut" href="">
+                    <i class="ai-logout fs-5 opacity-60 me-2"></i>Sign out</a>
+                    <a class="nav-link fw-semibold py-2 px-0" style="color:orangered;" @click="deleteUser" href="">
+                    <i class="ai-delete fs-5 opacity-60 me-2"></i>회원 탈퇴</a>
                   </nav>
-                  <nav class="nav flex-column"><a class="nav-link fw-semibold py-2 px-0" href="account-signin.html"><i class="ai-logout fs-5 opacity-60 me-2"></i>Sign out</a></nav>
                 </div>
               </div>
             </div>
@@ -29,8 +31,8 @@
           <!-- Page content-->
           <div class="col-lg-9 pt-4 pb-2 pb-sm-4">
             <div class="d-flex align-items-center mb-4">
-              <h1 class="h2 mb-0">관심있는 영화 <span class='fs-base fw-normal text-muted'>{{ likeMovies.length }}개잇듬</span></h1>
-              <button class="btn btn-sm btn-outline-danger ms-auto" type="button"><i class="ai-trash ms-n1 me-2"></i>Clear all</button>
+              <h1 class="h2 mb-0">관심있는 영화 <span class='fs-base fw-normal text-muted'>{{ likeMovies.length }}개</span></h1>
+              <button class="btn btn-sm btn-outline-danger ms-auto" type="button" @click="clearAll"><i class="ai-trash ms-n1 me-2"></i>Clear all</button>
             </div>
             <div class="card border-0 py-1 p-md-2 p-xl-3 p-xxl-4">
               <div class="card-body pb-4">
@@ -47,7 +49,7 @@
 
         
                   <!-- Item-->
-                  <div class="col pb-2 pb-sm-3">
+                  <!-- <div class="col pb-2 pb-sm-3">
                     <div class="card-hover position-relative bg-secondary rounded-1 p-3 mb-4"><span class="badge bg-faded-primary text-primary position-absolute top-0 start-0 mt-3 ms-3">New</span>
                       <button class="btn btn-icon btn-sm btn-light bg-light border-0 rounded-circle position-absolute top-0 end-0 mt-3 me-3 zindex-5 opacity-0" type="button"><i class="ai-trash fs-xl text-danger"></i></button>
                       <div class="swiper swiper-nav-onhover" data-swiper-options="{&quot;loop&quot;: true, &quot;navigation&quot;: {&quot;prevEl&quot;: &quot;.btn-prev&quot;, &quot;nextEl&quot;: &quot;.btn-next&quot;}}"><a class="swiper-wrapper" href="shop-single.html">
@@ -76,7 +78,7 @@
                     <div class="d-flex align-items-center"><span class="me-2">$22.00</span>
                       <div class="nav ms-auto" data-bs-toggle="tooltip" data-bs-template="&lt;div class=&quot;tooltip fs-xs&quot; role=&quot;tooltip&quot;&gt;&lt;div class=&quot;tooltip-inner bg-light text-muted p-0&quot;&gt;&lt;/div&gt;&lt;/div&gt;" data-bs-placement="left" title="Add to cart"><a class="nav-link fs-lg py-2 px-1" href="#"><i class="ai-cart"></i></a></div>
                     </div>
-                  </div>
+                  </div> -->
                 </div>
               </div>
             </div>
@@ -119,6 +121,20 @@ export default {
     gotoDetail(movieId) {
       this.$router.push({name: 'MovieDetailView', params: {movieId: `${movieId}`}})
     },
+    clearAll() {
+      this.$store.dispatch('clearAll')
+    },
+    signOut() {
+      if (!confirm("로그아웃 하시겠습니까?")) return
+      this.$store.dispatch('signOut')
+    },
+    deleteUser() {
+      if (!confirm("회원탈퇴 하시겠습니까?")) return
+      this.$store.dispatch('deleteUser')
+    },
+    changePassword() {
+      this.$router.push({name: 'ChangePassword'})
+    }
   },
   created() {
     this.getUserInfo()

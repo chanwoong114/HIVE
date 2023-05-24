@@ -58,11 +58,17 @@ const movie = {
       .then(res => {
         console.log(res.data)
         context.commit('LOAD_USER_DATA', res.data.rated_movies)
+        context.commit('SAVE_LIKE_USERS', res.data.followings)
       })
       .catch(err => {
         console.log(err)
       })
     },
+    clearAll(context) {
+      context.state.rated_movies.forEach(movieId => {
+        context.dispatch('movieLike', [movieId, false])
+      })
+    }
   },
 }
 

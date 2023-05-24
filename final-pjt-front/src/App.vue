@@ -131,7 +131,7 @@
     </div>
     
     <router-view class="pt-2"/>
-    <footer class="footer py-4">
+    <footer class="footer py-4 bg-dark">
       <div class="container text-center py-3">
         <span class="text-muted">&copy; <span class='text-danger'></span></span>
         <a class="nav-link d-inline fw-normal p-0" href="https://www.instagram.com/non_inss/" target="_blank" rel="noopener">Team HIVE</a></div>

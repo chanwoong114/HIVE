@@ -26,14 +26,14 @@ def delete(request):
 def follow(request, user_pk):
     person = get_object_or_404(get_user_model(), pk=user_pk)
     if person == request.user:
-        return Response('본인은 본인을 팔로우 할 수 없습니다.')
+        return Response('본인은 본인을 팔로우 할 수 없습니다.', status=status.HTTP_400_BAD_REQUEST)
     
     if person.followers.filter(pk=request.user.pk).exists():
         person.followers.remove(request.user)
-        return Response('팔로우 취소')
+        return Response({'id': user_pk, 'follow': False})
     else:
         person.followers.add(request.user)
-        return Response('팔로우')
+        return Response({'id': user_pk, 'follow': True})
     
 @api_view(['GET', 'POST'])
 def userpage(request, username):

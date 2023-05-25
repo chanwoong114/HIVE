@@ -11,13 +11,13 @@
       <div class="board-contents">
         <h3>{{ article.title }}</h3>
         <div>
-          <strong class="w3-large">{{ article.user.username }}</strong>
+          <strong class="w3-large">작성자 : {{ article.user.username }}</strong>
           <br>
-          <span>{{ article.updated_at.slice(0, 10) }}</span>
+          <span>작성일자 {{ article.updated_at.slice(0, 10) }}</span>
         </div>
       </div>
       <div class="board-contents">
-        <span>{{ article.content }}</span>
+        <span>내용 : {{ article.content }}</span>
       </div>
       <div class="board-contents">
         <CommentView :articleId="article.id" :comments="article.comments"/>
@@ -84,9 +84,9 @@ export default {
 
 <style>
   .underbar {
-    border-bottom: 1px solid #999;
+    border-bottom: 1px solid var(--ar-gray-900);
   }
   div {
-    color: #fff;
+    color: var(--ar-gray-900);
   }
 </style>

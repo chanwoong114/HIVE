@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray">
+  <div>
     <h3>댓글 작성</h3>
     <div class="input-group mb-3 ">
       <input type="text" class="form-control" v-model="content"

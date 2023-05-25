@@ -1,6 +1,6 @@
 <template>
   <div class="bg-gray">
-    <div class="board-detail">
+    <div class="board-detail pt-5">
       <h1>글 작성</h1>
       <form @submit.prevent="createArtiecle">
         <div class="board-contents">
@@ -12,7 +12,7 @@
           </textarea>
         </div>
         <div class="common-buttons">
-          <button type="submit" class="w3-button w3-round w3-blue-gray" v-on:click="createArtiecle">저장</button>&nbsp;
+          <button type="submit" class="w3-button w3-round w3-blue-gray">저장</button>&nbsp;
           <button type="button" class="w3-button w3-round w3-gray" v-on:click="articleList">목록</button>
         </div>
       </form>

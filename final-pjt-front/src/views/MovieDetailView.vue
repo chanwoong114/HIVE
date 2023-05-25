@@ -33,11 +33,10 @@
           </div>    
         </div>
       </div>
-      <br>
       </div>
       
       <div class="bg-gray" style="text-align: center;" >
-        <div class="container mt-2 pt-5" >
+        <div class="container pt-5 pb-5" >
           
           <span style="font-size:xx-large;">
             <span id="pointer" @click="selectContentToggle(0)" :class="{'selected': selectContent===0}">연관 추천 영화</span> &nbsp;

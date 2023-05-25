@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray">
+  <div class="bg-gray pb-3">
 
     <div class="board-list">
       <!-- 게시글생성 버튼 -->
@@ -34,7 +34,7 @@
             </a>
             <div class="col-sm-7 col-lg-8">
               <div class="pt-4 pb-sm-4 ps-sm-4 pe-lg-4">
-                <h3>No.{{ row.id }}</h3>
+                <h3>No.{{ idx+1 + 5*(currentPage-1) }}</h3>
                 <h3 class="zoom" v-on:click="gotoArticle(row.id)"><a :href="row.url">제목 : {{ row.title }}</a></h3>
                 <p class="zoom d-sm-none d-md-block" @click="gotoUser(row.user.username)">작성자 : {{ row.user.username }}</p>
                 <p>등록일자 {{ row.updated_at.slice(0, 10) }}</p>
@@ -51,9 +51,9 @@
             <div class="col col-md-4 col-6 order-md-3 order-2">
               <nav aria-label="Page navigation">
                 <ul class="pagination pagination-sm justify-content-end">
-                  <li  :class="{'visually-hidden': currentPage==1}" ><span class="page-link">이전</span></li>
+                  <li  :class="{'visually-hidden': currentPage==1}" ><span class="page-link" @click="pageSwitch(1)" >First</span></li>
                   <li v-for="(page, index) in pageidx" :key="index" :class="{'active': currentPage===page, 'visually-hidden': (page > currentPage + 2 || page < currentPage - 2)}" ><span class="page-link" @click="pageSwitch(page)">{{ page }}</span></li>
-                  <li  :class="{'visually-hidden': currentPage==pageidx}" ><span class="page-link">다음</span></li>
+                  <li  :class="{'visually-hidden': currentPage==pageidx}" ><span class="page-link" @click="pageSwitch(pageidx)">Last</span></li>
                 </ul>
               </nav>
             </div>
@@ -125,7 +125,7 @@ export default {
     },
     pageArticle() {
       return this.articles.filter((article, index) => {
-        return parseInt(index/5) === this.currentPage
+        return parseInt((index)/5+1) === this.currentPage
       })
     }
   }
@@ -146,7 +146,7 @@ export default {
 
   .board-contents {
       padding: 12px 8px;
-      border-bottom: 1px solid #eee;
+      border-bottom: 1px solid var(--ar-gray-900);
   }
 
   .common-buttons {

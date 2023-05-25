@@ -183,6 +183,10 @@ strong {
   color: var(--ar-gray-900);
 }
 
+hr {
+  color: var(--ar-gray-900);
+}
+
 
 .bordercard {
   color: var(--ar-gray-900);

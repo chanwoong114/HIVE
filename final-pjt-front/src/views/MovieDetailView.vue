@@ -74,10 +74,10 @@
                 <p id="personP">{{ movie?.crew_ids.name }}</p>
               </a>
               <div id="crew-content" style="display:none;width:70%;">
-                <h1>{{ movie?.crew_ids.name }}</h1>
+                <h1 style="color:black;">{{ movie?.crew_ids.name }}</h1>
                 <br>
                 <br>
-                <h3>제작한 영화</h3>
+                <h3 style="color:black;">제작한 영화</h3>
                 <div id="cardbox" class="row mx-auto">
                   <MovieDetailItem class="col-2 rounded" v-for="(crewMovie, index) in personMovie" :key="index" :movie="crewMovie"/>
                 </div>
@@ -94,10 +94,10 @@
                   <p id="personP">{{ cast.name }}</p>
                 </a>
                 <div :id="cast.id" style="display:none;width:70%;">
-                  <h1>{{ cast.name }}</h1>
+                  <h1 style="color:black;">{{ cast.name }}</h1>
                   <br>
                   <br>
-                  <h3>참여한 영화</h3>
+                  <h3 style="color:black;">참여한 영화</h3>
                   <div class="row">
                     <div class="col-2" v-for="(castMovie, index) in personMovie" :key="index">
                       <MovieDetailItem class="rounded" :movie="castMovie"/>

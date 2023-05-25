@@ -1,11 +1,11 @@
 <template>
   <div class="bg-gray">
-    <script type="text/javascript" src="snake.js"></script>
+    <!-- <script type="text/javascript" src="snake.js"></script>
     <div class="container">
       <h1>404</h1>
       <div id="score">Snake</div>
       <div id="plus"></div>
-    </div>
+    </div> -->
   </div>
 </template>
 

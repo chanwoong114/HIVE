@@ -184,7 +184,7 @@
 
     # 데이터 베이스 모델링
 
-    ![movie_erd](C:\Users\pc\OneDrive\바탕%20화면\0525\final_pjt\Images\erd.PNG)
+    ![movie_erd](/Images/erd.PNG)
 
 - TMDB api에서 제공하는 popular 영화를 1000개의 영화를 수집
 
@@ -195,14 +195,14 @@
 1. 인구통계학정보 기반 추천(Demographic Filtering)
 - 영화의 영화에 평가를 매긴 횟수, 평점을 부여하기 위한 최소 평가 수, 영화의 평균 평점, 전체 영화의 평균 평점을 가중치로 계산)
 
-  ![weight](C:\Users\pc\OneDrive\바탕%20화면\0525\final_pjt\Images\Demographic%20Filtering.png)
+  ![weight](/Images/Demographic%20Filtering.png)
 
 2. 좋아요 기반의 장르 가중치 추천
 - 좋아요 누른 영화의 장르들로 가중치를 매겨 영화를 추천
 
 - 예
 
-  ![genre](C:\Users\pc\OneDrive\바탕%20화면\0525\final_pjt\Images\Image%20Pasted%20at%202023-5-26%2000-39.png)
+  ![genre](/Images/Image%20Pasted%20at%202023-5-26%2000-39.png)
 
   # 후기 **👍찬웅** - 구현에는 자신이 있었지만 기획이나 디자인에 대해서는 두려움이 있었는데 기획에 강점이 있는 팀원과 같이 기획 및 디자인을 하며 자신감을 키울 수 있었습니다.
 
@@ -230,4 +230,4 @@
 
 - 힘들긴 했지만 정말 많은걸 배웠고 css에서 정말 애를 먹어서 화면 크기계속 바꿔가고 죽는지 알았지만 예쁜 페이지가 만들어 졌을때 정말 기쁘고 성장 할수있는 기회였다.
 
-  ![bee](C:\Users\pc\OneDrive\바탕%20화면\0525\final_pjt\Images\메인벌.png)![bee](C:\Users\pc\OneDrive\바탕%20화면\0525\final_pjt\Images\메인벌.png)
+  ![bee](/Images/메인벌.png)

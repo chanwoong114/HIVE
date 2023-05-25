@@ -6,7 +6,7 @@
         <header class="navbar bg-navb navbar-expand-lg fixed-top" style="opacity: 1;">
           
           <div class="container"><a class="navbar-brand pe-sm-3" :href="`http://localhost:8080/movies`">
-            <img src="./assets/logo.png"  alt="Logo" width="35" height="32">
+            <img src="./assets/logo.png"  alt="Logo" width="50" height="50">
             HIVE
           </a>
           <!-- 검색 -->
@@ -37,15 +37,15 @@
                     <div class="mega-dropdown-column pt-1 pt-lg-3 pb-lg-4">
                       <ul class="list-unstyled mb-0">
                         <li><router-link class="dropdown-item" to="/movies">영화추천</router-link>
-                          <span class="mega-dropdown-column position-absolute top-0 end-0 h- bg-size-cover bg-repeat-0 rounded-3 rounded-start-0" style="background-image: url(assets/img/megamenu/bee.png)"></span></li>
-                          <li><router-link class="dropdown-item" to="/genre">장르별 영화</router-link>
-                            <span class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 zindex-2 opacity-0" style="background-image: url(assets/img/megamenu/C.png)"></span></li>  
-                          </ul>
-                        </div>
-                        <div class="mega-dropdown-column position-relative border-start zindex-3"></div>
+                          <span class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 zindex-2 opacity-0" style="background-image: url(assets/img/megamenu/영화추천1.png)"></span></li>
+                        <li><router-link class="dropdown-item" to="/genre">장르별 영화</router-link>
+                          <span class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 zindex-2 opacity-0" style="background-image: url(assets/img/megamenu/장르별.png)"></span></li>  
+                        </ul>
                       </div>
+                      <div class="mega-dropdown-column position-relative border-start zindex-3"></div>
                     </div>
-                  </li>
+                  </div>
+                </li>
                   <!-- 게시판,마이페이지 -->
                   <li class="nav-item"><router-link class="nav-link" to="/community">게시판</router-link></li>
                   <!-- <li class="nav-item"><a class="nav-link" href="docs/getting-started.html">마이페이지</a></li> -->
@@ -133,7 +133,7 @@
 export default {
   data() {
     return {
-      darkMode: true
+      darkMode: false
     };
   },
   computed: {
@@ -167,12 +167,11 @@ export default {
   //     window.scrollTo(0, 0);
   //   },
   // },
-  created() {
-    document.body.classList.add('dark-mode');
-  }
 }
 </script>
 <style>
+
+
   @import url("//fonts.googleapis.com/earlyaccess/nanumgothic.css" );
   input[type=password] {
     font-family:"Nanum Gothic", sans-serif !important;

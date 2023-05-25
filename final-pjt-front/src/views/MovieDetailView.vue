@@ -58,9 +58,9 @@
           <div class="d-flex-column justify-content-between" v-if="selectContent===1">
             <h4 class="text-start">감독</h4>
             <br>
-            <div style="width: 10%;">
-              <a class="personBox" href="" data-fancybox @click="trigger('crew', movie?.crew_ids.id)" style="width: 10%;" data-src="#crew-content">
-                <img id="personimg" :src="`https://image.tmdb.org/t/p/original/${movie?.crew_ids.profile_path}`" width="100" class="rounded-2" alt="">
+            <div style="width: 16%;">
+              <a class="personBox" href="" data-fancybox @click="trigger('crew', movie?.crew_ids.id)" style="width: 16%;" data-src="#crew-content">
+                <img id="personimg" :src="`https://image.tmdb.org/t/p/original/${movie?.crew_ids.profile_path}`" width="200" class="rounded-2" alt="">
                 <p id="personP">{{ movie?.crew_ids.name }}</p>
               </a>
               <div id="crew-content" style="display:none;width:70%;">
@@ -80,7 +80,7 @@
             <div class="row text-start" >
               <div class="col" v-for="cast in movie?.cast_ids" :key="cast.id">
                 <a class="personBox" href="" data-fancybox @click="trigger('cast', cast.id)" :data-src="`#${cast.id}`">
-                  <img id="personimg" :src="`https://image.tmdb.org/t/p/original/${cast.profile_path}`" width="100" class="rounded-2" alt="">
+                  <img id="personimg" :src="`https://image.tmdb.org/t/p/original/${cast.profile_path}`" width="200" class="rounded-2" alt="">
                   <p id="personP">{{ cast.name }}</p>
                 </a>
                 <div :id="cast.id" style="display:none;width:70%;">

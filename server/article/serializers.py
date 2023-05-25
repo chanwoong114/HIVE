@@ -6,7 +6,7 @@ class ArticleListSerializer(serializers.ModelSerializer):
     class UserSerializer(serializers.ModelSerializer):
         class Meta:
             model = get_user_model()
-            fields = ['id', 'username']
+            fields = ['id', 'username','profile']
 
     like_counts = serializers.IntegerField(source='like_users.count', read_only=True)
     user = UserSerializer(read_only=True)

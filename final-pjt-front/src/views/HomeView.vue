@@ -188,7 +188,7 @@ export default {
     window.scrollTo(0, 0);
     document.addEventListener('scroll', this.scrollEvents);
   },
-  unmounted() {
+  destroyed() {
     document.removeEventListener('scroll', this.scrollEvents);
   },
   
@@ -198,11 +198,12 @@ export default {
 <style scoped>
 .see {
   opacity: 1;
-  transition: 1s; 
+  transition: 2s; 
 }
 
 .noneSee {
   opacity: 0;
+  transition: 2s; 
 }
 
 .board-list {

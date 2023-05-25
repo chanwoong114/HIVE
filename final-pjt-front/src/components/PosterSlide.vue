@@ -25,6 +25,8 @@
 import { Carousel } from "@fancyapps/ui/dist/carousel/carousel.esm.js";
 import "@fancyapps/ui/dist/carousel/carousel.css";
 import PosterSlideItem from "./PosterSlideItem.vue";
+import { Autoplay } from "@fancyapps/ui/dist/carousel/carousel.autoplay.esm.js";
+import "@fancyapps/ui/dist/carousel/carousel.autoplay.css";
 
 export default {
   name: 'PosterSlide',
@@ -36,14 +38,21 @@ export default {
     num: Number
   },
   updated() {
-    const mainContainer = document.getElementById(`myCarousel${this.num}`);
-    const mainOptions = {
-      Autoplay: {
-        timeout: 3000,
-      },
-    };
+    const mainContainer = document.getElementById(`myCarousel${this.num}`)
+    // const mainOptions = {
+    //   Autoplay: {
+    //     timeout: 3000,
+        
+    //   },
+    // };
 
-    const mainCarousel = new Carousel(mainContainer, mainOptions);
+    const mainCarousel = new Carousel(mainContainer, {
+      Autoplay: {
+        timeout: 2000,
+      }
+    }, {
+      Autoplay
+    });
 
     // Carousel for navigation
     const navContainer = document.getElementById(`myNavigation${this.num}`);

@@ -16,7 +16,8 @@ const community = {
       state.articles = data
     },
     CREATE_ARTICLES(state, data) {
-      state.articles.push(data)
+      // state.articles.unshift(data)
+      console.log(state, data)
     },
     UPDATE_ARTICLES(state, data) {
       state.articles = state.articles.map(article => {
@@ -57,8 +58,8 @@ const community = {
         data: { title, content }
       })
       .then((res) => {
-      // console.log(res, context)
-        context.commit('CREATE_ARTICLES', res.data)
+        console.log(res, context)
+        // context.commit('CREATE_ARTICLES', res.data)
         router.push({name: 'communityDetail', params: {articleId: res.data.id}})
       })
       .catch((err) => {

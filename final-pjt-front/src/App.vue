@@ -3,8 +3,7 @@
   <div id="app">
     <div class="bg-gray">
       <div>
-        <!-- 네브바-->
-        <header class="navbar bg-white navbar-expand-lg fixed-top" >
+        <header class="navbar bg-navb navbar-expand-lg fixed-top" style="opacity: 1;">
           
           <div class="container"><a class="navbar-brand pe-sm-3" :href="`http://localhost:8080/movies`">
             <img src="./assets/logo.png"  alt="Logo" width="35" height="32">
@@ -62,9 +61,10 @@
               </nav>
             </div>
         </header>
+        <!-- 네브바-->
         
         <!-- 네브바2 -->
-        <header class="position-relative navbar bg-white navbar-expand-lg" >
+        <header class="position-relative navbar bg-gray navbar-expand-lg" style="opacity: 0;" >
           
           <div class="container"><a class="navbar-brand pe-sm-3" :href="`http://localhost:8080/movies`">
             <img src="./assets/bighive.png"  alt="Logo" width="35" height="32">
@@ -119,7 +119,7 @@
         </header>
       </div>
     </div>
-    <router-view style="min-height: 89vh" class="pt-2"/>
+    <router-view style="min-height: 90vh" class="pt-2 pb-2"/>
     
     <!-- <footer class="footer bg-gray py-2 fixed-bottom">
       <div class="container text-center py-3">
@@ -341,4 +341,20 @@ h4 {
   footer {
     height: 3%;
   }
+
+  .bg-navb {
+    background: rgb(54, 54, 54) !important;
+    opacity: 1 !important;
+  }
+
+  .dark-mode .bg-navb {
+    background: white !important;
+    opacity: 1 !important;
+  }
+
+  .dark-mode .navtext {
+    color: white;
+  }
+
+  
 </style>

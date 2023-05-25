@@ -16,6 +16,7 @@ import random
 def article_list(request):
     if request.method == 'GET':
         articles = get_list_or_404(Article)
+        articles.sort(key=lambda x: x.updated_at,reverse=True)
         serializer = ArticleListSerializer(articles, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
 

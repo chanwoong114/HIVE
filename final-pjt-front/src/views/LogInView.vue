@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="bg-gray">
 
     <!-- <form @submit.prevent="login">
       <label for="username"></label><br>
@@ -36,19 +36,10 @@
                   </div>
                 </div>
               </div>
-              <div class="d-flex flex-wrap align-items-center justify-content-between pb-4">
-                <form-check class="my-1">
-                  <input class="form-check-input" type="checkbox" id="keep-signedin">
-                  <label class="form-check-label ms-1" for="keep-signedin">로그인 상태유지</label>
-                </form-check><a class="fs-sm fw-semibold text-decoration-none my-1" href="#">비밀번호찾기</a>
-              </div>
+              
               <button class="btn btn-lg btn-success  w-100 mb-4" type="submit">로그인</button>
               <button class="btn btn-lg btn-success w-100 mb-4" type="submit" @click="gotoSignup()">회원가입</button>
-              <h2 class="h6 text-center pt-3 pt-lg-4 mb-4">다른방법 로그인</h2>
-              <div class="row row-cols-1 row-cols-sm-2 gy-3">
-                <div class="col"><a class="btn btn-icon btn-outline-secondary btn-google btn-lg w-100" href="#"><i class="ai-google fs-xl me-2"></i>Google</a></div>
-                <div class="col"><a class="btn btn-icon btn-outline-secondary btn-facebook btn-lg w-100" href="#"><i class="ai-facebook fs-xl me-2"></i>Facebook</a></div>
-              </div>
+              
             </form>
           </div>
           <!-- Copyright-->

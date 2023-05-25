@@ -5,7 +5,7 @@
       <div>
         <header class="navbar bg-navb navbar-expand-lg fixed-top" style="opacity: 1;">
           
-          <div class="container"><a class="navbar-brand pe-sm-3" @click="gotoHome">
+          <div class="container"><a class="navbar-brand pe-sm-3" href="http://localhost:8080/">
             <img src="./assets/logo.png"  alt="Logo" width="35" height="32">
             HIVE
           </a>

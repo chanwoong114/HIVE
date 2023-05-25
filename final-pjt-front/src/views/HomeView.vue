@@ -188,7 +188,7 @@ export default {
     window.scrollTo(0, 0);
     document.addEventListener('scroll', this.scrollEvents);
   },
-  unmounted() {
+  destroyed() {
     document.removeEventListener('scroll', this.scrollEvents);
   },
   

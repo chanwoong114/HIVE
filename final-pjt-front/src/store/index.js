@@ -18,6 +18,7 @@ export default new Vuex.Store({
     createPersistedState(),
   ],
   state: {
+    darkMode: false,
     movies: [
     ],
     token: null,
@@ -27,6 +28,9 @@ export default new Vuex.Store({
   getters: {
     isLogin(state) {
       return state.token ? true : false
+    },
+    isDarkMode(state) {
+      return state.darkMode
     }
   },
   mutations: {
@@ -53,6 +57,9 @@ export default new Vuex.Store({
           return userId != data.id
         })
       }
+    },
+    TOGGLE_MODE(state) {
+      state.darkMode = !state.darkMode
     }
   },
   actions: {
@@ -162,7 +169,10 @@ export default new Vuex.Store({
         alert(error.response.data)
         return
       })
-    }
+    },
+    toggleDarkMode(context) {
+      context.commit('TOGGLE_MODE')
+    },
   },
   modules: {
     movie,

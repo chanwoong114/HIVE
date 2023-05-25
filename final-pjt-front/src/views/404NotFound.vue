@@ -32,9 +32,9 @@
           <div id="brick" style="display:none;width:70%; height: 80%;">
             <canvas class="pt-5" id="myCanvas" width="480" height="320"></canvas>
             <br>
-            <div class="d-flex justify-content-between" style="width: 30%;">
-              <button class="btn btn-success" style="width: 30%;"  @click="brickgamestart">게임 시작</button>
-              <button class="btn btn-danger" style="width: 30%;" @click="brickgameEnd" >게임 끝!</button>
+            <div class="d-flex justify-content-center" style="width: 100%;">
+              <button class="btn btn-success mx-2" style="width: 10%;"  @click="brickgamestart">게임 시작</button>
+              <button class="btn btn-danger mx-2" style="width: 10%;" @click="brickgameEnd" >게임 끝!</button>
 
             </div>
           </div>
@@ -49,9 +49,9 @@
           <div id="twozero" style="display:none;width:70%; height: 80%;">
             <canvas id="game" width="400" height="400"></canvas>
             <br>
-            <div class="d-flex justify-content-between" style="width: 30%;">
-              <button class="btn btn-success" style="width: 30%;"  @click="gameStart">게임 시작</button>
-              <button class="btn btn-danger" style="width: 30%;" @click="gameEnd" >게임 끝!</button>
+            <div class="d-flex justify-content-center" style="width: 100%;">
+              <button class="btn btn-success mx-2" style="width: 10%;"  @click="gameStart">게임 시작</button>
+              <button class="btn btn-danger mx-2" style="width: 10%;" @click="gameEnd" >게임 끝!</button>
 
             </div>
 

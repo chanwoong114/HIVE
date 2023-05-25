@@ -123,7 +123,7 @@
     
     <footer class="footer py-2 fixed-bottom">
       <div class="container text-center py-3">
-        <span class="text-muted">&copy; </span>
+        <span class="text-muted"> 123213213131 </span>
         <a class="nav-link d-inline p-0" style="color:black;" href="#" target="_blank">Team HIVE</a>
       </div>
     </footer>

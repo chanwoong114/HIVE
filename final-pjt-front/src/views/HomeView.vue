@@ -33,8 +33,8 @@
         <div class="container py-5 mt-1 mb-2 mt-sm-2 mb-sm-3 mt-md-3 mb-md-4 my-lg-4 my-xl-5">
           <h1 class="display-5 text-center pt-xxl-2">HIVE란?</h1>
           <h3 class="display-5 text-center pt-xxl-2">당신을 위해 최고의 영화를 선택해봤어요!</h3>
-          <h3 class="display-5 text-center pt-xxl-2">영화 속 세계로 여행을 떠나보세요.</h3>
-          <h5 class="fs-lg text-center  pb-3 pb-lg-0 mb-lg-5">"잠깐의 시간을 잊고 즐거운 시간을 보내실 수 있을 거예요. 여러분을 감동시키고 웃음을 안겨줄 영화를 선별했습니다. 편안한 자리에 앉아서 최고의 영화와 함께 특별한 순간을 즐겨보세요!"</h5>
+         
+          <h4 class="fs-lg text-center  pb-3 pb-lg-0 mb-lg-5">"잠깐의 시간을 잊고 즐거운 시간을 보내실 수 있을 거예요. 여러분을 감동시키고 웃음을 안겨줄 영화를 선별했습니다. 편안한 자리에 앉아서 최고의 영화와 함께 특별한 순간을 즐겨보세요!"</h4>
           <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 gy-5 pb-xl-3">
             <!-- 사진들어가는곳-->
             <div class="col">
@@ -119,10 +119,11 @@
         <h2 class="display-5 text-center pt-2 pt-sm-3 pt-md-4 pt-lg-5 pb-lg-3 mt-xxl-2 mb-0">출연진별 모아보기</h2>
         
         <div class="row align-items-center py-4 mt-2 mt-sm-3 mt-md-4 mb-2 mb-md-3 mb-lg-4" data-aos="fade-up" data-aos-duration="600" data-aos-offset="300" data-disable-parallax-down="md">
-          <div class="col-md-6 col-lg-7 order-md-2 d-flex justify-content-end"><img class="d-dark-mode-none" src="assets/Group5.png" width="593" alt="Colors"><img class="d-none d-dark-mode-block" src="assets/Group5.png" width="593" alt="Colors"></div>
+          <div class="col-md-6 col-lg-7 order-md-2 d-flex justify-content-end"><img class="d-dark-mode-none" src="assets/출연진1.png" width="593" alt="Colors" style="border-radius: 3%;"><img class="d-none d-dark-mode-block" src="assets/출연진1.png" width="593" alt="Colors" style="border-radius: 3%;"></div>
           <div class="col-md-6 col-lg-5 order-md-1 mt-md-n5" data-aos="fade-up" data-aos-duration="850" data-aos-offset="200" data-disable-parallax-down="md">
-            <h2 class="mb-4">감독/출연진</h2>
-            <h3 class="fs-lg mb-0 mb-lg-4">선택한 감독/배우 별로 영화를 저희가 정성을 다해 선택해드려요!</h3>
+            <h1 class="display-5 mb-4">감독/출연진</h1>
+            <h2 class="fs-lg mb-0 mb-lg-4">선택한 감독/배우 별로 영화를 저희가 정성을 다해 선택해드려요!</h2>
+            <h2 class="fs-lg mb-0 mb-lg-4">영화 속 세계로 여행을 떠나보세요.</h2>
           </div>
         </div>
         
@@ -132,15 +133,16 @@
       <!-- 다크모드 -->
       <div class="bg-gray">
       <section class="container pt-5 mt-lg-3 mt-xl-4 mt-xxl-5 ">
-        <h2 class="display-5 text-center pt-2 pt-sm-3 pt-md-4 pt-lg-5 pb-lg-3 mt-xxl-2 mb-0">다크모드</h2>
+        <h2 class="display-5 text-center pt-2 pt-sm-3 pt-md-4 pt-lg-5 pb-lg-3 mt-xxl-2 mb-0 ">다크모드</h2>
         
+        <h3 class="display-5 text-center pt-xxl-2">당신의 눈을 위한 최고의 선택!</h3>
         <div class=" row align-items-center py-4 mt-2 mt-sm-3 mt-md-4 mb-2 mb-md-3 mb-lg-4" >
-          <div class="col-md-5 col-lg-5 mx-auto board-list ">
-            <img  src="assets/다크.png" width="593" height="1400" alt="Colors">
+          <div class="col-md-5 col-lg-5 mx-auto ">
+            <img  src="assets/다크.png" width="593" height="1400" alt="Colors" style="border-radius: 3%;" >
           </div>
 
-          <div class="col-md-5 col-lg-5 mx-auto board-list" >
-            <img  src="assets/라이트.png" width="593" height="1400" alt="Colors">
+          <div class="col-md-5 col-lg-5 mx-auto" >
+            <img  src="assets/라이트.png" width="593" height="1400" alt="Colors" style="border-radius: 3%;">
           </div>
         </div>
         
@@ -179,8 +181,6 @@ export default {
 <style scoped>
 .board-list {
     border: solid var(--ar-gray-900);
-    margin: auto;
-    
     border-radius: 20px;
     
   }

@@ -5,7 +5,7 @@
       <div>
         <header class="navbar bg-navb navbar-expand-lg fixed-top" style="opacity: 1;">
           
-          <div class="container"><a class="navbar-brand pe-sm-3" :href="`http://localhost:8080/movies`">
+          <div class="container"><a class="navbar-brand pe-sm-3" :href="`http://localhost:8080/`">
             <img src="./assets/logo.png"  alt="Logo" width="50" height="50">
             HIVE
           </a>

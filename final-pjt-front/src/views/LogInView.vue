@@ -16,7 +16,7 @@
       <div class="d-lg-flex position-relative bg-gray">
         <!-- Sign in form-->
         
-        <div class="d-flex flex-column align-items-center mx-auto w-lg-50 h-100 px-3 px-lg-5">
+        <div class="board-list d-flex flex-column align-items-center mx-auto w-lg-50 h-100 px-3 px-lg-5">
           <div class="card-lifted overflow-hidden rounded-3 "><img class="d-dark-mode-none" src="../assets/logo.png"><img class="d-none d-dark-mode-block" src="../assets/logo.png"></div>
       
           <h1>로그인</h1>
@@ -25,12 +25,12 @@
             <form class="needs-validation" novalidate @submit.prevent="login()">
               <div class="pb-3 mb-3">
         
-                <div class="position-relative"><i class="ai-mail fs-lg position-absolute top-50 start-0 translate-middle-y ms-3"></i>
+                <div class="position-relative"><i class="fs-lg position-absolute top-50 start-0 translate-middle-y ms-3"></i>
                   <input class="form-control form-control-lg ps-5" type="email" v-model="username" placeholder="아이디" required>
                 </div>
               </div>
               <div class="mb-4">
-                <div class="position-relative"><i class="ai-lock-closed fs-lg position-absolute top-50 start-0 translate-middle-y ms-3"></i>
+                <div class="position-relative"><i class=" fs-lg position-absolute top-50 start-0 translate-middle-y ms-3"></i>
                   <div class="password-toggle">
                     <input class="form-control form-control-lg ps-5"  type="password" v-model="password" placeholder="비밀번호" required>
                   </div>
@@ -90,6 +90,12 @@ export default {
 }
 </script>
 <style scoped>
+.board-list {
+    border: solid var(--ar-gray-900);
+    border-radius: 20px;
+    margin: 5px;
+    
+  }
 img {
     position: relative;
     z-index: -1;

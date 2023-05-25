@@ -24,7 +24,7 @@
   <div class="d-lg-flex position-relative bg-gray">
     <!-- Sign in form-->
     
-    <div class="d-flex flex-column align-items-center mx-auto w-lg-50 h-100 px-3 px-lg-5"> 
+    <div class="board-list d-flex flex-column align-items-center mx-auto w-lg-50 h-100 px-3 px-lg-5"> 
       <div class="card-lifted overflow-hidden rounded-3"><img class="d-dark-mode-none" src="../assets/logo.png"><img class="d-none d-dark-mode-block" src="../assets/logo.png"></div>
       <H1>회원가입</H1>
       <div class="w-100 mt-auto" style="max-width: 526px;">
@@ -104,4 +104,10 @@ img {
     position: relative;
     z-index: -5;
 }
+.board-list {
+    border: solid var(--ar-gray-900);
+    border-radius: 20px;
+    margin: 5px;
+    
+  }
 </style>

@@ -27,7 +27,7 @@
                     </svg>
                   </div>
                   <br>
-                  <p style="color: white;">줄거리 : {{ movie.overview }}</p>
+                  <p style="color: white;">줄거리 : {{ movie?.overview }}</p>
                 </div>
               </div>
             </div>
@@ -57,9 +57,9 @@
             <span><strong>|</strong></span>&nbsp;&nbsp;
             <span id="pointer" @click="selectContentToggle(2)" :class="{'selected': selectContent===2}">리뷰</span>
           </span>
-          <h3 v-if="selectContent===0 && movie.recommend_movies.length === 0">관련 영화가 없습니다...</h3>
+          <h3 v-if="selectContent===0 && movie?.recommend_movies.length === 0">관련 영화가 없습니다...</h3>
           <div v-if="selectContent===0" class="row row-cols-3 row-cols-md-6 g-2 mx-auto pt-5">
-            <div class="col container"  v-for="(recommendMovie, index) in movie.recommend_movies" :key="index">
+            <div class="col container"  v-for="(recommendMovie, index) in movie?.recommend_movies" :key="index">
               <MovieDetailItem  :movie="recommendMovie"/>
             </div>
           </div>
@@ -88,13 +88,13 @@
             <h4 class="text-start">출연진</h4>
             <br>
             <div class="row text-start" >
-              <div class="col" v-for="cast in movie?.cast_ids" :key="cast.id">
-                <a class="personBox" href="" data-fancybox @click="trigger('cast', cast.id)" :data-src="`#${cast.id}`">
-                  <img id="personimg" :src="`https://image.tmdb.org/t/p/original/${cast.profile_path}`" width="200" class="rounded-2" alt="">
-                  <p id="personP">{{ cast.name }}</p>
+              <div class="col" v-for="cast in movie?.cast_ids" :key="cast?.id">
+                <a class="personBox" href="" data-fancybox @click="trigger('cast', cast?.id)" :data-src="`#${cast?.id}`">
+                  <img id="personimg" :src="`https://image.tmdb.org/t/p/original/${cast?.profile_path}`" width="200" class="rounded-2" alt="">
+                  <p id="personP">{{ cast?.name }}</p>
                 </a>
                 <div :id="cast.id" style="display:none;width:70%;">
-                  <h1 style="color:black;">{{ cast.name }}</h1>
+                  <h1 style="color:black;">{{ cast?.name }}</h1>
                   <br>
                   <br>
                   <h3 style="color:black;">참여한 영화</h3>
@@ -109,7 +109,7 @@
           </div>
           
           <div class="pt-5" v-if="selectContent===2">
-            <MovieComment :movieComments="movie.comments" :movieId="movie.id"
+            <MovieComment :movieComments="movie?.comments" :movieId="movie?.id"
             @rating="ratingSet"/>
           </div>
           
@@ -246,59 +246,6 @@ export default {
     z-index: 2;
   } */
 
-  .personBox {
-    position: relative;
-  }
 
-  .personBox:hover #personimg {
-    opacity: 0.5;
-    border: 2px solid;
-    border-color:white;
-    margin-bottom: 2px;
-  }
-
-  .personBox:hover #cardbox {
-    opacity: 1;
-  }
-
-  #personP {
-    display: none;
-    color: white;
-  }
-
-  .personBox:hover #personP {
-    position: absolute;
-    left: 8%;
-    top: 0%;
-    display: inline;
-  }
-
-  #area {
-  /* absolute는 부모가 relative일 때 부모를 따라간다. */
-  width: 100%;
-  padding-bottom: 56.25%; /* 16:9 비율 */
-  position: absolute; 
-  top:0%; 
-  left: 0%; 
-  z-index: -1;
-  }
-
-  #video {
-    position: absolute;
-    width: 100%; /* 부모에 맞게 꽉 채운다. */
-    height: 100%;
-    opacity: 0.5;
-  }
-
-  .selected {
-    color: #FFD963;
-    font-weight: bold;
-  }
-  .video-container {
-  position: absolute;
-  top: 18%;
-  left: 50px; /* Adjust this value as needed */
-  transform: translateY(-50%);
-}
 
 </style>

@@ -37,9 +37,13 @@
                     <h4 class="fs-xs fw-medium text-muted text-uppercase pb-1 mb-2">Account</h4>
                       <span class="nav-link fw-semibold py-2 px-0" @click="changePassword"><i class="ai-settings fs-5 opacity-60 me-2"></i>Password Change</span>
                   </nav>
+                  <div class="hr-container">
+                    <hr>
+                  </div>
                   <nav class="nav flex-column">
                     <a class="nav-link fw-semibold py-2 px-0" @click="signOut" href="">
                     <i class="ai-logout fs-5 opacity-60 me-2"></i>Sign out</a>
+
                     <a class="nav-link fw-semibold py-2 px-0" style="color:orangered;" @click="deleteUser" href="">
                     <i class="ai-delete fs-5 opacity-60 me-2"></i>회원 탈퇴</a>
                   </nav>
@@ -180,4 +184,7 @@ export default {
     border: 2px solid black;
     margin-bottom: 4px;
   }
+  .hr-container {
+  margin-right: 100px;
+}
 </style>

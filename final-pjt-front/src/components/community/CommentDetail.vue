@@ -3,9 +3,9 @@
     <div v-if="updateCheck" class="input-group mb-3 ">
       <input type="text" class="form-control" v-model="content"
       aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-      <span @click="updateComment" class="input-group-text btn bg-success mx-1 text-white" 
+      <span @click="updateComment" class="btn bg-success mx-1 text-white" 
       id="inputGroup-sizing-default">수정</span>
-      <span @click="updateToggle" class="input-group-text btn bg-secondary mx-1 text-white" 
+      <span @click="updateToggle" class="btn bg-secondary mx-1 text-white" 
       id="inputGroup-sizing-default">취소</span>
     </div>
     <span v-if="!updateCheck" class="underbar d-flex justify-content-between" >

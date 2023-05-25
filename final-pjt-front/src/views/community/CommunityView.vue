@@ -14,13 +14,13 @@
               <h1 class="mb-lg-0">게시판</h1>
             </div>
             <div class="col-xl-2 offset-xl-1 col-lg-3 col-sm-5">
-              <select v-model="searchSelected" class="form-select">
+              <select id="selectvar" v-model="searchSelected" class="form-select">
                 <option :value="true">제목</option>
                 <option :value="false" >작성자</option>
               </select>
             </div>
             <div class="col-lg-4 col-sm-7">
-              <div class="position-relative"><i class="ai-search position-absolute top-50 start-0 translate-middle-y ms-3"></i>
+              <div class="position-relative"><i style="color:gray" class="ai-search position-absolute top-50 start-0 translate-middle-y ms-3"></i>
                 <input class="form-control ps-5" v-model.trim="searchWord" type="search" placeholder="내용을 입력하세요">
               </div>
             </div>
@@ -105,6 +105,7 @@ export default {
     },
     pageSwitch(page) {
       this.currentPage = page
+      window.scrollTo(0, 0)
     }
   },
   computed: {
@@ -124,7 +125,7 @@ export default {
       }
     },
     pageidx() {
-      return parseInt(this.articles.length/5)
+      return parseInt((this.articles.length+4)/5)
     },
     pageArticle() {
       return this.articles.filter((article, index) => {

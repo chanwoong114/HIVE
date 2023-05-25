@@ -223,9 +223,9 @@ export default {
   created() {
     this.loadMovieDetail()
     this.loadUrl()
+    this.isLike()
   },
   mounted() {
-    this.isLike()
   },
 }
 </script>

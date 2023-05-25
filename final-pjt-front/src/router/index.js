@@ -81,7 +81,7 @@ const routes = [
   },
 
   {
-    path: '/userpage/:username',
+    path: '/userpage/:username/detail',
     name: 'UserPage',
     component: UserPage,
   },
@@ -99,7 +99,7 @@ const routes = [
   },
 
   {
-    path: '/community/:articleId',
+    path: '/community/:articleId/detail',
     name: 'communityDetail',
     component: CommunityDetailView
   },

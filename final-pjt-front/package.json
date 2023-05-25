@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@fancyapps/fancybox": "^3.5.7",
-    "@fancyapps/ui": "^5.0.18",
+    "@fancyapps/ui": "^5.0.19",
     "axios": "^1.4.0",
     "bootstrap": "^5.2.3",
     "bootstrap-vue": "^2.23.1",

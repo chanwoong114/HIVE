@@ -104,7 +104,6 @@ img {
     position: relative;
     z-index: -5;
 }
-
 .board-list {
     border: solid var(--ar-gray-900);
     border-radius: 20px;

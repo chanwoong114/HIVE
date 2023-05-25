@@ -29,8 +29,11 @@
           <!-- 게시글들 -->
           <article class="row g-0 border-0 mb-4" v-for="(row, idx) in pageArticle" :key="idx">
           
-            <a class="col-sm-5 col-lg-4 bg-repeat-0 bg-size-cover bg-position-center rounded-5" href="#" style="background-color: gray; min-height: 2rem; position: relative;">
-              <img class="position-absolute top-0 start-0 h-100 w-100 rounded-5" src="assets/img/hh.png" alt="">
+            <!-- <a class="col-sm-3 com-md-3 col-lg-3 bg-repeat-0 bg-size-cover bg-position-center rounded-5" v-on:click="gotoArticle(row.id)" href="#" style="background-color: gray; min-height: fit-content; position: relative;">
+              <img class="position-absolute top-0 start-0 h-100 w-100 rounded-5" :src="`http://127.0.0.1:8000${row.user.profile}`" alt="">
+            </a> -->
+            <a class="col-sm-5 col-lg-4 bg-repeat-0 bg-size-cover bg-position-center rounded-5" href="#" v-on:click="gotoArticle(row.id)"  style="background-color: gray; min-height: 2rem; position: relative;">
+              <img class="position-absolute top-0 start-0 h-100 w-100 rounded-5" :src="`http://127.0.0.1:8000${row.user.profile}`" alt="">
             </a>
             <div class="col-sm-7 col-lg-8">
               <div class="pt-4 pb-sm-4 ps-sm-4 pe-lg-4">

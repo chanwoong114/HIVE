@@ -198,11 +198,12 @@ export default {
 <style scoped>
 .see {
   opacity: 1;
-  transition: 1s; 
+  transition: 2s; 
 }
 
 .noneSee {
   opacity: 0;
+  transition: 2s; 
 }
 
 .board-list {

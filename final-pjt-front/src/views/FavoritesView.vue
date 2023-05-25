@@ -10,7 +10,7 @@
                 <button class="btn-close position-absolute top-0 end-0 mt-3 me-3 d-lg-none" type="button" data-bs-dismiss="offcanvas" data-bs-target="#sidebarAccount"></button>
                 <div class="offcanvas-body">
                   <div class="pb-2 pb-lg-0 mb-4 mb-lg-5">
-                    <img id="profileimg" class="d-block rounded-circle mb-2" :src="`http://127.0.0.1:8000${user.profile}`" 
+                    <img id="profileimg" class="d-block rounded-circle mb-2" :src="`http://127.0.0.1:8000${user?.profile}`" 
                     data-fancybox data-src="#profile" width="80">
                     <div id="profile" style="display:none;width:70%; color:black;">
                       <h2 style="color:black;">프로필 변경</h2>

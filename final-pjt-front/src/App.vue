@@ -37,15 +37,15 @@
                     <div class="mega-dropdown-column pt-1 pt-lg-3 pb-lg-4">
                       <ul class="list-unstyled mb-0">
                         <li><router-link class="dropdown-item" to="/movies">영화추천</router-link>
-                          <span class="mega-dropdown-column position-absolute top-0 end-0 h- bg-size-cover bg-repeat-0 rounded-3 rounded-start-0" style="background-image: url(assets/img/megamenu/bee.png)"></span></li>
-                          <li><router-link class="dropdown-item" to="/genre">장르별 영화</router-link>
-                            <span class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 zindex-2 opacity-0" style="background-image: url(assets/img/megamenu/C.png)"></span></li>  
-                          </ul>
-                        </div>
-                        <div class="mega-dropdown-column position-relative border-start zindex-3"></div>
+                          <span class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 zindex-2 opacity-0" style="background-image: url(assets/img/megamenu/영화추천1.png)"></span></li>
+                        <li><router-link class="dropdown-item" to="/genre">장르별 영화</router-link>
+                          <span class="mega-dropdown-column position-absolute top-0 end-0 h-100 bg-size-cover bg-repeat-0 zindex-2 opacity-0" style="background-image: url(assets/img/megamenu/장르별.png)"></span></li>  
+                        </ul>
                       </div>
+                      <div class="mega-dropdown-column position-relative border-start zindex-3"></div>
                     </div>
-                  </li>
+                  </div>
+                </li>
                   <!-- 게시판,마이페이지 -->
                   <li class="nav-item"><router-link class="nav-link" to="/community">게시판</router-link></li>
                   <!-- <li class="nav-item"><a class="nav-link" href="docs/getting-started.html">마이페이지</a></li> -->
@@ -123,7 +123,7 @@
     
     <footer class="footer py-2 fixed-bottom">
       <div class="container text-center py-3">
-        <span class="text-muted">&copy; </span>
+        <span class="text-muted"> 123213213131 </span>
         <a class="nav-link d-inline p-0" style="color:black;" href="#" target="_blank">Team HIVE</a>
       </div>
     </footer>
@@ -182,6 +182,8 @@ export default {
 }
 </script>
 <style>
+
+
   @import url("//fonts.googleapis.com/earlyaccess/nanumgothic.css" );
   input[type=password] {
     font-family:"Nanum Gothic", sans-serif !important;

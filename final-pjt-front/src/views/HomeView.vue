@@ -21,9 +21,10 @@
         <div class="parallax mx-auto mb-n5" style="max-width: 800px;">
           <div class="rotate parallax-layer zindex-2" data-depth="0.9" style="margin-top: -3cm;"><img src="../assets/A.png" alt="Foreground shape"></div>
           <div class="rotate parallax-layer zindex-2" data-depth="0.9" style="margin-left: -5cm;"><img src="../assets/A.png" alt="Foreground shape"></div>
+          <div class="rotate parallax-layer zindex-2" data-depth="0.9" style="margin-top: -7cm; margin-left: -10cm;"><img src="../assets/A.png" alt="Foreground shape"></div>
           <div class="rotate parallax-layer zindex-2" data-depth="0.9" style="margin-top: -10cm;"><img src="../assets/A.png" alt="Foreground shape"></div>
           <div class="rotate parallax-layer zindex-2" data-depth="0.9" style="margin-top: -3cm;"><img src="../assets/B.png" alt="Foreground shape"></div>
-          <div class="rotate parallax-layer zindex-2" data-depth="0.9" style="margin-top: -3cm;"><img src="../assets/C.png" alt="Foreground shape"></div>
+          <div class="rotate parallax-layer zindex-2" data-depth="0.9" style="margin-top: -3cm; margin-left: 4cm;"><img src="../assets/C.png" alt="Foreground shape"></div>
           <div class="parallax-layer" data-depth="-0.1"><img src="assets/img/landing/intro/hero/01.png" alt="Background shapes"></div>
         </div>
       </section>
@@ -32,39 +33,39 @@
         <div class="container py-5 mt-1 mb-2 mt-sm-2 mb-sm-3 mt-md-3 mb-md-4 my-lg-4 my-xl-5">
           <h1 class="display-5 text-center pt-xxl-2">HIVE란?</h1>
           <h3 class="display-5 text-center pt-xxl-2">당신을 위해 최고의 영화를 선택해봤어요!</h3>
-          <h3 class="display-5 text-center pt-xxl-2">영화 속 세계로 여행을 떠나보세요.</h3>
-          <h5 class="fs-lg text-center  pb-3 pb-lg-0 mb-lg-5">"잠깐의 시간을 잊고 즐거운 시간을 보내실 수 있을 거예요. 여러분을 감동시키고 웃음을 안겨줄 영화를 선별했습니다. 편안한 자리에 앉아서 최고의 영화와 함께 특별한 순간을 즐겨보세요!"</h5>
+         
+          <h4 class="fs-lg text-center  pb-3 pb-lg-0 mb-lg-5">"잠깐의 시간을 잊고 즐거운 시간을 보내실 수 있을 거예요. 여러분을 감동시키고 웃음을 안겨줄 영화를 선별했습니다. 편안한 자리에 앉아서 최고의 영화와 함께 특별한 순간을 즐겨보세요!"</h4>
           <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 gy-5 pb-xl-3">
             <!-- 사진들어가는곳-->
             <div class="col">
               <div class="card-hover card-lifted mx-auto" style="max-width: 416px;">
-                <div class="card-lifted overflow-hidden rounded-3 mb-3"><img class="d-dark-mode-none" src="../assets/hh.png"><img class="d-none d-dark-mode-block" src="../assets/hh.png"></div>
-                <h3 class="text-center mb-0"><a class="stretched-link" href="#">박범진</a></h3>
+                <div class="card-lifted overflow-hidden rounded-3 mb-3"><img class="d-dark-mode-none" src="../assets/6.png"><img class="d-none d-dark-mode-block" src="../assets/6.png"></div>
+                <h3 class="text-center mb-0"><a class="stretched-link" href="#">HIVE추천영화</a></h3>
               </div>
             </div>
             <div class="col">
               <div class="card-hover card-lifted mx-auto" style="max-width: 416px;">
-                <div class="card-lifted overflow-hidden rounded-3 mb-3"><img class="d-dark-mode-none" src="../assets/hh.png" ><img class="d-none d-dark-mode-block" src="../assets/hh.png"></div>
-                <h3 class="text-center mb-0"><a class="stretched-link" href="#">박범진</a></h3>
+                <div class="card-lifted overflow-hidden rounded-3 mb-3"><img class="d-dark-mode-none" src="../assets/2.png" ><img class="d-none d-dark-mode-block" src="../assets/2.png"></div>
+                <h3 class="text-center mb-0"><a class="stretched-link" href="#">죽기전 꼭봐야하는 영화</a></h3>
               </div>
             </div>
             <div class="col">
               <div class="card-hover card-lifted mx-auto" style="max-width: 416px;">
-                <div class="card-lifted overflow-hidden rounded-3 mb-3"><img class="d-dark-mode-none" src="../assets/hh.png" ><img class="d-none d-dark-mode-block" src="../assets/hh.png"></div>
-                <h3 class="text-center mb-0"><a class="stretched-link" href="#">박범진</a></h3>
+                <div class="card-lifted overflow-hidden rounded-3 mb-3"><img class="d-dark-mode-none" src="../assets/1.png" ><img class="d-none d-dark-mode-block" src="../assets/1.png"></div>
+                <h3 class="text-center mb-0"><a class="stretched-link" href="#">오늘 이거 어때요?</a></h3>
               </div>
             </div>
             <div class="col">
               <div class="card-hover card-lifted mx-auto" style="max-width: 416px;">
-                <div class="card-lifted overflow-hidden rounded-3 mb-3"><img class="d-dark-mode-none" src="../assets/hh.png"><img class="d-none d-dark-mode-block" src="../assets/hh.png"></div>
-                <h3 class="text-center mb-0"><a class="stretched-link" href="#">영화추천2</a></h3>
+                <div class="card-lifted overflow-hidden rounded-3 mb-3"><img class="d-dark-mode-none" src="../assets/3.png"><img class="d-none d-dark-mode-block" src="../assets/3.png"></div>
+                <h3 class="text-center mb-0"><a class="stretched-link" href="#">장르별</a></h3>
               </div>
             </div>
             
             <div class="col">
               <div class="card-hover card-lifted mx-auto" style="max-width: 416px;">
-                <div class="card-lifted overflow-hidden rounded-3 mb-3"><img class="d-dark-mode-none" src="../assets/hh.png" ><img class="d-none d-dark-mode-block" src="../assets/hh.png"></div>
-                <h3 class="text-center mb-0"><a class="stretched-link" href="#">장르별3</a></h3>
+                <div class="card-lifted overflow-hidden rounded-3 mb-3"><img class="d-dark-mode-none" src="../assets/5.png" ><img class="d-none d-dark-mode-block" src="../assets/5.png"></div>
+                <h3 class="text-center mb-0"><a class="stretched-link" href="#">게시판</a></h3>
               </div>
             </div>
           </div>
@@ -118,10 +119,11 @@
         <h2 class="display-5 text-center pt-2 pt-sm-3 pt-md-4 pt-lg-5 pb-lg-3 mt-xxl-2 mb-0">출연진별 모아보기</h2>
         
         <div class="row align-items-center py-4 mt-2 mt-sm-3 mt-md-4 mb-2 mb-md-3 mb-lg-4" data-aos="fade-up" data-aos-duration="600" data-aos-offset="300" data-disable-parallax-down="md">
-          <div class="col-md-6 col-lg-7 order-md-2 d-flex justify-content-end"><img class="d-dark-mode-none" src="assets/Group5.png" width="593" alt="Colors"><img class="d-none d-dark-mode-block" src="assets/Group5.png" width="593" alt="Colors"></div>
+          <div class="col-md-6 col-lg-7 order-md-2 d-flex justify-content-end"><img class="d-dark-mode-none" src="assets/출연진1.png" width="593" alt="Colors" style="border-radius: 3%;"><img class="d-none d-dark-mode-block" src="assets/출연진1.png" width="593" alt="Colors" style="border-radius: 3%;"></div>
           <div class="col-md-6 col-lg-5 order-md-1 mt-md-n5" data-aos="fade-up" data-aos-duration="850" data-aos-offset="200" data-disable-parallax-down="md">
-            <h2 class="mb-4">감독/출연진</h2>
-            <h3 class="fs-lg mb-0 mb-lg-4">선택한 감독/배우 별로 영화를 저희가 정성을 다해 선택해드려요!</h3>
+            <h1 class="display-5 mb-4">감독/출연진</h1>
+            <h2 class="fs-lg mb-0 mb-lg-4">선택한 감독/배우 별로 영화를 저희가 정성을 다해 선택해드려요!</h2>
+            <h2 class="fs-lg mb-0 mb-lg-4">영화 속 세계로 여행을 떠나보세요.</h2>
           </div>
         </div>
         
@@ -130,15 +132,17 @@
 
       <!-- 다크모드 -->
       <div class="bg-gray">
-      <section class="container pt-5 mt-lg-3 mt-xl-4 mt-xxl-5">
-        <h2 class="display-5 text-center pt-2 pt-sm-3 pt-md-4 pt-lg-5 pb-lg-3 mt-xxl-2 mb-0">다크모드</h2>
+      <section class="container pt-5 mt-lg-3 mt-xl-4 mt-xxl-5 ">
+        <h2 class="display-5 text-center pt-2 pt-sm-3 pt-md-4 pt-lg-5 pb-lg-3 mt-xxl-2 mb-0 ">다크모드</h2>
         
-        <div class="row align-items-center py-4 mt-2 mt-sm-3 mt-md-4 mb-2 mb-md-3 mb-lg-4" >
-          <div class="col-md-6 col-lg-6 order-md-2 ">
-            <img  src="assets/Group5.png" width="593" alt="Colors">
+        <h3 class="display-5 text-center pt-xxl-2">당신의 눈을 위한 최고의 선택!</h3>
+        <div class=" row align-items-center py-4 mt-2 mt-sm-3 mt-md-4 mb-2 mb-md-3 mb-lg-4" >
+          <div class="col-md-5 col-lg-5 mx-auto ">
+            <img  src="assets/다크.png" width="593" height="1400" alt="Colors" style="border-radius: 3%;" >
           </div>
-          <div class="col-md-6 col-lg-6 order-md-2  " >
-            <img  src="assets/Group5.png" width="593" alt="Colors">
+
+          <div class="col-md-5 col-lg-5 mx-auto" >
+            <img  src="assets/라이트.png" width="593" height="1400" alt="Colors" style="border-radius: 3%;">
           </div>
         </div>
         
@@ -175,6 +179,12 @@ export default {
 </script>
 
 <style scoped>
+.board-list {
+    border: solid var(--ar-gray-900);
+    border-radius: 20px;
+    
+  }
+
 .scroll-down-btn {
         display: inline-block;
         text-decoration: none;
@@ -332,34 +342,40 @@ export default {
 
 
 
-@keyframes rotate_image{
- 
- 0% {
-   left : 1000px;
-   transform: rotate(5deg) translateY(0);
-   
- }
- 50% {
-  transform: rotate(5deg) translateY(25px);
- }
- 62.5% {
-  transform: rotate(5deg) translateY(50px);
- }
- 75% {
-  transform: rotate(5deg) translateY(50px);
- }
- 87.5% {
-  transform: rotate(5deg) translateY(0px);
- }
- 100% {
-   left : -1200px
-   
- }
+      @keyframes rotate_image {
+  0% {
+    left: 1600px;
+    transform: rotate(0deg) translateY(0);
+  }
+  12.5% {
+    transform: rotate(2.5deg) translateY(5px);
+  }
+  25% {
+    transform: rotate(0deg) translateY(-5px);
+  }
+  37.5% {
+    transform: rotate(2.5deg) translateY(5px);
+  }
+  50% {
+    transform: rotate(0deg) translateY(-5px);
+  }
+  62.5% {
+    transform: rotate(2.5deg) translateY(5px);
+  }
+  75% {
+    transform: rotate(0deg) translateY(-5px);
+  }
+  87.5% {
+    transform: rotate(-.5deg) translateY(5px);
+  }
+  100% {
+    left: -1300px;
+  }
 }
-.rotate {
-animation: rotate_image 7s linear infinite;
-position : absolute;
 
-}      
+.rotate {
+  animation: rotate_image 11s linear infinite;
+  position: absolute;
+}
 
 </style>

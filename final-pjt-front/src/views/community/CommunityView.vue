@@ -3,35 +3,33 @@
 
     <div class="board-list">
       <!-- 게시글생성 버튼 -->
-      <div class="common-buttons pt-2">
+      <div class="common-buttons pt-2 ">
         <button type="button" class="w3-button w3-round w3-blue-gray" @click="createArticle()">글쓰기</button>
       </div>
 
       <div class="container pt-2 pb-lg-5 pb-md-4 pb-2 my-5">
           <!-- 게시글 네브바 -->
-          <div class="row align-items-center gy-2 mb-4 pb-1 pb-sm-2 pb-lg-3">
-            <div class="col-lg-5">
-              <h1 class="mb-lg-0">게시판</h1>
+          <div class="row align-items-center gy-2 mb-4 pb-1 pb-sm-2 pb-lg-3 ">
+            <div class="col-lg-5 ">
+              <h1 class="mb-lg-0 ">&nbsp;게시판</h1>
             </div>
-            <div class="col-xl-2 offset-xl-1 col-lg-3 col-sm-5">
+            <div class="col-xl-2 offset-xl-1 col-lg-3 col-sm-5 ">
               <select v-model="searchSelected" class="form-select">
                 <option :value="true">제목</option>
                 <option :value="false" >작성자</option>
               </select>
             </div>
-            <div class="col-lg-4 col-sm-7">
-              <div class="position-relative"><i class="ai-search position-absolute top-50 start-0 translate-middle-y ms-3"></i>
-                <input class="form-control ps-5" v-model.trim="searchWord" type="search" placeholder="내용을 입력하세요">
+            <div class="col-lg-4 col-sm-7 ">
+              <div class="position-relative "><i class="ai-search position-absolute top-50 start-0 translate-middle-y ms-3"></i>
+                <input class="form-control ps-5 " v-model.trim="searchWord" type="search" placeholder="내용을 입력하세요">
               </div>
             </div>
           </div>
 
           <!-- 게시글들 -->
-          <article class="row g-0 border-0 mb-4" v-for="(row, idx) in pageArticle" :key="idx">
+          <article class="board-article row p-5 g-0 mb-4" v-for="(row, idx) in pageArticle" :key="idx">
           
-            <!-- <a class="col-sm-3 com-md-3 col-lg-3 bg-repeat-0 bg-size-cover bg-position-center rounded-5" v-on:click="gotoArticle(row.id)" href="#" style="background-color: gray; min-height: fit-content; position: relative;">
-              <img class="position-absolute top-0 start-0 h-100 w-100 rounded-5" :src="`http://127.0.0.1:8000${row.user.profile}`" alt="">
-            </a> -->
+            
             <a class="col-sm-5 col-lg-4 bg-repeat-0 bg-size-cover bg-position-center rounded-5" href="#" v-on:click="gotoArticle(row.id)"  style="background-color: gray; min-height: 2rem; position: relative;">
               <img class="position-absolute top-0 start-0 h-100 w-100 rounded-5" :src="`http://127.0.0.1:8000${row.user.profile}`" alt="">
             </a>
@@ -50,7 +48,7 @@
             <div class="col col-md-4 col-6 order-md-1 order-1">
               
             </div>
-        
+       
             <div class="col col-md-4 col-6 order-md-3 order-2">
               <nav aria-label="Page navigation">
                 <ul class="pagination pagination-sm justify-content-end">
@@ -63,7 +61,7 @@
           </div>
         </div>
       </div>
-  
+      
    
     <!-- Subscription-->
     
@@ -124,7 +122,7 @@ export default {
       }
     },
     pageidx() {
-      return parseInt(this.articles.length/5)
+      return parseInt((this.articles.length+4)/5)
     },
     pageArticle() {
       return this.articles.filter((article, index) => {
@@ -137,8 +135,14 @@ export default {
 
 <style>
   .board-list {
-    width: 768px;
+    border: solid var(--ar-gray-900);
+    width: 1000px;
     margin: auto;
+    border-radius: 20px;
+  }
+  .board-article{
+    border: solid var(--ar-gray-900);
+    border-radius: 20px;
   }
 
   .board-detail {

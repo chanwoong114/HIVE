@@ -121,12 +121,12 @@
     </div>
     <router-view style="min-height: 90vh" class="pt-2 pb-2"/>
     
-    <!-- <footer class="footer bg-gray py-2 fixed-bottom">
+    <footer class="footer py-2 fixed-bottom">
       <div class="container text-center py-3">
-        <span class="text-muted">&copy; <span class='text-danger'></span></span>
-        <a class="nav-link d-inline p-0" style="color:black;" href="https://www.instagram.com/non_inss/" target="_blank">Team HIVE</a>
+        <span class="text-muted">&copy; </span>
+        <a class="nav-link d-inline p-0" style="color:black;" href="#" target="_blank">Team HIVE</a>
       </div>
-    </footer> -->
+    </footer>
   </div>
 </template>
 <script>

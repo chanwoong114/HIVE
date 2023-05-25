@@ -19,9 +19,11 @@
         <div class="d-none d-lg-block" style="margin-top: -80px;"></div>
         <div class="d-none d-sm-block d-lg-none" style="margin-top: -40px;"></div>
         <div class="parallax mx-auto mb-n5" style="max-width: 800px;">
-          <div class="parallax-layer zindex-2" data-depth="0.9" style="margin-top: -3cm;"><img src="../assets/A.png" alt="Foreground shape"></div>
-          <div class="parallax-layer zindex-2" data-depth="0.9" style="margin-top: -3cm;"><img src="../assets/B.png" alt="Foreground shape"></div>
-          <div class="parallax-layer zindex-2" data-depth="0.9" style="margin-top: -3cm;"><img src="../assets/C.png" alt="Foreground shape"></div>
+          <div class="rotate parallax-layer zindex-2" data-depth="0.9" style="margin-top: -3cm;"><img src="../assets/A.png" alt="Foreground shape"></div>
+          <div class="rotate parallax-layer zindex-2" data-depth="0.9" style="margin-left: -5cm;"><img src="../assets/A.png" alt="Foreground shape"></div>
+          <div class="rotate parallax-layer zindex-2" data-depth="0.9" style="margin-top: -10cm;"><img src="../assets/A.png" alt="Foreground shape"></div>
+          <div class="rotate parallax-layer zindex-2" data-depth="0.9" style="margin-top: -3cm;"><img src="../assets/B.png" alt="Foreground shape"></div>
+          <div class="rotate parallax-layer zindex-2" data-depth="0.9" style="margin-top: -3cm;"><img src="../assets/C.png" alt="Foreground shape"></div>
           <div class="parallax-layer" data-depth="-0.1"><img src="assets/img/landing/intro/hero/01.png" alt="Background shapes"></div>
         </div>
       </section>
@@ -125,8 +127,23 @@
         
       </section>
       </div>
-      <!-- 메일 -->
-     
+
+      <!-- 다크모드 -->
+      <div class="bg-gray">
+      <section class="container pt-5 mt-lg-3 mt-xl-4 mt-xxl-5">
+        <h2 class="display-5 text-center pt-2 pt-sm-3 pt-md-4 pt-lg-5 pb-lg-3 mt-xxl-2 mb-0">다크모드</h2>
+        
+        <div class="row align-items-center py-4 mt-2 mt-sm-3 mt-md-4 mb-2 mb-md-3 mb-lg-4" >
+          <div class="col-md-6 col-lg-6 order-md-2 ">
+            <img  src="assets/Group5.png" width="593" alt="Colors">
+          </div>
+          <div class="col-md-6 col-lg-6 order-md-2  " >
+            <img  src="assets/Group5.png" width="593" alt="Colors">
+          </div>
+        </div>
+        
+      </section>
+      </div>
       
     
       
@@ -305,5 +322,44 @@ export default {
         21%, 51%, 81% { color: #2c333e; }
         30%, 60%, 90% { color: white; }
       }
+  
+
+
+
+
+
+
+
+
+
+@keyframes rotate_image{
+ 
+ 0% {
+   left : 1000px;
+   transform: rotate(5deg) translateY(0);
+   
+ }
+ 50% {
+  transform: rotate(5deg) translateY(25px);
+ }
+ 62.5% {
+  transform: rotate(5deg) translateY(50px);
+ }
+ 75% {
+  transform: rotate(5deg) translateY(50px);
+ }
+ 87.5% {
+  transform: rotate(5deg) translateY(0px);
+ }
+ 100% {
+   left : -1200px
+   
+ }
+}
+.rotate {
+animation: rotate_image 7s linear infinite;
+position : absolute;
+
+}      
 
 </style>

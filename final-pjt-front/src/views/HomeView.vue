@@ -19,12 +19,11 @@
         <div class="d-none d-lg-block" style="margin-top: -80px;"></div>
         <div class="d-none d-sm-block d-lg-none" style="margin-top: -40px;"></div>
         <div class="parallax mx-auto mb-n5" style="max-width: 800px;">
-          <div class="rotate parallax-layer zindex-2" data-depth="0.9" style="margin-top: -3cm;"><img src="../assets/A.png" alt="Foreground shape"></div>
-          <div class="rotate parallax-layer zindex-2" data-depth="0.9" style="margin-left: -5cm;"><img src="../assets/A.png" alt="Foreground shape"></div>
-          <div class="rotate parallax-layer zindex-2" data-depth="0.9" style="margin-top: -7cm; margin-left: -10cm;"><img src="../assets/A.png" alt="Foreground shape"></div>
-          <div class="rotate parallax-layer zindex-2" data-depth="0.9" style="margin-top: -10cm;"><img src="../assets/A.png" alt="Foreground shape"></div>
-          <div class="rotate parallax-layer zindex-2" data-depth="0.9" style="margin-top: -3cm;"><img src="../assets/B.png" alt="Foreground shape"></div>
-          <div class="rotate parallax-layer zindex-2" data-depth="0.9" style="margin-top: -3cm; margin-left: 4cm;"><img src="../assets/C.png" alt="Foreground shape"></div>
+          <div class="rotate parallax-layer zindex-2" data-depth="0.9" style="margin-top: -4cm;"><img src="../assets/fly.png" alt="Foreground shape"></div>
+          <div class="rotate parallax-layer zindex-2" data-depth="0.9" style="margin-left: -5cm; margin-left: -5cm;"><img src="../assets/fly.png" alt="Foreground shape"></div>
+          <div class="rotate parallax-layer zindex-2" data-depth="0.9" style="margin-top: -7cm; margin-left: -12cm;"><img src="../assets/fly.png" alt="Foreground shape"></div>
+          <div class="rotate parallax-layer zindex-2" data-depth="0.9" style="margin-top: -10cm;"><img src="../assets/fly.png" alt="Foreground shape"></div>
+          <div class="rotate parallax-layer zindex-2" data-depth="0.9" style="margin-top: -3cm; margin-left: 7cm;"><img src="../assets/fly.png" alt="Foreground shape"></div>
           <div class="parallax-layer" data-depth="-0.1"><img src="assets/img/landing/intro/hero/01.png" alt="Background shapes"></div>
         </div>
       </section>

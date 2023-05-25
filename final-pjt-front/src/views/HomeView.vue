@@ -76,7 +76,7 @@
     <br>
       <!-- 사이트 목업 보여주는곳-->
       <div class="bg-gray">
-      <section class="pt-2 pt-sm-3 pt-md-4 pt-lg-3 pb-1 pb-sm-3 pb-md-4 pb-lg-5" >
+      <section id="hiddenSection" class="pt-2 pt-sm-3 pt-md-4 pt-lg-3 pb-1 pb-sm-3 pb-md-4 pb-lg-5" >
         <div class="container position-relative py-5 my-lg-3 my-xl-4 my-xxl-5">
           <div class="position-absolute" style="margin-left: -9.7%;" data-aos="zoom-in" data-aos-duration="500" data-aos-offset="300" data-disable-parallax-down="lg">
             <svg class="text-warning d-none d-lg-block" width="744" height="744" viewBox="0 0 744 744" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -130,6 +130,8 @@
       </section>
       </div>
 
+
+
       <!-- 다크모드 -->
       <div class="bg-gray">
       <section class="container pt-5 mt-lg-3 mt-xl-4 mt-xxl-5 ">
@@ -165,20 +167,45 @@
 export default {
   data() {
     return {
-      darkMode: false
+      target: null,
     };
+  },
+  methods: {
+    scrollEvents() {
+      if (window.scrollY > 1800) {
+        document.querySelector('#hiddenSection').classList.add('see')
+        document.querySelector('#hiddenSection').classList.remove('noneSee')
+      } else {
+        document.querySelector('#hiddenSection').classList.remove('see')
+        document.querySelector('#hiddenSection').classList.add('noneSee')
+      }
+      
+    }
   },
   components: {
     // 컴포넌트의 내용
   },
   mounted() {
-   
+    window.scrollTo(0, 0);
+    document.addEventListener('scroll', this.scrollEvents);
+  },
+  unmounted() {
+    document.removeEventListener('scroll', this.scrollEvents);
   },
   
 };
 </script>
 
 <style scoped>
+.see {
+  opacity: 1;
+  transition: 1s; 
+}
+
+.noneSee {
+  opacity: 0;
+}
+
 .board-list {
     border: solid var(--ar-gray-900);
     border-radius: 20px;

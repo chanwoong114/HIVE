@@ -49,6 +49,7 @@ export default {
     const mainCarousel = new Carousel(mainContainer, {
       Autoplay: {
         timeout: 2000,
+        showProgress: false
       }
     }, {
       Autoplay

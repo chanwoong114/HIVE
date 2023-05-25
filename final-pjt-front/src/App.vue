@@ -367,5 +367,59 @@ h4 {
     color: white;
   }
 
+  .personBox {
+    position: relative;
+  }
+
+  .personBox:hover #personimg {
+    opacity: 0.5;
+    border: 2px solid;
+    border-color:white;
+    margin-bottom: 2px;
+  }
+
+  .personBox:hover #cardbox {
+    opacity: 1;
+  }
+
+  #personP {
+    display: none;
+    color: white;
+  }
+
+  .personBox:hover #personP {
+    position: absolute;
+    left: 8%;
+    top: 0%;
+    display: inline;
+  }
+
+  #area {
+  /* absolute는 부모가 relative일 때 부모를 따라간다. */
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 비율 */
+  position: absolute; 
+  top:0%; 
+  left: 0%; 
+  z-index: -1;
+  }
+
+  #video {
+    position: absolute;
+    width: 100%; /* 부모에 맞게 꽉 채운다. */
+    height: 100%;
+    opacity: 0.5;
+  }
+
+  .selected {
+    color: #FFD963;
+    font-weight: bold;
+  }
+  .video-container {
+  position: absolute;
+  top: 18%;
+  left: 50px; /* Adjust this value as needed */
+  transform: translateY(-50%);
+}
   
 </style>

@@ -1,12 +1,12 @@
 <template>
   <div>
     <div id="zoom" class="bg-dark card mb-4 bordercard" @click="gotoDetail(movie.id)">
-      <img :src="'https://image.tmdb.org/t/p/original/' + movie.poster_path" :alt="movie.title"   
+      <img :src="'https://image.tmdb.org/t/p/original/' + movie?.poster_path" :alt="movie.title"   
       class="card-img backgroundimg">
       <img class="mainimg rounded" :src="'https://image.tmdb.org/t/p/original/' + movie.poster_path" :alt="movie.title">
-      <div v-if="movie.comments_rating > 0" id="movieInfo">
+      <div v-if="movie?.comments_rating > 0" id="movieInfo">
         <p>평점</p>
-        <p>{{ movie.comments_rating }}</p>
+        <p>{{ movie?.comments_rating }}</p>
       </div>
       <div v-else id="movieInfo">
         <p style="color: white">리뷰가 없습니다.</p>
@@ -46,9 +46,9 @@ export default {
 
         if (movieId != this.$route.params.movieId) {
           this.$router.push({name: 'MovieDetailView', params: {movieId: movieId}})
-          this.$router.go(this.$router.currentRoute)
+          history.go(0)
         } else {
-          this.$router.go(this.$router.currentRoute)
+          history.go(0)
         }
       },
       movieLike(event) {

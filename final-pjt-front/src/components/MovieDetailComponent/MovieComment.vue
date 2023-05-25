@@ -19,10 +19,10 @@
             aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
             <star-rating :border-width="3" border-color="#d8d8d8" :rounded-corners="true" :star-points="[23,2, 14,17, 0,19, 10,34, 7,50, 23,43, 38,50, 36,34, 46,19, 31,17]"
               :inline="true" :increment="0.5" :star-size="30" :show-rating="false" v-model="currentRating"></star-rating>
-            <button type="submit" class="input-group-text rounded btn bg-success mx-1 text-white" id="inputGroup-sizing-default">
-              &nbsp;&nbsp;작성&nbsp;&nbsp;</button>
-            <button @click="updateToggle('', '')" type="submit" class="input-group-text btn rounded bg-secondary mx-1 text-white" id="inputGroup-sizing-default">
-            &nbsp;&nbsp;취소&nbsp;&nbsp;</button>
+            <button type="submit" class="mx-1 rounded btn bg-success text-white" id="inputGroup-sizing-default">
+              작성</button>
+            <button @click="updateToggle('', '')" type="submit" class=" btn rounded bg-secondary mx-1 text-white" id="inputGroup-sizing-default">
+            취소</button>
           </div>
         </form>
 
@@ -34,8 +34,8 @@
           aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
           <star-rating :border-width="3" border-color="#d8d8d8" :rounded-corners="true" :star-points="[23,2, 14,17, 0,19, 10,34, 7,50, 23,43, 38,50, 36,34, 46,19, 31,17]"
             :inline="true" :increment="0.5" :star-size="30" :show-rating="false" v-model="rating"></star-rating>
-          <button type="submit" class="input-group-text btn bg-primary text-white" id="inputGroup-sizing-default">
-            &nbsp;&nbsp;작성&nbsp;&nbsp;</button>
+          <button type="submit" class="mx-1 btn bg-primary text-white" id="inputGroup-sizing-default">
+            작성</button>
         </div>
       </form>
       <h3 v-else>이미 리뷰를 작성했습니다.</h3>

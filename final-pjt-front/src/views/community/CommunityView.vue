@@ -19,9 +19,9 @@
                 <option :value="false" >작성자</option>
               </select>
             </div>
-            <div class="col-lg-4 col-sm-7 ">
-              <div class="position-relative "><i class="ai-search position-absolute top-50 start-0 translate-middle-y ms-3"></i>
-                <input class="form-control ps-5 " v-model.trim="searchWord" type="search" placeholder="내용을 입력하세요">
+            <div class="col-lg-4 col-sm-7">
+              <div class="position-relative"><i style="color:gray" class="ai-search position-absolute top-50 start-0 translate-middle-y ms-3"></i>
+                <input class="form-control ps-5" v-model.trim="searchWord" type="search" placeholder="내용을 입력하세요">
               </div>
             </div>
           </div>
@@ -103,6 +103,7 @@ export default {
     },
     pageSwitch(page) {
       this.currentPage = page
+      window.scrollTo(0, 0)
     }
   },
   computed: {

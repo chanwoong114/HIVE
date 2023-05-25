@@ -46,9 +46,9 @@ export default {
 
         if (movieId != this.$route.params.movieId) {
           this.$router.push({name: 'MovieDetailView', params: {movieId: movieId}})
-          history.go(0)
+          this.$router.go(this.$router.currentRoute)
         } else {
-          history.go(0)
+          this.$router.go(this.$router.currentRoute)
         }
       },
       movieLike(event) {

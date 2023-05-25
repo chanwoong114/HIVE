@@ -4,7 +4,7 @@
     <div style="position: relative">
       <div style="min-height: 80vh; ">
         <div v-if="URL" id="area" style="">
-          <iframe id="video" :src="`https://youtube.com/embed/?autoplay=1&mute=1&controls=0&playlist=${URL}&loop=1`" frameborder="0"
+          <iframe id="video" v-if="isURL" :src="`https://youtube.com/embed/?autoplay=1&mute=1&controls=0&playlist=${URL}&loop=1`" frameborder="0"
           style="position: absolute; top:-5%; left: 0%; z-index: -2;" ></iframe>
         </div>
         <div class="container video-container" >
@@ -141,7 +141,8 @@ export default {
       likeCount: null,
       URL: 'N7uu8v34HU8',
       selectContent: 0,
-      rating: 0
+      rating: 0,
+      isURL: false
     }
   },
   methods: {
@@ -195,6 +196,7 @@ export default {
             this.URL = result.key
           }
         })
+        this.isURL = true
       })
       .catch(error => {
         console.log(error)
@@ -224,6 +226,7 @@ export default {
     this.loadMovieDetail()
     this.loadUrl()
     this.isLike()
+    
   },
   mounted() {
   },

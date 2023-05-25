@@ -51,7 +51,7 @@
        
             <div class="col col-md-4 col-6 order-md-3 order-2">
               <nav aria-label="Page navigation">
-                <ul class="pagination pagination-sm justify-content-end">
+                <ul class="pagination pagination-sm justify-content-center">
                   <li  :class="{'visually-hidden': currentPage==1}" ><span class="page-link" @click="pageSwitch(1)" >First</span></li>
                   <li v-for="(page, index) in pageidx" :key="index" :class="{'active': currentPage===page, 'visually-hidden': (page > currentPage + 2 || page < currentPage - 2)}" ><span class="page-link" @click="pageSwitch(page)">{{ page }}</span></li>
                   <li  :class="{'visually-hidden': currentPage==pageidx}" ><span class="page-link" @click="pageSwitch(pageidx)">Last</span></li>

@@ -132,25 +132,24 @@
 </template>
 <script>
 export default {
-  data() {
-    return {
-      darkMode: false
-    };
-  },
   computed: {
     isLogin() {
       return this.$store.getters.isLogin
+    },
+    darkMode() {
+      return this.$store.getters.isDarkMode
     }
   },
   methods:{
     toggleDarkMode() {
-      this.darkMode = !this.darkMode;
-      if (this.darkMode) {
+      this.$store.dispatch('toggleDarkMode')
+
+      if (this.$store.state.darkMode) {
         // 다크 모드 클래스를 추가
-        document.body.classList.add('dark-mode');
+        document.body.classList.add('dark-mode')
       } else {
         // 다크 모드 클래스를 제거
-        document.body.classList.remove('dark-mode');
+        document.body.classList.remove('dark-mode')
       }
     },
    
@@ -161,8 +160,21 @@ export default {
     gotoSearch(){
       this.$router.push({name: 'SearchView'})
     },
+
+    gotoHome() {
+      this.$router.push({name: 'HomeView'})
+    }
     
   },
+  created() {
+    if (this.$store.state.darkMode) {
+        // 다크 모드 클래스를 추가
+        document.body.classList.add('dark-mode')
+      } else {
+        // 다크 모드 클래스를 제거
+        document.body.classList.remove('dark-mode')
+      }
+  }
   // watch: {
   //   $route() {
   //     window.scrollTo(0, 0);

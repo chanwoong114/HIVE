@@ -9,7 +9,7 @@
         <p>{{ movie.comments_rating }}</p>
       </div>
       <div v-else id="movieInfo">
-        <p>리뷰가 없습니다.</p>
+        <p style="color: white">리뷰가 없습니다.</p>
       </div>
       <div id="title">
         {{ movie.title }}

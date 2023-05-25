@@ -7,6 +7,7 @@ import comment from '@/store/community/comment.js'
 import axios from 'axios'
 import createPersistedState from 'vuex-persistedstate'
 import router from '../router'
+import swal from 'sweetalert';
 
 const API_URL = 'http://127.0.0.1:8000'
 
@@ -18,6 +19,7 @@ export default new Vuex.Store({
     createPersistedState(),
   ],
   state: {
+    darkMode: false,
     movies: [
     ],
     token: null,
@@ -27,6 +29,9 @@ export default new Vuex.Store({
   getters: {
     isLogin(state) {
       return state.token ? true : false
+    },
+    isDarkMode(state) {
+      return state.darkMode
     }
   },
   mutations: {
@@ -53,6 +58,9 @@ export default new Vuex.Store({
           return userId != data.id
         })
       }
+    },
+    TOGGLE_MODE(state) {
+      state.darkMode = !state.darkMode
     }
   },
   actions: {
@@ -72,9 +80,11 @@ export default new Vuex.Store({
           // console.log(res)
           context.commit('SAVE_TOKEN', res.data.key)
           context.commit('SAVE_USERNAME', username)
+          swal("Success!", "회원 가입이 완료되었습니다.", "success");
         })
         .catch((err) => {
-        console.log(err)
+          console.log(err)
+          swal("Nope!", "올바른 정보를 입력하세요", "error");
       })
     },
     login(context, payload) {
@@ -93,12 +103,15 @@ export default new Vuex.Store({
           context.commit('SAVE_TOKEN', res.data.key)
           context.commit('SAVE_USERNAME', username)
           context.dispatch('loadUserData', res.data.key)
-          
+          swal("Success!", "로그인이 완료되었습니다.", "success");
         })
-        .catch((err) => console.log(err))
+        .catch((err) => {
+          console.log(err)
+          swal("Nope!", "올바른 정보를 입력하세요", "error");
+        })
       },
       signOut(context) {
-      alert('로그아웃 되었습니다.')
+      swal("Success!", "로그아웃이 완료되었습니다.", "success");
       console.log(context)
       router.push({name: 'HomeView'})
       window.localStorage.clear();
@@ -162,7 +175,10 @@ export default new Vuex.Store({
         alert(error.response.data)
         return
       })
-    }
+    },
+    toggleDarkMode(context) {
+      context.commit('TOGGLE_MODE')
+    },
   },
   modules: {
     movie,

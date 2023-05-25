@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="bg-gray">
     <!-- <div class="box">
     <h1>회원 가입</h1>
     <form @submit.prevent="signUp">
@@ -35,7 +35,7 @@
             </div>
           </div>
           <div class="mb-4">
-            <div class="position-relative"><i class="ai-lock-closed fs-lg position-absolute top-50 start-0 translate-middle-y ms-3"></i>
+            <div style="color:gray" class="position-relative"><i  class="ai-lock-closed fs-lg position-absolute top-50 start-0 translate-middle-y ms-3"></i>
               <div class="password-toggle">
                 <input class="form-control form-control-lg ps-5" v-model="password1" type="password" placeholder="비밀번호" required>
                 <label class="password-toggle-btn" aria-label="Show/hide password">
@@ -54,19 +54,8 @@
               </div>
             </div>
           </div>
-          <div class="d-flex flex-wrap align-items-center justify-content-between pb-4">
-            <form-check class="my-1">
-              <input class="form-check-input" type="checkbox" id="keep-signedin">
-              <label class="form-check-label ms-1" for="keep-signedin">로그인 상태 유지</label>
-            </form-check><a class="fs-sm fw-semibold text-decoration-none my-1" href="#">비밀번호를 잊으셨나요?</a>
-          </div>
           <button class="btn btn-lg btn-success w-100 mb-4" type="submit" value="SignUp">회원가입</button>
           <!-- 그냥 띄우기만 ! -->
-          <h2 class="h6 text-center pt-3 pt-lg-4 mb-4">다른방법 로그인</h2>
-          <div class="row row-cols-1 row-cols-sm-2 gy-3">
-                <div class="col"><a class="btn btn-icon btn-outline-secondary btn-google btn-lg w-100" href="#"><i class="ai-google fs-xl me-2"></i>Google</a></div>
-                <div class="col"><a class="btn btn-icon btn-outline-secondary btn-facebook btn-lg w-100" href="#"><i class="ai-facebook fs-xl me-2"></i>Facebook</a></div>
-              </div>
             </form>
           </div>
           <!-- Copyright-->

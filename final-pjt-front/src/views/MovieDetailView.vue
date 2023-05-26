@@ -95,6 +95,7 @@
                 </a>
                 <div :id="cast.id" style="display:none;width:70%;">
                   <h1 style="color:black;">{{ cast?.name }}</h1>
+                  <h4 style="color:black;">{{ cast?.character }}</h4>
                   <br>
                   <br>
                   <h3 style="color:black;">참여한 영화</h3>
